@@ -36,7 +36,7 @@ background_path = "Sincode/images/background.png"
 add_bg_from_local(background_path)
 
 with st.sidebar:
-    logo = Image.open("/content/drive/MyDrive/FYP/SinCodeLogo.jpg")
+    logo = Image.open("Sincode/images/SinCodeLogo.jpg")
     st.image(logo, width=200)
     st.title("සිංCode Project")
     st.info("Prototype")

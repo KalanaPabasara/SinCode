@@ -32,7 +32,7 @@ def load_system():
     decoder = BeamSearchDecoder()
     return decoder
 
-background_path = "/content/drive/MyDrive/FYP/background.png"
+background_path = "Sincode/images/background.png"
 add_bg_from_local(background_path)
 
 with st.sidebar:

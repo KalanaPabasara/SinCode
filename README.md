@@ -11,7 +11,7 @@ short_description: Context-Aware Transliteration
 sdk_version: 1.53.1
 ---
 
-# SinCode: Neuro-Symbolic Transliteration Prototype 🇱🇰
+# SinCode: Neuro-Symbolic Transliteration Prototype
 
 > **Context-Aware Singlish-to-Sinhala Transliteration with Code-Switching Support.**
 

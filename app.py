@@ -43,13 +43,13 @@ with st.sidebar:
     st.markdown("### 🏗 Architecture")
     st.success("""
     **Data-Driven Neuro-Symbolic Engine**
-    XLM-R contextual scoring (65%) + transliteration fidelity (25%) + dictionary rank prior (10%).
+    XLM-R contextual scoring (40%) + transliteration fidelity (60%) + dictionary rank prior (0%).
 
     **Adaptive Code-Switching**
     Intelligently detects and preserves English contexts.
 
     **Contextual Disambiguation**
-    Resolves Singlish ambiguity using sentence-level probability — no rigid penalty rules.
+    Resolves Singlish ambiguity using sentence-level probability.
     """)
 
     st.markdown("---")

@@ -37,14 +37,15 @@ ENGLISH_CORPUS_URL = (
 ENGLISH_CORPUS_CACHE = "english_20k.txt"
 
 # Scoring weights (tunable hyperparameters)
-W_MLM: float = 0.60           # Contextual language model probability
-W_FIDELITY: float = 0.40      # Source-aware transliteration fidelity
+W_MLM: float = 0.40           # Contextual language model probability
+W_FIDELITY: float = 0.60      # Source-aware transliteration fidelity
 W_RANK: float = 0.00          # Dictionary rank prior (disabled — dict is unordered)
 
 MAX_CANDIDATES: int = 8       # Max candidates per word position
 DEFAULT_BEAM_WIDTH: int = 5   # Beam search width
-FIDELITY_SCALE: float = 6.0   # Edit-distance penalty multiplier
-DICT_FIDELITY_DAMP: float = 1.0  # Damping factor for dict candidates' fidelity
+FIDELITY_SCALE: float = 10.0  # Edit-distance penalty multiplier
+DICT_FIDELITY_DAMP: float = 1.5  # Damping factor for dict candidates' fidelity
+MIN_ENGLISH_LEN: int = 3      # Min word length for 20k-corpus English detection
 SINHALA_VIRAMA: str = '\u0DCA'  # Sinhala virama (hal) character
 ZWJ: str = '\u200D'             # Zero-width joiner (for conjuncts)
 
@@ -79,7 +80,10 @@ def load_english_vocab() -> Set[str]:
 
     try:
         with open(ENGLISH_CORPUS_CACHE, "r", encoding="utf-8") as f:
-            vocab.update(line.strip().lower() for line in f if line.strip())
+            vocab.update(
+                w for line in f
+                if (w := line.strip().lower()) and len(w) >= MIN_ENGLISH_LEN
+            )
     except OSError as exc:
         logger.warning("Could not read English corpus file: %s", exc)
 
@@ -201,13 +205,13 @@ class CandidateScorer:
 
     Combines three probabilistic signals to rank candidates:
 
-    1. **MLM Score** (weight α = 0.60)
+    1. **MLM Score** (weight α = 0.40)
        Contextual fit from XLM-RoBERTa masked language model.
        English candidates matching the user's input receive an
        MLM floor (best non-English score) to remove XLM-R's
        cross-script calibration bias.
 
-    2. **Source-Aware Fidelity** (weight β = 0.40)
+    2. **Source-Aware Fidelity** (weight β = 0.60)
        English candidates matching input → 0.0 (user intent).
        Dictionary candidates → damped (50%) Levenshtein to rule
        output — validates as real word but still rewards phonetic

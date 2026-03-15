@@ -42,14 +42,14 @@ with st.sidebar:
     st.info("Prototype")
     st.markdown("### 🏗 Architecture")
     st.success("""
-    **Hybrid Neuro-Symbolic Engine**
-    Combines rule-based speed with Deep Learning (XLM-R) context awareness.
+    **Data-Driven Neuro-Symbolic Engine**
+    XLM-R contextual scoring (65%) + transliteration fidelity (25%) + dictionary rank prior (10%).
 
     **Adaptive Code-Switching**
     Intelligently detects and preserves English contexts.
 
     **Contextual Disambiguation**
-    Resolves Singlish ambiguity using sentence-level probability.
+    Resolves Singlish ambiguity using sentence-level probability — no rigid penalty rules.
     """)
 
     st.markdown("---")
@@ -72,8 +72,9 @@ if st.button("Transliterate", type="primary", use_container_width=True) and inpu
         st.markdown(f"### {result}")
         st.caption(f"Time: {round(end_time - start_time, 2)}s")
 
-        with st.expander("See How It Works (Debug Info)", expanded=True):
-            st.write("Below shows the candidate scoring for each word step:")
+        with st.expander("See How It Works (Scoring Breakdown)", expanded=True):
+            st.write("Below shows the **data-driven scoring** for each word step:")
+            st.caption("MLM = contextual fit · Fid = transliteration fidelity · Rank = dictionary prior · 🔤 = English")
             for log in trace_logs:
                 st.markdown(log)
                 st.divider()

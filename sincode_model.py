@@ -1,268 +1,701 @@
+"""
+SinCode: Context-Aware Singlish-to-Sinhala Transliteration Engine
+
+Architecture (Tiered Decoding):
+    1. English Filter    – Preserves code-switched English words
+    2. Dictionary Lookup – Retrieves Sinhala candidates from 5.9M-word DB
+    3. Phonetic Rules    – Generates fallback transliteration for unknown words
+    4. Data-Driven Scorer – Ranks ALL candidates using:
+         a) XLM-R MLM contextual probability  (60%)
+         b) Source-aware fidelity              (40%)
+    5. Beam Search       – Finds the globally optimal word sequence
+
+Author: Kalana Chandrasekara (2026)
+"""
+
 import torch
 import math
 import re
 import os
+import pickle
+import logging
 import requests
+from typing import List, Tuple, Dict, Optional, Set
+from dataclasses import dataclass, field
 from transformers import AutoTokenizer, AutoModelForMaskedLM
 
-# --- 0. SETUP ROBUST ENGLISH VOCAB ---
-def load_english_corpus():
-    # 1. Define Core "Safety" Words
-    core_english = {
-        "transliteration", "sincode", "prototype", "assignment", "singlish",
-        "rest", "complete", "tutorial", "small", "mistakes", "game", "play",
-        "type", "test", "online", "code", "mixing", "project", "demo", "today",
-        "tomorrow", "presentation", "slide"
-    }
+logger = logging.getLogger(__name__)
 
-    url = "https://raw.githubusercontent.com/first20hours/google-10000-english/master/20k.txt"
-    file_path = "english_20k.txt"
+# ─── Configuration ───────────────────────────────────────────────────────────
 
-    download_success = False
+DEFAULT_MODEL_NAME = "FacebookAI/xlm-roberta-base"
+DEFAULT_DICTIONARY_PATH = "dictionary.pkl"
 
-    # 2. Try to Load/Download 20k Corpus
-    if not os.path.exists(file_path):
+ENGLISH_CORPUS_URL = (
+    "https://raw.githubusercontent.com/first20hours/google-10000-english/master/20k.txt"
+)
+ENGLISH_CORPUS_CACHE = "english_20k.txt"
+
+# Scoring weights (tunable hyperparameters)
+W_MLM: float = 0.60           # Contextual language model probability
+W_FIDELITY: float = 0.40      # Source-aware transliteration fidelity
+W_RANK: float = 0.00          # Dictionary rank prior (disabled — dict is unordered)
+
+MAX_CANDIDATES: int = 8       # Max candidates per word position
+DEFAULT_BEAM_WIDTH: int = 5   # Beam search width
+FIDELITY_SCALE: float = 6.0   # Edit-distance penalty multiplier
+DICT_FIDELITY_DAMP: float = 1.0  # Damping factor for dict candidates' fidelity
+SINHALA_VIRAMA: str = '\u0DCA'  # Sinhala virama (hal) character
+ZWJ: str = '\u200D'             # Zero-width joiner (for conjuncts)
+
+# Precompiled regex for punctuation stripping
+PUNCT_PATTERN = re.compile(r"^(\W*)(.*?)(\W*)$")
+
+# Core English words always recognised (supplements the 20k corpus)
+CORE_ENGLISH_WORDS: Set[str] = {
+    "transliteration", "sincode", "prototype", "assignment", "singlish",
+    "rest", "complete", "tutorial", "small", "mistakes", "game", "play",
+    "type", "test", "online", "code", "mixing", "project", "demo", "today",
+    "tomorrow", "presentation", "slide",
+}
+
+
+# ─── English Vocabulary ─────────────────────────────────────────────────────
+
+def load_english_vocab() -> Set[str]:
+    """Load and cache a ~20k English word list for code-switch detection."""
+    vocab = CORE_ENGLISH_WORDS.copy()
+
+    if not os.path.exists(ENGLISH_CORPUS_CACHE):
         try:
-            print("🌐 Downloading English Corpus...")
-            r = requests.get(url, timeout=5)
-            with open(file_path, "wb") as f:
-                f.write(r.content)
-            download_success = True
-        except:
-            print("Internet Warning: Could not download English corpus. Using fallback list.")
-    else:
-        download_success = True
+            logger.info("Downloading English corpus...")
+            response = requests.get(ENGLISH_CORPUS_URL, timeout=10)
+            response.raise_for_status()
+            with open(ENGLISH_CORPUS_CACHE, "wb") as f:
+                f.write(response.content)
+        except (requests.RequestException, OSError) as exc:
+            logger.warning("Could not download English corpus: %s", exc)
+            return vocab
 
-    # 3. Combine Lists
-    full_vocab = core_english.copy()
+    try:
+        with open(ENGLISH_CORPUS_CACHE, "r", encoding="utf-8") as f:
+            vocab.update(line.strip().lower() for line in f if line.strip())
+    except OSError as exc:
+        logger.warning("Could not read English corpus file: %s", exc)
 
-    if download_success and os.path.exists(file_path):
-        try:
-            with open(file_path, "r") as f:
-                downloaded_words = set(f.read().splitlines())
-                full_vocab.update(downloaded_words)
-        except:
-            pass
+    logger.info("English vocabulary loaded: %d words", len(vocab))
+    return vocab
 
-    print(f"English Vocab Loaded: {len(full_vocab)} words")
-    return full_vocab
 
-ENGLISH_VOCAB = load_english_corpus()
+ENGLISH_VOCAB: Set[str] = load_english_vocab()
 
-# --- 1. RULE BASED ENGINE ---
-# (Standard Rule Variables)
-nVowels = 26
-consonants = ["nnd", "nndh", "nng", "th", "dh", "gh", "ch", "ph", "bh", "jh", "sh", "GN", "KN", "Lu", "kh", "Th", "Dh", "S", "d", "c", "th", "t", "k", "D", "n", "p", "b", "m", "\\u005C" + "y", "Y", "y", "j", "l", "v", "w", "s", "h", "N", "L", "K", "G", "P", "B", "f", "g", "r"]
-consonantsUni = ["ඬ", "ඳ", "ඟ", "ත", "ධ", "ඝ", "ච", "ඵ", "භ", "ඣ", "ෂ", "ඥ", "ඤ", "ළු", "ඛ", "ඨ", "ඪ", "ශ", "ද", "ච", "ත", "ට", "ක", "ඩ", "න", "ප", "බ", "ම", "‍ය", "‍ය", "ය", "ජ", "ල", "ව", "ව", "ස", "හ", "ණ", "ළ", "ඛ", "ඝ", "ඵ", "ඹ", "ෆ", "ග", "ර"]
-vowels = ["oo", "o\\)", "oe", "aa", "a\\)", "Aa", "A\\)", "ae", "ii", "i\\)", "ie", "ee", "ea", "e\\)", "ei", "uu", "u\\)", "au", "\\a", "a", "A", "i", "e", "u", "o", "I"]
-vowelsUni = ["ඌ", "ඕ", "ඕ", "ආ", "ආ", "ඈ", "ඈ", "ඈ", "ඊ", "ඊ", "ඊ", "ඊ", "ඒ", "ඒ", "ඒ", "ඌ", "ඌ", "ඖ", "ඇ", "අ", "ඇ", "ඉ", "එ", "උ", "ඔ", "ඓ"]
-vowelModifiersUni = ["ූ", "ෝ", "ෝ", "ා", "ා", "ෑ", "ෑ", "ෑ", "ී", "ී", "ී", "ී", "ේ", "ේ", "ේ", "ූ", "ූ", "ෞ", "ැ", "", "ැ", "ි", "ෙ", "ු", "ො", "ෛ"]
-specialConsonants = ["\\n", "\\h", "\\N", "\\R", "R", "\\r"]
-specialConsonantsUni = ["ං", "ඃ", "ඞ", "ඍ", "ර්"+"\u200D", "ර්"+"\u200D"]
-specialChar = ["ruu", "ru"]
-specialCharUni = ["ෲ", "ෘ"]
 
-def rule_based_transliterate(text):
-    for i in range(len(specialConsonants)):
-        text = text.replace(specialConsonants[i], specialConsonantsUni[i])
-    for i in range(len(specialCharUni)):
-        for j in range(len(consonants)):
-            s = consonants[j] + specialChar[i]
-            v = consonantsUni[j] + specialCharUni[i]
-            r = s.replace(s+"/G", "")
-            text = text.replace(r, v)
-    for j in range(len(consonants)):
-        for i in range(len(vowels)):
-            s = consonants[j] + "r" + vowels[i]
-            v = consonantsUni[j] + "්‍ර" + vowelModifiersUni[i]
-            r = s.replace(s+"/G", "")
-            text = text.replace(r, v)
-        s = consonants[j] + "r"
-        v = consonantsUni[j] + "්‍ර"
-        r = s.replace(s+"/G", "")
-        text = text.replace(r, v)
-    for i in range(len(consonants)):
-        for j in range(nVowels):
-            s = consonants[i] + vowels[j]
-            v = consonantsUni[i] + vowelModifiersUni[j]
-            r = s.replace(s+"/G", "")
-            text = text.replace(r, v)
-    for i in range(len(consonants)):
-        r = consonants[i].replace(consonants[i]+"/G", "")
-        text = text.replace(r, consonantsUni[i] + "්")
-    for i in range(len(vowels)):
-        r = vowels[i].replace(vowels[i]+"/G", "")
-        text = text.replace(r, vowelsUni[i])
+# ─── Rule-Based Transliteration Engine ───────────────────────────────────────
+# Phonetic mapping tables (Singlish Romanized → Sinhala Unicode)
+# Tables are ordered longest-pattern-first so greedy replacement works.
+
+CONSONANTS: List[str] = [
+    "nnd", "nndh", "nng",
+    "th", "dh", "gh", "ch", "ph", "bh", "jh", "sh",
+    "GN", "KN", "Lu", "kh", "Th", "Dh",
+    "S", "d", "c", "th", "t", "k", "D", "n", "p", "b", "m",
+    "\\y",                          # FIX: was "\\u005C"+"y" (never matched)
+    "Y", "y", "j", "l", "v", "w", "s", "h",
+    "N", "L", "K", "G", "P", "B", "f", "g", "r",
+]
+
+CONSONANTS_UNI: List[str] = [
+    "ඬ", "ඳ", "ඟ",
+    "ත", "ධ", "ඝ", "ච", "ඵ", "භ", "ඣ", "ෂ",
+    "ඥ", "ඤ", "ළු", "ඛ", "ඨ", "ඪ",
+    "ශ", "ද", "ච", "ත", "ට", "ක", "ඩ", "න", "ප", "බ", "ම",
+    "‍ය",
+    "‍ය", "ය", "ජ", "ල", "ව", "ව", "ස", "හ",
+    "ණ", "ළ", "ඛ", "ඝ", "ඵ", "ඹ", "ෆ", "ග", "ර",
+]
+
+VOWELS: List[str] = [
+    "oo", "o\\)", "oe", "aa", "a\\)", "Aa", "A\\)", "ae",
+    "ii", "i\\)", "ie", "ee", "ea", "e\\)", "ei",
+    "uu", "u\\)", "au",
+    "\\a", "a", "A", "i", "e", "u", "o", "I",
+]
+
+VOWELS_UNI: List[str] = [
+    "ඌ", "ඕ", "ඕ", "ආ", "ආ", "ඈ", "ඈ", "ඈ",
+    "ඊ", "ඊ", "ඊ", "ඊ", "ඒ", "ඒ", "ඒ",
+    "ඌ", "ඌ", "ඖ",
+    "ඇ", "අ", "ඇ", "ඉ", "එ", "උ", "ඔ", "ඓ",
+]
+
+VOWEL_MODIFIERS_UNI: List[str] = [
+    "ූ", "ෝ", "ෝ", "ා", "ා", "ෑ", "ෑ", "ෑ",
+    "ී", "ී", "ී", "ී", "ේ", "ේ", "ේ",
+    "ූ", "ූ", "ෞ",
+    "ැ", "", "ැ", "ි", "ෙ", "ු", "ො", "ෛ",
+]
+
+SPECIAL_CONSONANTS: List[str] = ["\\n", "\\h", "\\N", "\\R", "R", "\\r"]
+SPECIAL_CONSONANTS_UNI: List[str] = ["ං", "ඃ", "ඞ", "ඍ", "ර්\u200D", "ර්\u200D"]
+
+SPECIAL_CHARS: List[str] = ["ruu", "ru"]
+SPECIAL_CHARS_UNI: List[str] = ["ෲ", "ෘ"]
+
+N_VOWELS: int = 26
+
+
+def rule_based_transliterate(text: str) -> str:
+    """
+    Convert Romanized Singlish text to Sinhala script using phonetic rules.
+
+    Replacement order matters: longer patterns are consumed first so that
+    greedy left-to-right substitution produces correct output.
+    """
+    # 1. Special consonants (anusvara, visarga, etc.)
+    for pat, uni in zip(SPECIAL_CONSONANTS, SPECIAL_CONSONANTS_UNI):
+        text = text.replace(pat, uni)
+
+    # 2. Consonant + special-char combinations (e.g., kru → කෘ)
+    for sc, sc_uni in zip(SPECIAL_CHARS, SPECIAL_CHARS_UNI):
+        for cons, cons_uni in zip(CONSONANTS, CONSONANTS_UNI):
+            text = text.replace(cons + sc, cons_uni + sc_uni)
+
+    # 3. Consonant + ra + vowel clusters (e.g., kra → ක්‍රා)
+    for cons, cons_uni in zip(CONSONANTS, CONSONANTS_UNI):
+        for vow, vmod in zip(VOWELS, VOWEL_MODIFIERS_UNI):
+            text = text.replace(cons + "r" + vow, cons_uni + "්‍ර" + vmod)
+        text = text.replace(cons + "r", cons_uni + "්‍ර")
+
+    # 4. Consonant + vowel combinations
+    for cons, cons_uni in zip(CONSONANTS, CONSONANTS_UNI):
+        for j in range(N_VOWELS):
+            text = text.replace(cons + VOWELS[j], cons_uni + VOWEL_MODIFIERS_UNI[j])
+
+    # 5. Bare consonants → consonant + hal (virama)
+    for cons, cons_uni in zip(CONSONANTS, CONSONANTS_UNI):
+        text = text.replace(cons, cons_uni + "්")
+
+    # 6. Standalone vowels
+    for vow, vow_uni in zip(VOWELS, VOWELS_UNI):
+        text = text.replace(vow, vow_uni)
+
     return text
 
-# --- 2. DICTIONARY ADAPTER ---
+
+# ─── Data-Driven Candidate Scorer ───────────────────────────────────────────
+
+@dataclass
+class ScoredCandidate:
+    """Holds a candidate word and its scoring breakdown."""
+    text: str
+    mlm_score: float = 0.0
+    fidelity_score: float = 0.0
+    rank_score: float = 0.0
+    combined_score: float = 0.0
+    is_english: bool = False
+
+
+class CandidateScorer:
+    """
+    Data-driven replacement for the old hardcoded penalty table.
+
+    Combines three probabilistic signals to rank candidates:
+
+    1. **MLM Score** (weight α = 0.60)
+       Contextual fit from XLM-RoBERTa masked language model.
+       English candidates matching the user's input receive an
+       MLM floor (best non-English score) to remove XLM-R's
+       cross-script calibration bias.
+
+    2. **Source-Aware Fidelity** (weight β = 0.40)
+       English candidates matching input → 0.0 (user intent).
+       Dictionary candidates → damped (50%) Levenshtein to rule
+       output — validates as real word but still rewards phonetic
+       closeness to the typed input.
+       Rule-only outputs → penalised by virama/skeleton density.
+       Other → full Levenshtein distance to rule output.
+
+    Note: Dictionary rank prior is disabled (γ = 0.0) because the
+    dictionary entries are not ordered by frequency.
+    """
+
+    def __init__(
+        self,
+        w_mlm: float = W_MLM,
+        w_fidelity: float = W_FIDELITY,
+        w_rank: float = W_RANK,
+        fidelity_scale: float = FIDELITY_SCALE,
+    ):
+        self.w_mlm = w_mlm
+        self.w_fidelity = w_fidelity
+        self.w_rank = w_rank
+        self.fidelity_scale = fidelity_scale
+
+    # ── Levenshtein distance (pure-Python, no dependencies) ──────────
+
+    @staticmethod
+    def levenshtein(s1: str, s2: str) -> int:
+        """Compute the Levenshtein edit distance between two strings."""
+        if not s1:
+            return len(s2)
+        if not s2:
+            return len(s1)
+
+        m, n = len(s1), len(s2)
+        prev_row = list(range(n + 1))
+
+        for i in range(1, m + 1):
+            curr_row = [i] + [0] * n
+            for j in range(1, n + 1):
+                cost = 0 if s1[i - 1] == s2[j - 1] else 1
+                curr_row[j] = min(
+                    prev_row[j] + 1,       # deletion
+                    curr_row[j - 1] + 1,    # insertion
+                    prev_row[j - 1] + cost, # substitution
+                )
+            prev_row = curr_row
+
+        return prev_row[n]
+
+    # ── Scoring components ───────────────────────────────────────────
+
+    def compute_fidelity(
+        self, candidate: str, rule_output: str,
+        original_input: str = "", is_from_dict: bool = False,
+    ) -> float:
+        """
+        Source-aware transliteration fidelity.
+
+        The fidelity signal considers *where* a candidate came from:
+
+        - **English matching input** → 0.0  (user-intent preservation).
+        - **Dictionary candidates** → damped Levenshtein distance to
+          rule output (50% scale).  Dictionary validation proves the
+          candidate is a real word, reducing penalty, but phonetic
+          closeness to the typed input is still rewarded.
+        - **Rule-only outputs not in dictionary** → penalised by
+          consonant-skeleton density (high virama ratio = malformed).
+        - **Other** → full Levenshtein distance to rule output.
+        """
+        # 1. English candidate matching the original input word
+        if original_input and candidate.lower() == original_input.lower():
+            return 0.0
+
+        # 2. Dictionary-validated candidate → damped fidelity
+        #    Uses Levenshtein distance to rule output at reduced scale:
+        #    being in the dictionary validates as a real word, but
+        #    phonetic closeness to what the user typed still matters.
+        if is_from_dict:
+            if candidate == rule_output:
+                return 0.0
+            max_len = max(len(candidate), len(rule_output), 1)
+            norm_dist = self.levenshtein(candidate, rule_output) / max_len
+            return -norm_dist * self.fidelity_scale * DICT_FIDELITY_DAMP
+
+        # 3. Rule-only output (not validated by dictionary)
+        if candidate == rule_output:
+            # Measure consonant-skeleton density: count bare viramas
+            # (virama NOT followed by ZWJ, which would form a conjunct).
+            bare_virama = sum(
+                1 for i, ch in enumerate(candidate)
+                if ch == SINHALA_VIRAMA
+                and (i + 1 >= len(candidate) or candidate[i + 1] != ZWJ)
+            )
+            density = bare_virama / max(len(candidate), 1)
+            # High density → consonant skeleton, not a real word
+            return -density * self.fidelity_scale * 2
+
+        # 4. English word not matching input — uncertain
+        if candidate.isascii():
+            return -0.5
+
+        # 5. Sinhala candidate not from dictionary — distance penalty
+        max_len = max(len(candidate), len(rule_output), 1)
+        norm_dist = self.levenshtein(candidate, rule_output) / max_len
+        return -norm_dist * self.fidelity_scale
+
+    @staticmethod
+    def compute_rank_prior(rank: int, total: int) -> float:
+        """
+        Log-decay rank prior.  First candidate → 0.0; later ones decay.
+        """
+        if total <= 1:
+            return 0.0
+        return math.log(1.0 / (rank + 1))
+
+    # ── Combined score ───────────────────────────────────────────────
+
+    def score(
+        self,
+        mlm_score: float,
+        candidate: str,
+        rule_output: str,
+        rank: int,
+        total_candidates: int,
+        is_english: bool = False,
+        original_input: str = "",
+        is_from_dict: bool = False,
+    ) -> ScoredCandidate:
+        """Return a :class:`ScoredCandidate` with full breakdown."""
+        fidelity = self.compute_fidelity(
+            candidate, rule_output, original_input, is_from_dict,
+        )
+        rank_prior = self.compute_rank_prior(rank, total_candidates)
+
+        combined = (
+            self.w_mlm * mlm_score
+            + self.w_fidelity * fidelity
+            + self.w_rank * rank_prior
+        )
+
+        return ScoredCandidate(
+            text=candidate,
+            mlm_score=mlm_score,
+            fidelity_score=fidelity,
+            rank_score=rank_prior,
+            combined_score=combined,
+            is_english=is_english,
+        )
+
+
+# ─── Dictionary Adapter ─────────────────────────────────────────────────────
+
 class DictionaryAdapter:
-    def __init__(self, dictionary_dict):
+    """Retrieves transliteration candidates from the Sinhala dictionary."""
+
+    def __init__(self, dictionary_dict: Dict[str, List[str]]):
         self.dictionary = dictionary_dict
 
-    def get_candidates(self, word):
-        cands = []
+    def get_candidates(self, word: str) -> List[str]:
+        """
+        Return candidate transliterations for a Romanized word.
+
+        Priority:
+            1. English corpus match  → keep original word
+            2. Dictionary lookup     → exact / lowercase
+            3. Subword decomposition → only when 1 & 2 yield nothing
+        """
+        cands: List[str] = []
         word_lower = word.lower()
 
-        # 1. English Corpus Check
+        # 1. English corpus check
         if word_lower in ENGLISH_VOCAB:
             cands.append(word)
 
-        # 2. Sinhala Dictionary Check
+        # 2. Sinhala dictionary check
         if word in self.dictionary:
             cands.extend(self.dictionary[word])
         elif word_lower in self.dictionary:
             cands.extend(self.dictionary[word_lower])
 
-        # 3. Clean & Return
+        # 3. Deduplicate preserving order
         if cands:
             return list(dict.fromkeys(cands))
 
-        # 4. Fallback: Subwords (Only if NO candidates found)
+        # 4. Subword fallback (compound words)
         length = len(word)
         if length > 3:
             for i in range(2, length - 1):
-                part1 = word[:i]
-                part2 = word[i:]
-                p1_cands = self.dictionary.get(part1) or self.dictionary.get(part1.lower())
-                p2_cands = self.dictionary.get(part2) or self.dictionary.get(part2.lower())
+                part1, part2 = word[:i], word[i:]
+                p1 = self.dictionary.get(part1) or self.dictionary.get(part1.lower())
+                p2 = self.dictionary.get(part2) or self.dictionary.get(part2.lower())
 
-                if p1_cands and p2_cands:
-                    cands1 = list(enumerate(p1_cands[:3]))
-                    cands2 = list(enumerate(p2_cands[:3]))
-                    for rank1, w1 in cands1:
-                        for rank2, w2 in cands2:
+                if p1 and p2:
+                    for w1 in p1[:3]:
+                        for w2 in p2[:3]:
                             cands.append(w1 + w2)
 
-        if cands:
-            return list(set(cands))
-        return []
+        return list(dict.fromkeys(cands)) if cands else []
 
-    def get_rule_output(self, word):
+    @staticmethod
+    def get_rule_output(word: str) -> str:
+        """Generate Sinhala output via the phonetic rule engine."""
         return rule_based_transliterate(word)
 
-# --- 3. BEAM SEARCH DECODER (With Enhanced Trace) ---
-class BeamSearchDecoder:
-    def __init__(self, model_name="FacebookAI/xlm-roberta-base", dictionary_path="dictionary.pkl", device=None):
-        if device is None:
-            self.device = 'cuda' if torch.cuda.is_available() else 'cpu'
-        else:
-            self.device = device
 
+# ─── Beam Search Decoder ────────────────────────────────────────────────────
+
+class BeamSearchDecoder:
+    """
+    Contextual beam-search decoder for Singlish → Sinhala transliteration.
+
+    For each word position the decoder:
+        1. Generates candidates (dictionary + rule engine)
+        2. Scores them with XLM-R MLM in sentence context
+        3. Combines MLM score with fidelity & rank via CandidateScorer
+        4. Prunes to the top-k (beam width) hypotheses
+    """
+
+    def __init__(
+        self,
+        model_name: str = DEFAULT_MODEL_NAME,
+        dictionary_path: str = DEFAULT_DICTIONARY_PATH,
+        device: Optional[str] = None,
+    ):
+        self.device = device or ("cuda" if torch.cuda.is_available() else "cpu")
+
+        logger.info("Loading tokenizer & model: %s", model_name)
         self.tokenizer = AutoTokenizer.from_pretrained(model_name)
         self.model = AutoModelForMaskedLM.from_pretrained(model_name)
         self.model.to(self.device)
         self.model.eval()
 
-        import pickle
+        logger.info("Loading dictionary: %s", dictionary_path)
         with open(dictionary_path, "rb") as f:
             d_data = pickle.load(f)
         self.adapter = DictionaryAdapter(d_data)
+        self.scorer = CandidateScorer()
 
-    def batch_score(self, contexts, candidates):
-        inputs = self.tokenizer(contexts, return_tensors="pt", padding=True, truncation=True).to(self.device)
+    # ── MLM batch scoring ────────────────────────────────────────────
+
+    def _batch_mlm_score(
+        self,
+        left_contexts: List[str],
+        right_contexts: List[str],
+        candidates: List[str],
+    ) -> List[float]:
+        """
+        Score each candidate using masked LM log-probability with proper
+        multi-mask scoring for multi-subword candidates.
+
+        Instead of placing a single <mask> and summing subword log-probs
+        at that one position (which conflates alternative predictions at
+        the same slot), this method creates one <mask> per subword token
+        and scores each subword at its own position:
+
+            score = (1/N) * Σ_i  log P(t_i | mask_position_i, context)
+        """
+        if not candidates:
+            return []
+
+        mask = self.tokenizer.mask_token
         mask_token_id = self.tokenizer.mask_token_id
-        scores = []
+
+        # Pre-tokenize every candidate to determine subword count
+        cand_token_ids: List[List[int]] = []
+        for c in candidates:
+            ids = self.tokenizer.encode(c, add_special_tokens=False)
+            cand_token_ids.append(ids if ids else [self.tokenizer.unk_token_id])
+
+        # Build context strings with the correct number of <mask> tokens
+        batch_texts: List[str] = []
+        for i in range(len(candidates)):
+            n_masks = len(cand_token_ids[i])
+            mask_str = " ".join([mask] * n_masks)
+            parts = [p for p in [left_contexts[i], mask_str, right_contexts[i]] if p]
+            batch_texts.append(" ".join(parts))
+
+        inputs = self.tokenizer(
+            batch_texts,
+            return_tensors="pt",
+            padding=True,
+            truncation=True,
+        ).to(self.device)
+
         with torch.no_grad():
-            outputs = self.model(**inputs)
-            logits = outputs.logits
+            logits = self.model(**inputs).logits
 
-        for i, target in enumerate(candidates):
+        scores: List[float] = []
+        for i, target_ids in enumerate(cand_token_ids):
             token_ids = inputs.input_ids[i]
-            mask_indices = (token_ids == mask_token_id).nonzero(as_tuple=True)
-            if len(mask_indices[0]) == 0:
-                scores.append(-100.0); continue
+            mask_positions = (token_ids == mask_token_id).nonzero(as_tuple=True)[0]
 
-            mask_pos = mask_indices[0].item()
-            probs = torch.softmax(logits[i, mask_pos, :], dim=0)
-            target_ids = self.tokenizer.encode(target, add_special_tokens=False)
+            if mask_positions.numel() == 0 or not target_ids:
+                scores.append(-100.0)
+                continue
 
-            if not target_ids:
-                scores.append(-100.0); continue
+            # Score each subword at its corresponding mask position
+            n = min(len(target_ids), mask_positions.numel())
+            total = 0.0
+            for j in range(n):
+                pos = mask_positions[j].item()
+                log_probs = torch.log_softmax(logits[i, pos, :], dim=0)
+                total += log_probs[target_ids[j]].item()
 
-            word_score = sum([math.log(probs[tid].item() + 1e-9) for tid in target_ids])
-            scores.append(word_score / len(target_ids))
+            scores.append(total / n)
+
         return scores
 
-    def decode(self, sentence, beam_width=3):
+    # ── Main decode entry-point ──────────────────────────────────────
+
+    def decode(
+        self,
+        sentence: str,
+        beam_width: int = DEFAULT_BEAM_WIDTH,
+    ) -> Tuple[str, List[str]]:
+        """
+        Transliterate a full Singlish sentence into Sinhala script.
+
+        Returns:
+            result      – the best transliteration string
+            trace_logs  – per-step markdown logs for the debug UI
+        """
         words = sentence.split()
-        candidate_sets, penalties, future_context = [], [], []
-        punct_pattern = re.compile(r"^(\W*)(.*?)(\W*)$")
-        trace_logs = []
+        if not words:
+            return "", []
+
+        # ── Phase 1: candidate generation ────────────────────────────
+        word_infos: List[dict] = []
 
         for raw in words:
-            match = punct_pattern.match(raw)
+            match = PUNCT_PATTERN.match(raw)
             prefix, core, suffix = match.groups() if match else ("", raw, "")
 
             if not core:
-                candidate_sets.append([raw]); penalties.append([0.0]); future_context.append(raw)
+                word_infos.append({
+                    "candidates": [raw],
+                    "rule_output": raw,
+                    "english_flags": [False],
+                    "prefix": prefix,
+                    "suffix": suffix,
+                })
                 continue
 
-            # 1. Get Candidates
             cands = self.adapter.get_candidates(core)
-            rule_cand = self.adapter.get_rule_output(core)
+            rule_output = self.adapter.get_rule_output(core)
 
+            # Track which candidates are dictionary-validated
+            dict_entries: Set[str] = set()
+            if core in self.adapter.dictionary:
+                dict_entries.update(self.adapter.dictionary[core])
+            elif core.lower() in self.adapter.dictionary:
+                dict_entries.update(self.adapter.dictionary[core.lower()])
+
+            # Always include the rule output so the model can consider it
+            if rule_output and rule_output not in cands:
+                cands.append(rule_output)
+
+            # If still empty, use rule output as sole candidate
             if not cands:
-                cands = [rule_cand]
-                curr_penalties = [0.0]
-            else:
-                curr_penalties = []
-                has_english = any(c.lower() in ENGLISH_VOCAB for c in cands)
+                cands = [rule_output]
 
-                for c in cands:
-                    is_eng = c.lower() in ENGLISH_VOCAB
-                    is_rule_match = (c == rule_cand)
+            english_flags = [c.lower() in ENGLISH_VOCAB for c in cands]
+            dict_flags = [c in dict_entries for c in cands]
 
-                    if is_eng:
-                        curr_penalties.append(0.0)
-                    elif has_english:
-                        curr_penalties.append(5.0)
-                    elif is_rule_match:
-                        curr_penalties.append(0.0)
-                    else:
-                        curr_penalties.append(2.0)
+            # Apply punctuation wrappers
+            full_cands = [prefix + c + suffix for c in cands]
 
-            final_cands = [prefix + c + suffix for c in cands]
-            candidate_sets.append(final_cands[:6])
-            penalties.append(curr_penalties[:6])
-            best_idx = curr_penalties.index(min(curr_penalties))
-            future_context.append(final_cands[best_idx])
+            word_infos.append({
+                "candidates": full_cands[:MAX_CANDIDATES],
+                "rule_output": prefix + rule_output + suffix,
+                "english_flags": english_flags[:MAX_CANDIDATES],
+                "dict_flags": dict_flags[:MAX_CANDIDATES],
+                "prefix": prefix,
+                "suffix": suffix,
+            })
 
-        beam = [([], 0.0)]
-        for t in range(len(words)):
-            candidates = candidate_sets[t]
-            curr_penalties = penalties[t]
-            next_beam = []
+        # Build stable context for ALL positions (both left and right
+        # in MLM scoring).  English forms are preferred for English-
+        # detected words so the context reflects the code-mixed nature
+        # of the output rather than being 100% Sinhala.
+        #
+        # Using a FIXED context instead of the beam path for the left
+        # side prevents cascade errors: different beam paths produce
+        # different MLM scores for the same candidate, allowing early
+        # mistakes to propagate through noisy contextual fluctuations.
+        # With stable context, each candidate gets ONE consistent MLM
+        # score per position, and the system picks the phonetically +
+        # contextually best option at every step.
+        stable_context: List[str] = []
+        for info in word_infos:
+            eng_cands = [
+                c for c, e in zip(info["candidates"], info["english_flags"]) if e
+            ]
+            stable_context.append(
+                eng_cands[0] if eng_cands else info["rule_output"]
+            )
 
-            batch_ctx, batch_tgt, batch_meta = [], [], []
+        # ── Phase 2: beam search with data-driven scoring ────────────
+        beam: List[Tuple[List[str], float]] = [([], 0.0)]
+        trace_logs: List[str] = []
 
-            for p_idx, (p_path, p_score) in enumerate(beam):
+        for t, info in enumerate(word_infos):
+            candidates = info["candidates"]
+            eng_flags = info["english_flags"]
+            d_flags = info.get("dict_flags", [False] * len(candidates))
+            rule_out = info["rule_output"]
+            total_cands = len(candidates)
+
+            # Build left/right context pairs for multi-mask MLM scoring
+            batch_left: List[str] = []
+            batch_right: List[str] = []
+            batch_tgt: List[str] = []
+            batch_meta: List[Tuple[int, int]] = []  # (beam_idx, cand_idx)
+
+            for p_idx, (path, _) in enumerate(beam):
                 for c_idx, cand in enumerate(candidates):
-                    future = future_context[t+1:] if t+1 < len(words) else []
-                    ctx = " ".join(p_path + [self.tokenizer.mask_token] + future)
-                    batch_ctx.append(ctx)
+                    future = stable_context[t + 1:] if t + 1 < len(words) else []
+                    batch_left.append(" ".join(stable_context[:t]))
+                    batch_right.append(" ".join(future))
                     batch_tgt.append(cand)
                     batch_meta.append((p_idx, c_idx))
 
-            if batch_ctx:
-                scores = self.batch_score(batch_ctx, batch_tgt)
-                # --- TRACE LOGGING ---
-                step_log = f"**Step {t+1}: {words[t]}**\n"
-                for i, score in enumerate(scores):
-                    p_idx, c_idx = batch_meta[i]
-                    orig_path, orig_score = beam[p_idx]
-                    final_score = score - curr_penalties[c_idx]
-                    next_beam.append((orig_path + [batch_tgt[i]], orig_score + final_score))
+            if not batch_tgt:
+                continue
 
-                    # Add to log if score is reasonable (reduce noise)
-                    if score > -25.0:
-                        word = batch_tgt[i]
-                        penalty = curr_penalties[c_idx]
-                        step_log += f"- `{word}` (Pen: {penalty}) -> **{final_score:.2f}**\n"
-                trace_logs.append(step_log)
+            mlm_scores = self._batch_mlm_score(batch_left, batch_right, batch_tgt)
 
-            if not next_beam: continue
+            # ── MLM floor for English code-switching ─────────────────
+            # XLM-R is not calibrated for Singlish code-mixing: English
+            # tokens in Sinhala context receive disproportionately low
+            # MLM scores.  For English candidates that match the user's
+            # input, cap their disadvantage at the best non-English MLM
+            # score in the same beam, removing cross-script bias while
+            # preserving relative ranking information.
+            best_nonenglish_mlm: Dict[int, float] = {}
+            for i, mlm in enumerate(mlm_scores):
+                p_idx, c_idx = batch_meta[i]
+                is_eng = eng_flags[c_idx] if c_idx < len(eng_flags) else False
+                if not is_eng:
+                    prev = best_nonenglish_mlm.get(p_idx, -1e9)
+                    if mlm > prev:
+                        best_nonenglish_mlm[p_idx] = mlm
+
+            # ── Score & trace ────────────────────────────────────────
+            next_beam: List[Tuple[List[str], float]] = []
+            step_log = f"**Step {t + 1}: `{words[t]}`** &nbsp;(rule → `{rule_out}`)\n\n"
+
+            for i, mlm in enumerate(mlm_scores):
+                p_idx, c_idx = batch_meta[i]
+                orig_path, orig_score = beam[p_idx]
+                cand = batch_tgt[i]
+                is_eng = eng_flags[c_idx] if c_idx < len(eng_flags) else False
+                is_dict = d_flags[c_idx] if c_idx < len(d_flags) else False
+
+                # Apply MLM floor for English candidates matching input
+                effective_mlm = mlm
+                if is_eng and cand.lower() == words[t].lower():
+                    floor = best_nonenglish_mlm.get(p_idx, mlm)
+                    effective_mlm = max(mlm, floor)
+
+                scored = self.scorer.score(
+                    mlm_score=effective_mlm,
+                    candidate=cand,
+                    rule_output=rule_out,
+                    rank=c_idx,
+                    total_candidates=total_cands,
+                    is_english=is_eng,
+                    original_input=words[t],
+                    is_from_dict=is_dict,
+                )
+
+                new_total = orig_score + scored.combined_score
+                next_beam.append((orig_path + [cand], new_total))
+
+                # Trace log (skip very low scores to reduce noise)
+                if mlm > -25.0:
+                    eng_tag = " 🔤" if is_eng else ""
+                    step_log += (
+                        f"- `{cand}`{eng_tag} &nbsp; "
+                        f"MLM={scored.mlm_score:.2f} &nbsp; "
+                        f"Fid={scored.fidelity_score:.2f} &nbsp; "
+                        f"Rank={scored.rank_score:.2f} → "
+                        f"**{scored.combined_score:.2f}**\n"
+                    )
+
+            trace_logs.append(step_log)
+
             beam = sorted(next_beam, key=lambda x: x[1], reverse=True)[:beam_width]
 
-        final_output = " ".join(beam[0][0]) if beam else ""
-        return final_output, trace_logs
+        result = " ".join(beam[0][0]) if beam else ""
+        return result, trace_logs

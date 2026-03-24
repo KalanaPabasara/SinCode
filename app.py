@@ -1,80 +1,115 @@
+"""
+SinCode Web UI — Streamlit interface for the transliteration engine.
+"""
+
 import streamlit as st
 import time
-from sincode_model import BeamSearchDecoder
-from PIL import Image
+import os
 import base64
+from PIL import Image
+from sincode_model import BeamSearchDecoder
 
-st.set_page_config(page_title="සිංCode Prototype", page_icon="🇱🇰", layout="centered")
-def add_bg_from_local(image_file):
+st.set_page_config(page_title="සිංCode", page_icon="🇱🇰", layout="centered")
+
+
+# ─── Helpers ─────────────────────────────────────────────────────────────────
+
+def _set_background(image_file: str) -> None:
+    """Inject a dark-overlay background from a local image."""
     try:
         with open(image_file, "rb") as f:
-            data = f.read()
-        b64_data = base64.b64encode(data).decode()
-
+            b64 = base64.b64encode(f.read()).decode()
         st.markdown(
             f"""
             <style>
             .stApp {{
-                background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(data:image/png;base64,{b64_data});
+                background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                                  url(data:image/png;base64,{b64});
                 background-size: cover;
                 background-position: center;
                 background-attachment: fixed;
             }}
             </style>
             """,
-            unsafe_allow_html=True
+            unsafe_allow_html=True,
         )
     except FileNotFoundError:
-        pass 
+        pass
+
 
 @st.cache_resource
-def load_system():
-    decoder = BeamSearchDecoder()
-    return decoder
+def _load_decoder() -> BeamSearchDecoder:
+    """Load the transliteration engine (cached across reruns)."""
+    model_name = os.getenv("SICODE_MODEL_NAME")
+    dict_path = os.getenv("SICODE_DICTIONARY_PATH", "dictionary.pkl")
+    if model_name:
+        return BeamSearchDecoder(model_name=model_name, dictionary_path=dict_path)
+    return BeamSearchDecoder(dictionary_path=dict_path)
 
-background_path = "images/background.png"
-add_bg_from_local(background_path)
+
+# ─── Layout ──────────────────────────────────────────────────────────────────
+
+_set_background("images/background.png")
 
 with st.sidebar:
-    logo = Image.open("images/SinCodeLogo.jpg")
-    st.image(logo, width=200)
+    st.image(Image.open("images/SinCodeLogo.jpg"), width=200)
     st.title("සිංCode Project")
     st.info("Prototype")
+
+    st.markdown("### ⚙️ Settings")
+    decode_mode = st.radio(
+        "Decode Mode",
+        options=["greedy", "beam"],
+        index=0,
+        help=(
+            "**Greedy** — More accurate. Uses actual selected outputs as "
+            "context for each next word.\n\n"
+            "**Beam** — Faster. Uses fixed rule-based context for all words."
+        ),
+    )
+
     st.markdown("### 🏗 Architecture")
-    st.success("""
-    **Data-Driven Neuro-Symbolic Engine**
-    XLM-R contextual scoring (40%) + transliteration fidelity (60%) + dictionary rank prior (0%).
-
-    **Adaptive Code-Switching**
-    Intelligently detects and preserves English contexts.
-
-    **Contextual Disambiguation**
-    Resolves Singlish ambiguity using sentence-level probability.
-    """)
-
+    st.success(
+        "**Hybrid Neuro-Symbolic Engine**\n\n"
+        "XLM-R contextual scoring (55%) "
+        "+ transliteration fidelity (45%).\n\n"
+        "**Common Word Overrides** — "
+        "Curated table for high-frequency unambiguous words.\n\n"
+        "**Adaptive Code-Switching** — "
+        "Preserves English words in mixed input.\n\n"
+        "**Contextual Disambiguation** — "
+        "Resolves ambiguity via sentence-level probability."
+    )
     st.markdown("---")
     st.write("© 2026 Kalana Chandrasekara")
 
 st.title("සිංCode: Context-Aware Transliteration")
-st.markdown("Type Singlish sentences below. The system handles **code-mixing**, **ambiguity**, and **punctuation**.")
+st.markdown(
+    "Type Singlish sentences below. "
+    "The system handles **code-mixing**, **ambiguity**, and **punctuation**."
+)
 
-input_text = st.text_area("Input Text", height=100, placeholder="e.g., Singlish sentences type krnna")
+input_text = st.text_area(
+    "Input Text", height=100, placeholder="e.g., Singlish sentences type krnna"
+)
 
 if st.button("Transliterate", type="primary", use_container_width=True) and input_text:
     try:
         with st.spinner("Processing..."):
-            decoder = load_system()
-            start_time = time.time()
-            result, trace_logs = decoder.decode(input_text)
-            end_time = time.time()
+            decoder = _load_decoder()
+            t0 = time.time()
+            result, trace_logs = decoder.decode(input_text, mode=decode_mode)
+            elapsed = time.time() - t0
 
         st.success("Transliteration Complete")
         st.markdown(f"### {result}")
-        st.caption(f"Time: {round(end_time - start_time, 2)}s")
+        st.caption(f"Mode: {decode_mode} · Time: {round(elapsed, 2)}s")
 
-        with st.expander("See How It Works (Scoring Breakdown)", expanded=True):
-            st.write("Below shows the **data-driven scoring** for each word step:")
-            st.caption("MLM = contextual fit · Fid = transliteration fidelity · Rank = dictionary prior · 🔤 = English")
+        with st.expander("Scoring Breakdown", expanded=True):
+            st.caption(
+                "MLM = contextual fit · Fid = transliteration fidelity · "
+                "Rank = dictionary prior · 🔤 = English"
+            )
             for log in trace_logs:
                 st.markdown(log)
                 st.divider()

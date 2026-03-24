@@ -1,0 +1,8 @@
+# Ignore local dev files
+__pycache__/
+.venv/
+dump/
+misc/
+*.pyc
+*.pkl
+!dictionary.pkl

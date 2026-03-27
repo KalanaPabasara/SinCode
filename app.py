@@ -62,9 +62,10 @@ with st.sidebar:
         options=["greedy", "beam"],
         index=0,
         help=(
-            "**Greedy** — More accurate. Uses actual selected outputs as "
-            "context for each next word.\n\n"
-            "**Beam** — Faster. Uses fixed rule-based context for all words."
+            "**Greedy** (recommended) — Faster and more accurate. Picks the "
+            "best candidate at each step using real context.\n\n"
+            "**Beam** — Explores multiple paths but uses fixed context, "
+            "so results are similar with more computation."
         ),
     )
 

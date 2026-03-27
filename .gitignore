@@ -6,3 +6,14 @@ misc/
 *.pyc
 *.pkl
 !dictionary.pkl
+
+# Training artifacts
+train_mlm.py
+train_log.txt
+training_log_*.txt
+xlm-roberta-sinhala/
+xlm-roberta-sinhala-v2/
+
+# Evaluation artifacts
+eval_diagnostics*.json
+eval_predictions*.csv

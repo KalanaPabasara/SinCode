@@ -7,6 +7,10 @@ misc/
 *.pkl
 !dictionary.pkl
 
+# AI tooling (Copilot/Claude internal)
+.claude/
+SKILL.md
+
 # Training artifacts
 train_mlm.py
 train_log.txt

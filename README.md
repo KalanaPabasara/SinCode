@@ -31,6 +31,60 @@ Welcome to the interim prototype of **SinCode**, a final-year research project d
 3.  View the **Result**.
 4.  (Optional) Expand the **"See How It Works"** section to view the real-time scoring logic used by the system.
 
+## 📏 Baseline Evaluation (New)
+
+Use the evaluation script to measure current model quality before making tuning changes.
+
+### 1) Prepare dataset
+
+Create a CSV file with columns:
+
+- `input` (Singlish / code-mixed input)
+- `reference` (expected Sinhala output)
+
+You can start from `eval_dataset_template.csv`.
+
+### 2) Run evaluation
+
+```bash
+python evaluation.py --dataset eval_dataset_template.csv
+```
+
+Optional:
+
+```bash
+python evaluation.py --dataset your_dataset.csv --beam-width 5 --predictions-out eval_predictions.csv --diagnostics-out eval_diagnostics.json
+```
+
+### 3) Outputs
+
+- `eval_predictions.csv`: per-sample prediction + metrics
+- `eval_diagnostics.json`: per-word candidate scoring breakdown for error analysis
+
+Reported aggregate metrics:
+
+- Exact match
+- Average Character Error Rate (CER)
+- Average token accuracy
+- Average English code-mix preservation
+
+## 🤗 Hugging Face Spaces Notes
+
+This project is compatible with Spaces. You can configure runtime paths with environment variables:
+
+- `SICODE_DICTIONARY_PATH` (default: `dictionary.pkl`)
+- `SICODE_MODEL_NAME` (default: `FacebookAI/xlm-roberta-base`)
+- `SICODE_ENGLISH_CACHE` (optional path for `english_20k.txt` cache)
+
+Example:
+
+```bash
+SICODE_DICTIONARY_PATH=dictionary.pkl
+SICODE_MODEL_NAME=FacebookAI/xlm-roberta-base
+```
+
+The engine now auto-selects a writable cache path for English corpus downloads when running in restricted environments.
+
 ## 🏗️ System Architecture
 
 This prototype utilizes a **Tiered Decoding Strategy**:

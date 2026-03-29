@@ -3,6 +3,7 @@ Beam search and greedy decoders for Singlish → Sinhala transliteration.
 """
 
 import math
+import re
 import torch
 import pickle
 import logging
@@ -21,6 +22,14 @@ from core.scorer import CandidateScorer, ScoredCandidate, WordDiagnostic
 from core.dictionary import DictionaryAdapter
 
 logger = logging.getLogger(__name__)
+
+# Sinhala Unicode block: U+0D80 – U+0DFF
+_SINHALA_RE = re.compile(r"[\u0D80-\u0DFF]")
+
+
+def _is_sinhala(text: str) -> bool:
+    """Return True if the text already contains Sinhala script characters."""
+    return bool(_SINHALA_RE.search(text))
 
 
 class BeamSearchDecoder:
@@ -210,6 +219,20 @@ class BeamSearchDecoder:
                     "dict_flags": [False],
                     "prefix": prefix,
                     "suffix": suffix,
+                    "sinhala_passthrough": False,
+                })
+                continue
+
+            # Already-Sinhala text: pass through unchanged
+            if _is_sinhala(core):
+                word_infos.append({
+                    "candidates": [raw],
+                    "rule_output": raw,
+                    "english_flags": [False],
+                    "dict_flags": [False],
+                    "prefix": prefix,
+                    "suffix": suffix,
+                    "sinhala_passthrough": True,
                 })
                 continue
 
@@ -242,6 +265,7 @@ class BeamSearchDecoder:
                 "dict_flags": dict_flags[:MAX_CANDIDATES],
                 "prefix": prefix,
                 "suffix": suffix,
+                "sinhala_passthrough": False,
             })
 
         # Build right-side stable context (rule outputs for future words)
@@ -267,6 +291,23 @@ class BeamSearchDecoder:
             prefix = info.get("prefix", "")
             suffix = info.get("suffix", "")
             total_cands = len(candidates)
+
+            # ── Sinhala passthrough ────────────────────────────────────
+            if info.get("sinhala_passthrough"):
+                selected_words.append(words[t])
+                trace_logs.append(
+                    f"**Step {t + 1}: `{words[t]}`** &nbsp;→ "
+                    f"`{words[t]}` (Sinhala passthrough)\n"
+                )
+                diagnostics.append(WordDiagnostic(
+                    step_index=t,
+                    input_word=words[t],
+                    rule_output=rule_out,
+                    selected_candidate=words[t],
+                    beam_score=0.0,
+                    candidate_breakdown=[],
+                ))
+                continue
 
             # ── Common-word shortcut ─────────────────────────────────
             core_lower = words[t].lower().strip()
@@ -464,6 +505,19 @@ class BeamSearchDecoder:
                     "english_flags": [False],
                     "prefix": prefix,
                     "suffix": suffix,
+                    "sinhala_passthrough": False,
+                })
+                continue
+
+            # Already-Sinhala text: pass through unchanged
+            if _is_sinhala(core):
+                word_infos.append({
+                    "candidates": [raw],
+                    "rule_output": raw,
+                    "english_flags": [False],
+                    "prefix": prefix,
+                    "suffix": suffix,
+                    "sinhala_passthrough": True,
                 })
                 continue
 
@@ -495,6 +549,7 @@ class BeamSearchDecoder:
                 "dict_flags": dict_flags[:MAX_CANDIDATES],
                 "prefix": prefix,
                 "suffix": suffix,
+                "sinhala_passthrough": False,
             })
 
         # Build stable context (fixed for all beam paths)
@@ -520,6 +575,24 @@ class BeamSearchDecoder:
             prefix = info.get("prefix", "")
             suffix = info.get("suffix", "")
             total_cands = len(candidates)
+
+            # ── Sinhala passthrough ────────────────────────────────────
+            if info.get("sinhala_passthrough"):
+                next_beam_si = [(path + [words[t]], sc) for path, sc in beam]
+                beam = next_beam_si[:beam_width]
+                trace_logs.append(
+                    f"**Step {t + 1}: `{words[t]}`** &nbsp;→ "
+                    f"`{words[t]}` (Sinhala passthrough)\n"
+                )
+                diagnostics.append(WordDiagnostic(
+                    step_index=t,
+                    input_word=words[t],
+                    rule_output=rule_out,
+                    selected_candidate=words[t],
+                    beam_score=beam[0][1] if beam else 0.0,
+                    candidate_breakdown=[],
+                ))
+                continue
 
             # ── Common-word shortcut ─────────────────────────────────
             core_lower = words[t].lower().strip()

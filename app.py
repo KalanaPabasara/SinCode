@@ -104,7 +104,20 @@ if st.button("Transliterate", type="primary", use_container_width=True) and inpu
 
         st.success("Transliteration Complete")
         st.markdown(f"### {result}")
-        st.caption(f"Mode: {decode_mode} · Time: {round(elapsed, 2)}s")
+
+        col1, col2 = st.columns([3, 1])
+        with col1:
+            st.caption(f"Mode: {decode_mode} · Time: {round(elapsed, 2)}s")
+        with col2:
+            if st.button("📋 Copy", key="copy_result"):
+                st.session_state["copied"] = True
+        if st.session_state.get("copied"):
+            st.components.v1.html(
+                f"""<script>navigator.clipboard.writeText(`{result}`);</script>""",
+                height=0,
+            )
+            st.toast("Copied to clipboard!")
+            st.session_state["copied"] = False
 
         with st.expander("Scoring Breakdown", expanded=True):
             st.caption(

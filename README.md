@@ -7,7 +7,7 @@ sdk: streamlit
 app_file: app.py
 pinned: false
 license: mit
-short_description: Context-Aware Transliteration
+short_description: Context-Aware Singlish-to-Sinhala Transliteration
 sdk_version: 1.53.1
 ---
 

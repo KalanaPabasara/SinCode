@@ -37,7 +37,7 @@ def _resolve_english_cache_path() -> str:
     3) local working dir,
     4) system temp dir.
     """
-    override = os.getenv("SICODE_ENGLISH_CACHE")
+    override = os.getenv("SINCODE_ENGLISH_CACHE")
     if override:
         return override
 

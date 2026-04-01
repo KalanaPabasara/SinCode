@@ -59,8 +59,8 @@ def _save_feedback(input_sentence: str, original_output: str, corrected_output: 
 @st.cache_resource
 def _load_decoder() -> BeamSearchDecoder:
     """Load the transliteration engine (cached across reruns)."""
-    model_name = os.getenv("SICODE_MODEL_NAME")
-    dict_path = os.getenv("SICODE_DICTIONARY_PATH", "dictionary.pkl")
+    model_name = os.getenv("SINCODE_MODEL_NAME")
+    dict_path = os.getenv("SINCODE_DICTIONARY_PATH", "dictionary.pkl")
     if model_name:
         return BeamSearchDecoder(model_name=model_name, dictionary_path=dict_path)
     return BeamSearchDecoder(dictionary_path=dict_path)
@@ -73,7 +73,7 @@ _set_background("images/background.png")
 with st.sidebar:
     st.image(_load_logo("images/SinCodeLogo.jpg"), width=200)
     st.title("සිංCode Project")
-    st.info("Prototype")
+    st.info("6COSC023C.Y Final Project")
 
     st.markdown("### ⚙️ Settings")
     decode_mode = st.radio(

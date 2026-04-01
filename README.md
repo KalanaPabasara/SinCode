@@ -11,11 +11,11 @@ short_description: Context-Aware Transliteration
 sdk_version: 1.53.1
 ---
 
-# SinCode: Neuro-Symbolic Transliteration Prototype
+# SinCode: Neuro-Symbolic Transliteration System
 
 > **Context-Aware Singlish-to-Sinhala Transliteration with Code-Switching Support.**
 
-Welcome to the interim prototype of **SinCode**, a final-year research project designed to solve the ambiguity of transliterating "Singlish" (phonetic Sinhala) into native Sinhala script.
+**SinCode** is a final-year research project designed to solve the ambiguity of transliterating "Singlish" (phonetic Sinhala) into native Sinhala script.
 
 ## 🚀 Key Features
 
@@ -72,22 +72,22 @@ Reported aggregate metrics:
 
 This project is compatible with Spaces. You can configure runtime paths with environment variables:
 
-- `SICODE_DICTIONARY_PATH` (default: `dictionary.pkl`)
-- `SICODE_MODEL_NAME` (default: `FacebookAI/xlm-roberta-base`)
-- `SICODE_ENGLISH_CACHE` (optional path for `english_20k.txt` cache)
+- `SINCODE_DICTIONARY_PATH` (default: `dictionary.pkl`)
+- `SINCODE_MODEL_NAME` (default: `FacebookAI/xlm-roberta-base`)
+- `SINCODE_ENGLISH_CACHE` (optional path for `english_20k.txt` cache)
 
 Example:
 
 ```bash
-SICODE_DICTIONARY_PATH=dictionary.pkl
-SICODE_MODEL_NAME=FacebookAI/xlm-roberta-base
+SINCODE_DICTIONARY_PATH=dictionary.pkl
+SINCODE_MODEL_NAME=FacebookAI/xlm-roberta-base
 ```
 
 The engine now auto-selects a writable cache path for English corpus downloads when running in restricted environments.
 
 ## 🏗️ System Architecture
 
-This prototype utilizes a **Tiered Decoding Strategy**:
+The system utilizes a **Tiered Decoding Strategy**:
 1.  **Tier 1 (English Filter):** Checks the Google-20k English Corpus to filter out technical terms.
 2.  **Tier 2 (Dictionary Lookup):** Scans the 5.9M word database for exact Sinhala matches.
 3.  **Tier 3 (Phonetic Rules):** Generates Sinhala text for unknown words using a rule-based engine.
@@ -95,9 +95,7 @@ This prototype utilizes a **Tiered Decoding Strategy**:
 
 ## ⚠️ Disclaimer
 
-This is an **Interim Prototype** for demonstration purposes.
 * While accurate for common phrases, edge cases may still exist.
-* The system is currently optimized for demonstration performance and will be fine-tuned further.
 
 ---
 **Developer:** Kalana Chandrasekara
@@ -105,4 +103,4 @@ This is an **Interim Prototype** for demonstration purposes.
 **Supervisor:** Hiruni Samarage
 
 
-*Final Year Research Project (2026)*
+*Module: (2025) 6COSC023C.Y Computer Science Final Project (IIT Sri Lanka)*

@@ -170,45 +170,75 @@ if "output_words" in st.session_state and st.session_state["output_words"]:
     )
 
     if correction_mode:
-        st.caption("Click any highlighted word to see alternatives and swap it.")
+        st.caption("Use the buttons below to swap alternative transliterations.")
 
-        # Word chips in rows — only ambiguous words are interactive
-        ROW_SIZE = 6
-        for row_start in range(0, len(output_words), ROW_SIZE):
-            row_slice = list(enumerate(diagnostics[row_start:row_start + ROW_SIZE], start=row_start))
-            cols = st.columns(len(row_slice))
+        # ── Inline sentence display (natural text flow, no grid) ─────
+        word_spans = []
+        for i, diag in enumerate(diagnostics):
+            has_alts = len(diag.candidate_breakdown) > 1
+            was_changed = output_words[i] != original_words[i]
+            w = html_lib.escape(output_words[i])
+            if was_changed:
+                word_spans.append(
+                    f'<span style="color:#68d391;font-weight:700;">{w} ✓</span>'
+                )
+            elif has_alts:
+                word_spans.append(
+                    f'<span style="color:#63b3ed;font-weight:700;'
+                    f'border-bottom:2px dashed #63b3ed;cursor:default;">{w}</span>'
+                )
+            else:
+                word_spans.append(f'<span style="font-weight:600;">{w}</span>')
 
-            for col, (i, diag) in zip(cols, row_slice):
-                has_alts = len(diag.candidate_breakdown) > 1
+        st.markdown(
+            '<div style="font-size:1.15em;line-height:2.4;">'
+            + " &ensp; ".join(word_spans)
+            + "</div>",
+            unsafe_allow_html=True,
+        )
+        # ── Popover buttons only for swappable words ─────────────────
+        swappable = [
+            (i, diag)
+            for i, diag in enumerate(diagnostics)
+            if len(diag.candidate_breakdown) > 1
+        ]
+        if swappable:
+            widths = [max(len(output_words[i]), 3) for i, _ in swappable]
+            cols = st.columns(widths, gap="small")
+
+            for col, (i, diag) in zip(cols, swappable):
                 was_changed = output_words[i] != original_words[i]
                 with col:
-                    if has_alts:
-                        chip = f":green[**{output_words[i]}**] :material/check:" if was_changed else f":blue[**{output_words[i]}**]"
-                        with st.popover(chip, use_container_width=True):
-                            st.markdown(f"**`{diag.input_word}`** — pick alternative:")
-                            for scored in diag.candidate_breakdown[:5]:
-                                eng_tag = " 🔤" if scored.is_english else ""
-                                is_sel = scored.text == output_words[i]
-                                if st.button(
-                                    f"{'✅ ' if is_sel else ''}{scored.text}{eng_tag}",
-                                    key=f"alt_{i}_{scored.text}",
-                                    help=f"Score: {scored.combined_score:.2f}",
-                                    use_container_width=True,
-                                    type="primary" if is_sel else "secondary",
-                                ):
-                                    st.session_state["output_words"][i] = scored.text
-                                    st.rerun()
-                            st.markdown("---")
-                            custom = st.text_input(
-                                "Not listed? Type correct word:",
-                                key=f"custom_{i}",
-                                placeholder="Type Sinhala word",
-                            )
-                            if custom and st.button("Use this", key=f"custom_apply_{i}", use_container_width=True):
-                                st.session_state["output_words"][i] = custom
+                    chip = (
+                        f":green[**{output_words[i]}**] ✓"
+                        if was_changed
+                        else f":blue[**{output_words[i]}**]"
+                    )
+                    with st.popover(chip, use_container_width=True):
+                        st.markdown(f"**`{diag.input_word}`** — pick alternative:")
+                        for scored in diag.candidate_breakdown[:5]:
+                            eng_tag = " 🔤" if scored.is_english else ""
+                            is_sel = scored.text == output_words[i]
+                            if st.button(
+                                f"{'✅ ' if is_sel else ''}{scored.text}{eng_tag}",
+                                key=f"alt_{i}_{scored.text}",
+                                help=f"Score: {scored.combined_score:.2f}",
+                                use_container_width=True,
+                                type="primary" if is_sel else "secondary",
+                            ):
+                                st.session_state["output_words"][i] = scored.text
                                 st.rerun()
-                    else:
-                        st.markdown(f"**{output_words[i]}**")
+                        st.markdown("---")
+                        custom = st.text_input(
+                            "Not listed? Type correct word:",
+                            key=f"custom_{i}",
+                            placeholder="Type Sinhala word",
+                        )
+                        if custom and st.button(
+                            "Use this", key=f"custom_apply_{i}", use_container_width=True
+                        ):
+                            st.session_state["output_words"][i] = custom
+                            st.rerun()
 
         # ── Submit correction button (only when changes exist, once per result) ──
         # Guard key: (original sentence, original output) — stable regardless of swaps

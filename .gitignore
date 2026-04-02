@@ -7,7 +7,7 @@ misc/
 *.pkl
 !dictionary.pkl
 
-# AI tooling (Copilot/Claude internal)
+# Local dev workspace config
 .claude/
 SKILL.md
 

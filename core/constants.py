@@ -6,7 +6,8 @@ import re
 
 # ─── Model & Data Paths ─────────────────────────────────────────────────────
 
-DEFAULT_MODEL_NAME = "FacebookAI/xlm-roberta-base"
+# DEFAULT_MODEL_NAME = "FacebookAI/xlm-roberta-base"
+DEFAULT_MODEL_NAME = "Kalana001/xlm-roberta-sinhala-sincode"
 DEFAULT_DICTIONARY_PATH = "dictionary.pkl"
 
 ENGLISH_CORPUS_URL = (

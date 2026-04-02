@@ -95,7 +95,7 @@ COMMON_WORDS: Dict[str, str] = {
     "it":       "IT",
     "qa":       "QA",
     "ui":       "UI",
-    "ok":       "OK",
+    "ok":       "ok",
     # Common ad-hoc abbreviations (contd.)
     "ek":       "එක",        # eka (short form)
     "ekta":     "එකට",       # ekata = to that one
@@ -114,6 +114,41 @@ COMMON_WORDS: Dict[str, str] = {
     "hadamu":   "හදමු",      # let's make
     "kiyawala":  "කියවලා",    # having read
     "baya":     "බය",        # fear/scared
+    # Ad-hoc and alternative spellings (accuracy fixes)
+    "kema":      "කෑම",       # food (colloquial spelling)
+    "kama":      "කෑම",       # food (alt spelling)
+    "hodai":     "හොඳයි",    # good! (no-n spelling)
+    "oyge":      "ඔයාගෙ",    # your (shortened form)
+    "iwra":      "ඉවර",       # finished (vowel-stripped)
+    "krd":       "කරාද",      # did? (extreme abbreviation)
+    "handawata": "හැන්දෑවට", # in the evening
+    "wenwa":     "වෙනවා",     # becomes/happens
+    "ep":        "එපා",       # epa (single-syllable abbrev)
+    "prashnya":  "ප්\u200dරශ්\u200dනය",  # question (without final vowel)
+    # ── Verb forms / participles (no English conflict) ────────────────────
+    "penawa":    "පේනවා",     # appears/visible (alt spelling of penenawa)
+    "thiyana":   "තියෙන",     # that which is/exists (relative participle)
+    "enakota":   "එනකොට",    # when (you/they) come
+    "hadanna":   "හදන්න",     # to make/build (imperative)
+    "yawwa":     "යැව්වා",    # sent (alt spelling of yewwa)
+    "gihilla":   "ගිහිල්ලා",  # having gone
+    "kewata":    "කෑවට",      # having eaten / for the eating
+    "kiyla":     "කියලා",     # having said (ad-hoc spelling)
+    "krganna":   "කරගන්න",   # to do-and-get (ad-hoc abbreviation)
+    # ── Adjectives (no English conflict) ────────────────────────────────────
+    "amarui":    "අමාරුයි",   # difficult / hard
+    "hodama":    "හොඳම",      # best (superlative of honda)
+    # ── Particles / negation (no English conflict) ───────────────────────────
+    "nathi":     "නැති",      # without / lacking (negation)
+    "nati":      "නැති",      # without (alt spelling)
+    "naththe":   "නැත්තෙ",   # negative participle (not ...ing)
+    "dan":       "දැන්",      # now
+    "oni":       "ඕනි",       # need/want (alt spelling of one)
+    # ── Time ────────────────────────────────────────────────────────────────
+    "udee":      "උදේ",       # morning
+    # ── Ad-hoc abbreviations (no English conflict) ───────────────────────────
+    "hri":       "හරි",       # ok/right (shortened hari)
+    "mge":       "මගේ",       # my (shortened mage)
 }
 
 # Context-dependent words: use this form ONLY when the previous word is

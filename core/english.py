@@ -24,6 +24,7 @@ CORE_ENGLISH_WORDS: Set[str] = {
     "hall", "exam", "PR", "DM", "page", "app", "bug", "fix",
     "log", "push", "pull", "branch", "build", "run", "save",
     "link", "edit", "file", "open", "close", "live", "view",
+    "deployments", "leaderboard", "instagram", "github", "standup",
 }
 
 

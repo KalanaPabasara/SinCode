@@ -1,0 +1,41 @@
+id,input,reference,prediction,exact_match,cer,wer,bleu,token_accuracy,code_mix_preservation,time_s
+1,api kalin katha kala,අපි කලින් කතා කළා,අපි කලින් කතා කළා,True,0.0,0.0,1.0,1.0,1.0,0.002
+2,eka honda wage thiyanawa,ඒක හොඳ වගේ තියෙනවා,ඒක හොඳ වගේ තියෙනවා,True,0.0,0.0,1.0,1.0,1.0,0.002
+3,pola nisa gedara thiyanawa,පොළ ළඟ ගෙදර තියෙනවා,පොල නිසා ගෙදර තියෙනවා,False,0.2632,0.5,0.0,0.5,1.0,0.204
+4,oya kiwwata mama giye,ඔයා කිව්වට මම ගියේ,ඔයා කිව්වට මම ගියේ,True,0.0,0.0,1.0,1.0,1.0,0.07
+5,mama danne na eka gena,මම දන්නෙ නෑ ඒ ගැන,මම දන්නෙ නෑ ඒක ගැන,False,0.0588,0.2,0.0,0.8,1.0,0.002
+6,oya awa wage na,ඔයා ආවා වගේ නෑ,ඔයා ආවා වගේ නෑ,True,0.0,0.0,1.0,1.0,1.0,0.001
+7,ekat ynna bri,ඒකට යන්න බැරි,ඒකට යන්න බැරි,True,0.0,0.0,1.0,1.0,1.0,0.023
+8,mama inne gedaradi,මම ඉන්නෙ ගෙදරදී,මම ඉන්නෙ ගෙදරදී,True,0.0,0.0,1.0,1.0,1.0,0.001
+9,eka heta balamu,ඒක හෙට බලමු,ඒක හෙට බලමු,True,0.0,0.0,1.0,1.0,1.0,0.001
+10,klya madi api passe yamu,කාලය මදි අපි පස්සෙ යමු,කාලය මදි අපි පස්සෙ යමු,True,0.0,0.0,1.0,1.0,1.0,0.048
+11,assignment eka ada submit karanna one,assignment එක අද submit කරන්න ඕනෙ,assignment එක අද submit කරන්න ඕනෙ,True,0.0,0.0,1.0,1.0,1.0,0.027
+12,exam hall eka nisa mama baya una,exam hall එක නිසා මම බය උනා,exam hall එක නිසා මම බය උනා,True,0.0,0.0,1.0,1.0,1.0,0.028
+13,results blnna one,results බලන්න ඕනෙ,results බලන්න ඕනෙ,True,0.0,0.0,1.0,1.0,1.0,0.001
+14,study group ekak hadamu,study group එකක් හදමු,study group එකක් හදමු,True,0.0,0.0,1.0,1.0,1.0,0.021
+15,viva ekta prepared wage na,viva එකට prepared වගේ නෑ,viva එකට prepared වගේ නෑ,True,0.0,0.0,1.0,1.0,1.0,0.002
+16,mta project ek submit krnna one,මට project එක submit කරන්න ඕනෙ,මට project එක submit කරන්න ඕනෙ,True,0.0,0.0,1.0,1.0,1.0,0.002
+17,hta parikshanaya thiyanawa,හෙට පරීක්ෂණය තියෙනවා,හෙට පරික්‍ෂණය තියෙනවා,False,0.1,0.3333,0.0,0.6667,1.0,0.021
+18,mama poth kiyawala iwara kala,මම පොත කියවලා ඉවර කළා,මම පොත කියවලා ඉවර කළා,True,0.0,0.0,1.0,1.0,1.0,0.002
+19,guruwaraya nisa api kalin giya,ගුරුවරයා නිසා අපි කලින් ගියා,ගුරුවරය නිසා අපි කලින් ගියා,False,0.0357,0.2,0.6687,0.8,1.0,0.028
+20,prashnaya honda wage penenawa,ප්‍රශ්නය හොඳ වගේ පේනවා,ප්‍රශනය හොඳ වගේ පේනවා,False,0.0455,0.25,0.0,0.75,1.0,0.024
+21,deploy nisa site down wuna,deploy නිසා site down උනා,deploy නිසා site down උනා,True,0.0,0.0,1.0,1.0,1.0,0.002
+22,PR eka merge karanna one,PR එක merge කරන්න ඕනෙ,PR එක merge කරන්න ඕනෙ,True,0.0,0.0,1.0,1.0,1.0,0.025
+23,backlog eka update kala,backlog එක update කළා,backlog එක update කළා,True,0.0,0.0,1.0,1.0,1.0,0.023
+24,server down nisa work karanna ba,server down නිසා work කරන්න බෑ,server down නිසා work කරන්න බෑ,True,0.0,0.0,1.0,1.0,1.0,0.002
+25,meeting eka tomorrow damu,meeting එක tomorrow දාමු,meeting එක tomorrow දාමු,True,0.0,0.0,1.0,1.0,1.0,0.02
+26,feedback nisa redo karanna una,feedback නිසා redo කරන්න උනා,feedback නිසා redo කරන්න උනා,True,0.0,0.0,1.0,1.0,1.0,0.002
+27,ape wada ada iwara wenawa,අපේ වැඩ අද ඉවර වෙනවා,අපේ වැඩ අද ඉවර වෙනවා,True,0.0,0.0,1.0,1.0,1.0,0.002
+28,kalamanakaruwa awa passe api katha kala,කළමනාකරු ආවා පස්සෙ අපි කතා කළා,කලමනකරුව ආවා පස්සෙ අපි කතා කළා,False,0.1,0.1667,0.7598,0.8333,1.0,0.019
+29,me wada honda wage penenawa,මේ වැඩ හොඳ වගේ පේනවා,මේ වැඩ හොඳ වගේ පේනවා,True,0.0,0.0,1.0,1.0,1.0,0.002
+30,wada tika ada iwara karamu,වැඩ ටික අද ඉවර කරමු,වැඩ ටික අද ඉවර කරමු,True,0.0,0.0,1.0,1.0,1.0,0.019
+31,story eke poll ekak damma,story එකේ poll එකක් දැම්මා,story එකේ poll එකක් දැම්මා,True,0.0,0.0,1.0,1.0,1.0,0.025
+32,oyata DM ekak yewwa,ඔයාට DM එකක් යැව්වා,ඔයාට DM එකක් යැව්වා,True,0.0,0.0,1.0,1.0,1.0,0.028
+33,comment eka delete kala nisa mama danne na,comment එක delete කළ නිසා මම දන්නෙ නෑ,comment එක delete කළා නිසා මම දන්නෙ නෑ,False,0.027,0.125,0.5,0.875,1.0,0.029
+34,selfie ekak gannako,selfie එකක් ගන්නකෝ,selfie එකක් ගන්නකෝ,True,0.0,0.0,1.0,1.0,1.0,0.025
+35,post eka private nisa share karanna epa,post එක private නිසා share කරන්න එපා,post එක private නිසා share කරන්න එපා,True,0.0,0.0,1.0,1.0,1.0,0.028
+36,oyta message krnna on,ඔයාට message කරන්න ඕනෙ,ඔයාට message කරන්න ඕනෙ,True,0.0,0.0,1.0,1.0,1.0,0.002
+37,oya passe katha karamu,ඔයා පස්සෙ කතා කරමු,ඔයා පස්සෙ කතා කරමු,True,0.0,0.0,1.0,1.0,1.0,0.002
+38,eya laga pinthurak thiyanawa,ඒයා ළඟ පින්තුරක් තියෙනවා,ඒයා ළඟ පින්තූරක් තියෙනවා,False,0.0417,0.25,0.0,0.75,1.0,0.019
+39,oya awa wage mata hithenawa,ඔයා ආවා වගේ මට හිතෙනවා,ඔයා ආවා වගේ මට හිතෙනවා,True,0.0,0.0,1.0,1.0,1.0,0.002
+40,api passe hambawemu,අපි පස්සෙ හම්බවෙමු,අපි පස්සෙ හම්බවෙමු,True,0.0,0.0,1.0,1.0,1.0,0.018

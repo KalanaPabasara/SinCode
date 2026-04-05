@@ -1,0 +1,111 @@
+id,input,reference,prediction,exact_match,cer,wer,bleu,token_accuracy,code_mix_preservation,time_s
+1,api kalin katha kala,අපි කලින් කතා කළා,අපි කලින් කතා කළා,True,0.0,0.0,1.0,1.0,1.0,0.002
+2,eka honda wage thiyanawa,ඒක හොඳ වගේ තියෙනවා,ඒක හොඳ වගේ තියෙනවා,True,0.0,0.0,1.0,1.0,1.0,0.002
+3,meheta thadata wessa,මෙහෙට තදට වැස්සා,මෙහෙට තදට වැස්සා,True,0.0,0.0,1.0,1.0,1.0,0.217
+4,oya kiwwata mama giye,ඔයා කිව්වට මම ගියේ,ඔයා කිව්වට මම ගියේ,True,0.0,0.0,1.0,1.0,1.0,0.043
+5,mama danne na eka gena,මම දන්නෙ නෑ ඒක ගැන,මම දන්නෙ නෑ ඒක ගැන,True,0.0,0.0,1.0,1.0,1.0,0.002
+6,oya awa wage na,ඔයා ආවා වගේ නෑ,ඔයා ආවා වගේ නෑ,True,0.0,0.0,1.0,1.0,1.0,0.001
+7,ekat ynna bri,ඒකට යන්න බැරි,ඒකට යන්න බැරි,True,0.0,0.0,1.0,1.0,1.0,0.024
+8,mama inne gedaradi,මම ඉන්නෙ ගෙදරදී,මම ඉන්නෙ ගෙදරදී,True,0.0,0.0,1.0,1.0,1.0,0.001
+9,eka heta balamu,ඒක හෙට බලමු,ඒක හෙට බලමු,True,0.0,0.0,1.0,1.0,1.0,0.001
+10,klya madi api passe yamu,කාලය මදි අපි පස්සෙ යමු,කාලය මදි අපි පස්සෙ යමු,True,0.0,0.0,1.0,1.0,1.0,0.028
+11,assignment eka ada submit karanna one,assignment එක අද submit කරන්න ඕනෙ,assignment එක අද submit කරන්න ඕනෙ,True,0.0,0.0,1.0,1.0,1.0,0.027
+12,exam hall eka nisa mama baya una,exam hall එක නිසා මම බය උනා,exam hall එක නිසා මම බය උනා,True,0.0,0.0,1.0,1.0,1.0,0.027
+13,results blnna one,results බලන්න ඕනෙ,results බලන්න ඕනෙ,True,0.0,0.0,1.0,1.0,1.0,0.001
+14,study group ekak hadamu,study group එකක් හදමු,study group එකක් හදමු,True,0.0,0.0,1.0,1.0,1.0,0.021
+15,viva ekta prepared wage na,viva එකට prepared වගේ නෑ,viva එකට prepared වගේ නෑ,True,0.0,0.0,1.0,1.0,1.0,0.002
+16,mta project ek submit krnna one,මට project එක submit කරන්න ඕනෙ,මට project එක submit කරන්න ඕනෙ,True,0.0,0.0,1.0,1.0,1.0,0.002
+17,hta parikshanaya thiyanawa,හෙට පරික්‍ෂණය තියෙනවා,හෙට පරික්‍ෂණය තියෙනවා,True,0.0,0.0,1.0,1.0,1.0,0.02
+18,mama potha kiyawala iwara kala,මම පොත කියවලා ඉවර කළා,මම පොත කියවලා ඉවර කළා,True,0.0,0.0,1.0,1.0,1.0,0.027
+19,prkku nisa api kalin giya,පරක්කු නිසා අපි කලින් ගියා,පරක්කු නිසා අපි කලින් ගියා,True,0.0,0.0,1.0,1.0,1.0,0.019
+20,prashnaya hondai wage penenawa,ප්‍රශ්නය හොඳයි වගේ පේනවා,ප්‍රශ්නය හොඳයි වගේ පේනවා,True,0.0,0.0,1.0,1.0,1.0,0.046
+21,deployments nisa site down wuna,deployments නිසා site down උනා,deployments නිසා site down උනා,True,0.0,0.0,1.0,1.0,1.0,0.002
+22,PR eka merge karanna one,PR එක merge කරන්න ඕනෙ,PR එක merge කරන්න ඕනෙ,True,0.0,0.0,1.0,1.0,1.0,0.023
+23,backlog eka update kala,backlog එක update කළා,backlog එක update කළා,True,0.0,0.0,1.0,1.0,1.0,0.019
+24,server down nisa work karanna ba,server down නිසා work කරන්න බෑ,server down නිසා work කරන්න බෑ,True,0.0,0.0,1.0,1.0,1.0,0.002
+25,meeting eka tomorrow damu,meeting එක tomorrow දාමු,meeting එක tomorrow දාමු,True,0.0,0.0,1.0,1.0,1.0,0.022
+26,feedback nisa redo karanna una,feedback නිසා redo කරන්න උනා,feedback නිසා redo කරන්න උනා,True,0.0,0.0,1.0,1.0,1.0,0.002
+27,ape wada ada iwara wenawa,අපේ වැඩ අද ඉවර වෙනවා,අපේ වැඩ අද ඉවර වෙනවා,True,0.0,0.0,1.0,1.0,1.0,0.002
+28,kalamanakaru hitpu nisa api katha kala,කලමනාකරු හිටපු නිසා අපි කතා කළා,කලමනාකරු හිටපු නිසා අපි කතා කළා,True,0.0,0.0,1.0,1.0,1.0,0.049
+29,me wada hondai wage penawa,මේ වැඩ හොඳයි වගේ පේනවා,මේ වැඩ හොඳයි වගේ පේනවා,True,0.0,0.0,1.0,1.0,1.0,0.02
+30,wada tika ada iwara karamu,වැඩ ටික අද ඉවර කරමු,වැඩ ටික අද ඉවර කරමු,True,0.0,0.0,1.0,1.0,1.0,0.016
+31,story eke poll ekak damma,story එකේ poll එකක් දැම්මා,story එකේ poll එකක් දැම්මා,True,0.0,0.0,1.0,1.0,1.0,0.024
+32,oyata DM ekak yawwa,ඔයාට DM එකක් යැව්වා,ඔයාට DM එකක් යැව්වා,True,0.0,0.0,1.0,1.0,1.0,0.024
+33,comment eka delete kala nisa mama danne na,comment එක delete කළා නිසා මම දන්නෙ නෑ,comment එක delete කළා නිසා මම දන්නෙ නෑ,True,0.0,0.0,1.0,1.0,1.0,0.028
+34,selfie ekak gannako,selfie එකක් ගන්නකෝ,selfie එකක් ගන්නකෝ,True,0.0,0.0,1.0,1.0,1.0,0.023
+35,post eka private nisa share karanna epa,post එක private නිසා share කරන්න එපා,post එක private නිසා share කරන්න එපා,True,0.0,0.0,1.0,1.0,1.0,0.027
+36,oyta message krnna one,ඔයාට message කරන්න ඕනෙ,ඔයාට message කරන්න ඕනෙ,True,0.0,0.0,1.0,1.0,1.0,0.002
+37,api passe katha karamu,අපි පස්සෙ කතා කරමු,අපි පස්සෙ කතා කරමු,True,0.0,0.0,1.0,1.0,1.0,0.002
+38,eya laga pinthurayk thiyanawa,ඒයා ළඟ පින්තූරයක් තියෙනවා,ඒයා ළඟ පින්තූරයක් තියෙනවා,True,0.0,0.0,1.0,1.0,1.0,0.023
+39,oya awa wage mata hithenawa,ඔයා ආවා වගේ මට හිතෙනවා,ඔයා ආවා වගේ මට හිතෙනවා,True,0.0,0.0,1.0,1.0,1.0,0.002
+40,api passe hambawemu,අපි පස්සෙ හම්බවෙමු,අපි පස්සෙ හම්බවෙමු,True,0.0,0.0,1.0,1.0,1.0,0.015
+41,phone eka charge karanna one,phone එක charge කරන්න ඕනෙ,phone එක charge කරන්න ඕනෙ,True,0.0,0.0,1.0,1.0,1.0,0.022
+42,bus eka late una,bus එක late උනා,bus එක late උනා,True,0.0,0.0,1.0,1.0,1.0,0.018
+43,mama online inne,මම online ඉන්නෙ,මම online ඉන්නෙ,True,0.0,0.0,1.0,1.0,1.0,0.001
+44,time nathi nisa heta yamu,time නැති නිසා හෙට යමු,time නැති නිසා හෙට යමු,True,0.0,0.0,1.0,1.0,1.0,0.002
+45,oya call eka ganna,ඔයා call එක ගන්න,ඔයා call එක ගන්න,True,0.0,0.0,1.0,1.0,1.0,0.042
+46,api game yanawa heta,අපි ගමේ යනවා හෙට,අපි ගමේ යනවා හෙට,True,0.0,0.0,1.0,1.0,1.0,0.023
+47,man heta enne na,මන් හෙට එන්නෙ නෑ,මාන් හෙට එන්නෙ නෑ,False,0.0625,0.25,0.0,0.75,1.0,0.045
+48,eka hari lassanai,ඒක හරි ලස්සනයි,ඒක හරි ලස්සනයි,True,0.0,0.0,1.0,1.0,1.0,0.015
+49,oya kiwwa hari,ඔයා කිව්වා හරි,ඔයා කිව්වා හරි,True,0.0,0.0,1.0,1.0,1.0,0.001
+50,kalaya ithuru krganna one,කලය ඉතුරු කරගන්න ඕනෙ,කලය ඉතුරු කරගන්න ඕනෙ,True,0.0,0.0,1.0,1.0,1.0,0.046
+51,date eka fix karanna one,date එක fix කරන්න ඕනෙ,date එක fix කරන්න ඕනෙ,True,0.0,0.0,1.0,1.0,1.0,0.023
+52,rata yanna one,රට යන්න ඕනෙ,රට යන්න ඕනෙ,True,0.0,0.0,1.0,1.0,1.0,0.046
+53,game eke leaderboard eka balanna,game එකේ leaderboard එක බලන්න,ගමෙ එකේ leaderboard එක බලන්න,False,0.1379,0.2,0.6687,0.8,0.5,0.072
+54,api thamai hodama,අපි තමයි හොඳම,අපි තමයි හොඳම,True,0.0,0.0,1.0,1.0,1.0,0.018
+55,mama heta udee enawa oya enakota message ekk dnna,මම හෙට උදේ එනවා ඔයා එනකොට message එකක් දාන්න,මම හෙට උදේ එනවා ඔයා එනකොට message එකක් දාන්න,True,0.0,0.0,1.0,1.0,1.0,0.061
+56,ape gedara langa thiyana kadeta yanna one,අපේ ගෙදර ළඟ තියෙන කඩේට යන්න ඕනෙ,අපේ ගෙදර ළඟ තියෙන කඩේට යන්න ඕනෙ,True,0.0,0.0,1.0,1.0,1.0,0.067
+57,mama assignment eka karala submit karanawa ada raa,මම assignment එක කරලා submit කරනවා අද රෑ,මම assignment එක කරාල submit කරනවා අද රෑ,False,0.05,0.125,0.5,0.875,1.0,0.097
+58,oya enne naththe mokada kiyla mama danne na,ඔයා එන්නෙ නැත්තෙ මොකද කියලා මම දන්නෙ නෑ,ඔයා එන්නෙ නැත්තෙ මොකද කියලා මම දන්නෙ නෑ,True,0.0,0.0,1.0,1.0,1.0,0.045
+59,client ekka call karala feedback eka ahanna one,client එක්ක call කරලා feedback එක අහන්න ඕනෙ,client එක්ක call කරලා feedback එක අහන්න ඕනෙ,True,0.0,0.0,1.0,1.0,1.0,0.097
+60,mama gedara gihilla kewata passe call karannm,මම ගෙදර ගිහිල්ලා කෑවට පස්සෙ call කරන්නම්,මම ගෙදර ගිහිල්ලා කෑවට පස්සෙ call කරන්නම්,True,0.0,0.0,1.0,1.0,1.0,0.03
+61,laptop eke software update karanna one,laptop එකේ software update කරන්න ඕනෙ,laptop එකේ software update කරන්න ඕනෙ,True,0.0,0.0,1.0,1.0,1.0,0.002
+62,office eke wifi password eka mokakda,office එකේ wifi password එක මොකක්ද,office එකේ wifi password එක මොකක්ද,True,0.0,0.0,1.0,1.0,1.0,0.037
+63,online order eka track karanna ba,online order එක track කරන්න බෑ,online order එක track කරන්න බෑ,True,0.0,0.0,1.0,1.0,1.0,0.023
+64,email eke attachment eka download karanna,email එකේ attachment එක download කරන්න,email එකේ attachment එක download කරන්න,True,0.0,0.0,1.0,1.0,1.0,0.023
+65,Instagram story eke filter eka hadanna,Instagram story එකේ filter එක හදන්න,Instagram story එකේ filter එක හදන්න,True,0.0,0.0,1.0,1.0,1.0,0.023
+66,oyge wada iwra krd,ඔයාගෙ වැඩ ඉවර කරාද,ඔයාගෙ වැඩ ඉවර කරාද,True,0.0,0.0,1.0,1.0,1.0,0.002
+67,mge phone ek hack una,මගේ phone එක hack උනා,මගේ phone එක hack උනා,True,0.0,0.0,1.0,1.0,1.0,0.002
+68,handawata ynna wenwa,හැන්දෑවට යන්න වෙනවා,හැන්දෑවට යන්න වෙනවා,True,0.0,0.0,1.0,1.0,1.0,0.026
+69,prashnya krnna oni,ප්‍රශ්‍නය කරන්න ඕනි,ප්‍රශ්‍නය කරන්න ඕනි,True,0.0,0.0,1.0,1.0,1.0,0.001
+70,apita gdra ynna oni,අපිට ගෙදර යන්න ඕනි,අපිට ගෙදර යන්න ඕනි,True,0.0,0.0,1.0,1.0,1.0,0.072
+71,mama oyata kiwwa,මම ඔයාට කිව්වා,මම ඔයාට කිව්වා,True,0.0,0.0,1.0,1.0,1.0,0.001
+72,oya hari hondai,ඔයා හරි හොඳයි,ඔයා හරි හොඳයි,True,0.0,0.0,1.0,1.0,1.0,0.015
+73,api heta yamu,අපි හෙට යමු,අපි හෙට යමු,True,0.0,0.0,1.0,1.0,1.0,0.001
+74,app eka crash wenawa phone eke,app එක crash වෙනවා phone එකේ,app එක crash වෙනවා phone එකේ,True,0.0,0.0,1.0,1.0,1.0,0.028
+75,code eka push karanna github ekata,code එක push කරන්න github එකට,code එක push කරන්න github එකට,True,0.0,0.0,1.0,1.0,1.0,0.048
+76,database eka slow nisa query eka optimize karanna one,database එක slow නිසා query එක optimize කරන්න ඕනෙ,database එක slow නිසා query එක optimize කරන්න ඕනෙ,True,0.0,0.0,1.0,1.0,1.0,0.053
+77,bug eka fix kala merge karanna,bug එක fix කළා merge කරන්න,bug එක fix කළා merge කරන්න,True,0.0,0.0,1.0,1.0,1.0,0.046
+78,internet eka slow wage thiyanawa,internet එක slow වගේ තියෙනවා,internet එක slow වගේ තියෙනවා,True,0.0,0.0,1.0,1.0,1.0,0.023
+79,kema hodai ada,කෑම හොඳයි අද,කෑම හොඳයි අද,True,0.0,0.0,1.0,1.0,1.0,0.001
+80,mama bus eke enawa,මම bus එකේ එනවා,මම bus එකේ එනවා,True,0.0,0.0,1.0,1.0,1.0,0.002
+81,ganu depala ekka market giya,ගෑනු දෙපල එක්ක market ගියා,ගණු දෙපළ එක්කා market ගියා,False,0.1538,0.6,0.0,0.4,1.0,0.07
+82,watura bonna one,වතුර බොන්න ඕනෙ,වතුර බොන්න ඕනෙ,True,0.0,0.0,1.0,1.0,1.0,0.03
+83,shop eke sugar nati nisa mama giye na,shop එකේ sugar නැති නිසා මම ගියේ නෑ,shop එකේ sugar නැති නිසා මම ගියේ නෑ,True,0.0,0.0,1.0,1.0,1.0,0.003
+84,hri hari,හරි හරි,හරි හරි,True,0.0,0.0,1.0,1.0,1.0,0.001
+85,mta ep,මට එපා,මට එපා,True,0.0,0.0,1.0,1.0,1.0,0.001
+86,ok hari,ok හරි,ok හරි,True,0.0,0.0,1.0,1.0,1.0,0.001
+87,ape game hari dewal wenne,අපේ ගමේ හරි දේවල් වෙන්නේ,අපේ ගමේ හරි දේවල් වෙන්නැ,False,0.0417,0.2,0.6687,0.8,1.0,0.082
+88,mta dan one na,මට දැන් ඕනෙ නෑ,මට දැන් ඕනෙ නෑ,True,0.0,0.0,1.0,1.0,1.0,0.002
+89,eka hari hondai wage dnuna nisa mama giya,ඒක හරි හොඳයි වගේ දැනුනා නිසා මම ගියා,ඒක හරි හොඳයි වගේ දැනුනා නිසා මම ගියා,True,0.0,0.0,1.0,1.0,1.0,0.044
+90,game eke mission hari amarui,game එකේ mission හරි අමාරුයි,ගමෙ එකේ mission හරි අමාරුයි,False,0.1429,0.2,0.6687,0.8,0.5,0.029
+91,mama heta yanawa,මම හෙට යනවා,මම හෙට යනවා,True,0.0,0.0,1.0,1.0,1.0,0.001
+92,ey iye aawa,එයා ඊයේ ආවා,එයා ඊයේ ආවා,True,0.0,0.0,1.0,1.0,1.0,0.024
+93,api dan yanawa,අපි දැන් යනවා,අපි දැන් යනවා,True,0.0,0.0,1.0,1.0,1.0,0.001
+94,video eka balanna one,video එක බලන්න ඕනෙ,video එක බලන්න ඕනෙ,True,0.0,0.0,1.0,1.0,1.0,0.042
+95,video ekak hadamu,video එකක් හදමු,video එකක් හදමු,True,0.0,0.0,1.0,1.0,1.0,0.023
+96,video eke comment eka balanna,video එකේ comment එක බලන්න,video එකේ comment එක බලන්න,True,0.0,0.0,1.0,1.0,1.0,0.041
+97,video ekata like ekak danna,video එකට like එකක් දාන්න,video එකට like එකක් දාන්න,True,0.0,0.0,1.0,1.0,1.0,0.059
+98,lecture eka record karala share karanna,lecture එක record කරලා share කරන්න,lecture එක record කරලා share කරන්න,True,0.0,0.0,1.0,1.0,1.0,0.046
+99,research paper eka liyanna one heta wge,research paper එක ලියන්න ඕනෙ හෙට වගේ,research paper එක ලියන්න ඕනෙ හෙට වගේ,True,0.0,0.0,1.0,1.0,1.0,0.074
+100,exam eka hari amarui,exam එක හරි අමාරුයි,exam එක හරි අමාරුයි,True,0.0,0.0,1.0,1.0,1.0,0.02
+101,sprint eka plan karamu Monday,sprint එක plan කරමු Monday,sprint එක plan කරමු Monday,True,0.0,0.0,1.0,1.0,1.0,0.02
+102,ape team eka deadline ekata kala,අපේ team එක deadline එකට කළා,අපේ team එක deadline එකට කළා,True,0.0,0.0,1.0,1.0,1.0,0.044
+103,standup eke mokada kiwwe,standup එකේ මොකද කිව්වෙ,standup එකේ මොකද කිව්වේ,False,0.0435,0.25,0.0,0.75,1.0,0.048
+104,reel eka viral una,reel එක viral උනා,reel එක viral උනා,True,0.0,0.0,1.0,1.0,1.0,0.022
+105,group chat eke mokada wenne,group chat එකේ මොකද වෙන්නෙ,group chat එකේ මොකද වෙන්නේ,False,0.0385,0.2,0.6687,0.8,1.0,0.047
+106,oyge profile picture eka lassanai,ඔයාගෙ profile picture එක ලස්සනයි,ඔයාගෙ profile picture එක ලස්සනයි,True,0.0,0.0,1.0,1.0,1.0,0.048
+107,mama enne na heta,මම එන්නෙ නෑ හෙට,මම එන්නෙ නෑ හෙට,True,0.0,0.0,1.0,1.0,1.0,0.024
+108,eka karanna epa,ඒක කරන්න එපා,ඒක කරන්න එපා,True,0.0,0.0,1.0,1.0,1.0,0.001
+109,kawruwath enne na,කවුරුවත් එන්නෙ නෑ,කවුරුවත් එන්නෙ නෑ,True,0.0,0.0,1.0,1.0,1.0,0.045
+110,oya koheda ynne,ඔයා කොහේද යන්නේ,ඔයා කොහෙද යන්නෙ,False,0.1333,0.6667,0.0,0.3333,1.0,0.047

@@ -1,0 +1,102 @@
+================================================================================
+  SinCode — MLM Fine-Tuning Experiment 2 (Informal Sinhala Corpus)
+  Date: 29–30 March 2026
+  Author: Kalana Chandrasekara
+================================================================================
+
+MOTIVATION
+--------------------------------------------------------------------------------
+Experiment 1 (Wikipedia corpus) produced no measurable downstream improvement
+in transliteration accuracy. The Wikipedia corpus is formal-register text,
+which differs significantly from informal Singlish conversation patterns.
+
+This experiment uses a large informal Sinhala dataset to better align the
+language model with the colloquial register used in Singlish input.
+
+
+DATASET
+--------------------------------------------------------------------------------
+  Source:       9wimu9/sinhala_dataset_59m (Hugging Face Hub)
+  Description:  59M mixed-register Sinhala text samples, primarily informal
+  Subset used:  500,000 samples (full 59M would require ~15 days)
+  After filter: 499,801 samples (removed rows with < 10 characters)
+  Tokenized:    271,000 sequences (filtered sequences with < 20 tokens)
+  Train split:  257,450 samples (95%)
+  Eval split:   13,550 samples (5%)
+
+
+TRAINING CONFIGURATION
+--------------------------------------------------------------------------------
+  Base model:         FacebookAI/xlm-roberta-base (~270M parameters)
+  Output directory:   xlm-roberta-sinhala-v2/final/
+  Published on HF:    Kalana001/xlm-roberta-sinhala-sincode
+
+  ┌───────────────────────────┬──────────────────┐
+  │ Parameter                 │ Value            │
+  ├───────────────────────────┼──────────────────┤
+  │ Epochs                    │ 1                │
+  │ Per-device batch size     │ 8                │
+  │ Gradient accumulation     │ 4                │
+  │ Effective batch size      │ 32               │
+  │ Learning rate             │ 2e-5             │
+  │ LR scheduler              │ Cosine           │
+  │ Warmup steps              │ ~503             │
+  │ Weight decay              │ 0.01             │
+  │ MLM probability           │ 0.15             │
+  │ Max sequence length       │ 256 tokens       │
+  │ FP16 (mixed precision)    │ Yes              │
+  │ Total training steps      │ ~8,046           │
+  │ Seed                      │ 42               │
+  └───────────────────────────┴──────────────────┘
+
+  Hardware:
+    GPU:    NVIDIA GeForce RTX 5060 Ti (16 GB VRAM)
+    CPU:    AMD Ryzen 7 5800X (8-core / 16-thread)
+    CUDA:   13.2 (compute capability 12.0 — Blackwell)
+    OS:     Windows, Python 3.14
+
+  Estimated training time: ~1.5 hours
+
+
+RESULTS
+--------------------------------------------------------------------------------
+  Training loss:    9.556 → 8.776  (-8.2%)
+  Eval loss:        2.1877 → 2.0621
+
+  Perplexity comparison (15 Sinhala test sentences):
+    Base model (no fine-tuning):   35.35
+    Experiment 2 (this model):     15.95
+    Improvement:                   -54.9%
+
+  See training_loss.png for the full loss curve across 8,046 steps.
+  Run compare_perplexity.py to reproduce the perplexity figures.
+
+
+DOWNSTREAM EVALUATION (110 sentences)
+--------------------------------------------------------------------------------
+  Dataset:          evaluation/dataset_110.csv
+  Predictions:      eval_predictions.csv (this folder)
+  Diagnostics:      eval_diagnostics.json (this folder)
+
+  ┌─────────────────────────┬─────────────┐
+  │ Metric                  │ Value       │
+  ├─────────────────────────┼─────────────┤
+  │ Exact Match             │ 101/110     │
+  │                         │ (91.8%)     │
+  │ Character Error Rate    │ 0.0073      │
+  │ Word Error Rate         │ 0.0245      │
+  │ BLEU Score              │ 0.947       │
+  └─────────────────────────┴─────────────┘
+
+
+FILES IN THIS FOLDER
+--------------------------------------------------------------------------------
+  train_mlm.py          — Training script (in parent fine_tuning/ folder)
+  experiment_notes.txt  — This file
+  training_loss.png     — Loss curve graph across all training steps
+  plot_training.py      — Script used to generate training_loss.png
+  compare_perplexity.py — Script to measure perplexity before/after fine-tuning
+  eval_predictions.csv  — 110-sentence evaluation predictions
+  eval_diagnostics.json — Per-sentence diagnostic breakdown
+
+================================================================================

@@ -1,0 +1,41 @@
+id,input,reference,split,has_code_mix,has_ambiguity,domain,notes
+1,api kalin katha kala,අපි කලින් කතා කළා,train,0,0,general,pure singlish
+2,eka honda wage thiyanawa,ඒක හොඳ වගේ තියෙනවා,train,0,1,general,wage=seems
+3,pola nisa gedara thiyanawa,පොල නිසා ගෙදර තියෙනවා,train,0,1,general,nisa=because
+4,oya kiwwata mama giye,ඔයා කිව්වට මම ගියේ,train,0,0,general,contextual past
+5,mama danne na eka gena,මම දන්නෙ නෑ ඒක ගැන,train,0,1,general,eka pronoun
+6,oya awa wage na,ඔයා ආවා වගේ නෑ,train,0,1,general,wage=seems
+7,ekat ynna bri,ඒකට යන්න බැරි,train,0,0,general,ad hoc bri=bari
+8,mama inne gedaradi,මම ඉන්නෙ ගෙදරදී,train,0,0,general,pure singlish
+9,eka heta balamu,ඒක හෙට බලමු,train,0,0,general,eka pronoun
+10,klya madi api passe yamu,කාලය මදි අපි පස්සෙ යමු,train,0,0,general,ad hoc klya=kalaya
+11,assignment eka ada submit karanna one,assignment එක අද submit කරන්න ඕනෙ,train,1,0,education,eka after English noun
+12,exam hall eka nisa mama baya una,exam hall එක නිසා මම බය උනා,train,1,1,education,nisa=because
+13,results blnna one,results බලන්න ඕනෙ,train,1,0,education,ad hoc blnna=balanna
+14,study group ekak hadamu,study group එකක් හදමු,train,1,0,education,ekak after English noun
+15,viva ekta prepared wage na,viva එකට prepared වගේ නෑ,train,1,1,education,wage=seems
+16,mta project ek submit krnna one,මට project එක submit කරන්න ඕනෙ,train,1,0,education,ad hoc mta krnna
+17,hta parikshanaya thiyanawa,හෙට පරික්‍ෂණය තියෙනවා,train,0,0,education,ad hoc hta=heta
+18,mama poth kiyawala iwara kala,මම පොත කියවලා ඉවර කළා,train,0,0,education,pure singlish
+19,guruwaraya nisa api kalin giya,ගුරුවරයා නිසා අපි කලින් ගියා,train,0,1,education,nisa=because
+20,prashnaya honda wage penenawa,ප්‍රශ්නය හොඳ වගේ පේනවා,train,0,1,education,wage=seems
+21,deploy nisa site down wuna,deploy නිසා site down උනා,train,1,1,work,nisa=because
+22,PR eka merge karanna one,PR එක merge කරන්න ඕනෙ,train,1,0,work,eka after English noun
+23,backlog eka update kala,backlog එක update කළා,train,1,0,work,eka after English noun
+24,server down nisa work karanna ba,server down නිසා work කරන්න බෑ,train,1,1,work,nisa=because
+25,meeting eka tomorrow damu,meeting එක tomorrow දාමු,train,1,0,work,code mix preserved
+26,feedback nisa redo karanna una,feedback නිසා redo කරන්න උනා,train,1,1,work,nisa=because
+27,ape wada ada iwara wenawa,අපේ වැඩ අද ඉවර වෙනවා,train,0,0,work,pure singlish
+28,kalamanakaru apu nisa api katha kala,කලමණාකරු ආපු නිසා අපි කතා කලා,train,0,1,work,nisa=because
+29,me wada honda wage penenawa,මේ වැඩ හොඳ වගේ පේනවා,train,0,1,work,wage=seems
+30,wada tika ada iwara karamu,වැඩ ටික අද ඉවර කරමු,train,0,0,work,pure singlish
+31,story eke poll ekak damma,story එකේ poll එකක් දැම්මා,train,1,0,social,eke and ekak forms
+32,oyata DM ekak yewwa,ඔයාට DM එකක් යැව්වා,train,1,0,social,ekak after English noun
+33,comment eka delete kala nisa mama danne na,comment එක delete කල නිසා මම දන්නේ නෑ,train,1,1,social,nisa=because
+34,selfie ekak gannako,selfie එකක් ගන්නකෝ,train,1,0,social,ekak after English noun
+35,post eka private nisa share karanna epa,post එක private නිසා share කරන්න එපා,train,1,1,social,nisa=because
+36,oyta message krnna on,ඔයාට message කරන්න ඕනෙ,train,1,0,social,ad hoc oyta krnna
+37,oya passe katha karamu,ඔයා පස්සෙ කතා කරමු,train,0,0,social,pure singlish
+38,eya laga pinthurayk thiyanawa,ඒයා ළඟ පින්තූරයක් තියෙනවා,train,0,0,social,ad hoc pinthurayk
+39,oya awa wage mata hithenawa,ඔයා ආවා වගේ මට හිතෙනවා,train,0,1,social,wage=seems
+40,api passe hambawemu,අපි පස්සෙ හම්බවෙමු,train,0,0,social,pure singlish

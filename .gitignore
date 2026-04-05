@@ -6,18 +6,19 @@ misc/
 *.pyc
 *.pkl
 !dictionary.pkl
+*.bak
 
 # Local dev workspace config
 .claude/
 SKILL.md
 
-# Training artifacts
-train_mlm.py
+# Training artifacts (model weights on HF Hub, too large for git)
+/train_mlm.py
 train_log.txt
 training_log_*.txt
 xlm-roberta-sinhala/
 xlm-roberta-sinhala-v2/
 
-# Evaluation artifacts
-eval_diagnostics*.json
-eval_predictions*.csv
+# Root-level eval files
+/eval_diagnostics.json
+/eval_predictions.csv

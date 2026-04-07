@@ -8,11 +8,21 @@ jobs:
   sync-to-hub:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 1
           lfs: true
-      - name: Push to Hugging Face Space
+
+      - name: Create clean snapshot commit for HF
+        run: |
+          git lfs install
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan hf-sync
+          git add -A
+          git commit -m "Sync snapshot from GitHub ${GITHUB_SHA}"
+
+      - name: Force-push snapshot to Hugging Face Space
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: git push https://Kalana001:$HF_TOKEN@huggingface.co/spaces/Kalana001/SinCode main
+        run: git push --force https://Kalana001:$HF_TOKEN@huggingface.co/spaces/Kalana001/SinCode hf-sync:main

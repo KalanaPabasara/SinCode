@@ -3,6 +3,7 @@ __pycache__/
 .venv/
 dump/
 misc/
+/feedback.csv
 *.pyc
 *.pkl
 !dictionary.pkl

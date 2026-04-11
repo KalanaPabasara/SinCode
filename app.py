@@ -8,6 +8,7 @@ import os
 import hmac
 import html as html_lib
 import base64
+from streamlit.errors import StreamlitSecretNotFoundError
 from PIL import Image
 from feedback_store import FeedbackStore, format_feedback_error
 from sincode_model import BeamSearchDecoder
@@ -45,8 +46,12 @@ def _load_logo(image_file: str):
 
 
 def _secret_or_env(name: str, default: str = "") -> str:
-    if name in st.secrets:
-        return str(st.secrets[name])
+    try:
+        if name in st.secrets:
+            return str(st.secrets[name])
+    except StreamlitSecretNotFoundError:
+        # Local runs may not have .streamlit/secrets.toml; fall back to env.
+        pass
     return os.getenv(name, default)
 
 
@@ -92,36 +97,45 @@ def _save_feedback(
 
 
 def _render_admin_access(store: FeedbackStore) -> bool:
-    st.sidebar.markdown("### 📨 Feedback")
-    st.sidebar.caption(f"Storage: {store.backend_label}")
-
-    with st.sidebar.expander("Admin Access", expanded=st.session_state.get("admin_authenticated", False)):
-        if st.session_state.get("admin_authenticated", False):
-            st.success("Admin session active")
-            open_panel = st.toggle(
-                "Open feedback review panel",
-                value=st.session_state.get("show_admin_panel", False),
-                key="show_admin_panel_toggle",
-            )
-            st.session_state["show_admin_panel"] = open_panel
-            if st.button("Log Out", use_container_width=True):
-                st.session_state["admin_authenticated"] = False
-                st.session_state["show_admin_panel"] = False
-                st.rerun()
-            return st.session_state.get("show_admin_panel", False)
-
-        if not _admin_credentials_configured():
-            st.info("Set ADMIN_USERNAME and ADMIN_PASSWORD in Hugging Face Secrets to enable review access.")
-            return False
-
-        username = st.text_input("Username", key="admin_username")
-        password = st.text_input("Password", type="password", key="admin_password")
-        if st.button("Admin Login", use_container_width=True):
+    """Render admin login/status in main content area (top and prominent)."""
+    if st.session_state.get("admin_authenticated", False):
+        # Admin is logged in — show compact status bar
+        with st.container(border=True):
+            admin_cols = st.columns([3, 1, 1])
+            with admin_cols[0]:
+                st.markdown("### 👤 Admin Session Active")
+                st.caption(f"Feedback storage: {store.backend_label}")
+            with admin_cols[1]:
+                if st.button("📋 Panel", key="toggle_review_panel", use_container_width=True):
+                    st.session_state["show_admin_panel"] = not st.session_state.get("show_admin_panel", False)
+                    st.rerun()
+            with admin_cols[2]:
+                if st.button("🚪 Log Out", key="admin_logout", use_container_width=True):
+                    st.session_state["admin_authenticated"] = False
+                    st.session_state["show_admin_panel"] = False
+                    st.rerun()
+        return st.session_state.get("show_admin_panel", False)
+    
+    # Not authenticated — show login card (only if credentials are configured)
+    if not _admin_credentials_configured():
+        return False
+    
+    with st.container(border=True):
+        st.markdown("### 👤 Administrator Access")
+        st.caption(f"Feedback storage: {store.backend_label}")
+        
+        login_cols = st.columns(2)
+        with login_cols[0]:
+            username = st.text_input("Username", key="admin_username", placeholder="Admin username")
+        with login_cols[1]:
+            password = st.text_input("Password", type="password", key="admin_password", placeholder="Admin password")
+        
+        if st.button("🔓 Sign In", type="primary", use_container_width=True):
             if _authenticate_admin(username, password):
                 st.session_state["admin_authenticated"] = True
                 st.session_state["show_admin_panel"] = True
                 st.rerun()
-            st.error("Invalid admin credentials.")
+            st.error("❌ Invalid credentials. Please try again.")
     return st.session_state.get("show_admin_panel", False)
 
 
@@ -277,17 +291,20 @@ with st.sidebar:
     if not feedback_store.is_remote_enabled:
         st.warning("Feedback storage is offline. Set Supabase secrets to enable submissions.")
 
+st.title("සිංCode: Context-Aware Transliteration")
+st.markdown(
+    "Type Singlish sentences below. "
+    "The system handles **code-mixing**, **ambiguity**, and **punctuation**."
+)
+
+# Admin access card (shown at top of main content)
 show_admin_panel = _render_admin_access(feedback_store)
 
 if show_admin_panel:
     _render_admin_panel(feedback_store)
     st.stop()
 
-st.title("සිංCode: Context-Aware Transliteration")
-st.markdown(
-    "Type Singlish sentences below. "
-    "The system handles **code-mixing**, **ambiguity**, and **punctuation**."
-)
+st.markdown("---")
 
 input_text = st.text_area(
     "Input Text", height=100, placeholder="e.g., Singlish sentences type krnna"

@@ -1,0 +1,10 @@
+{
+  "system": "SinCode v2 (rule-based + dictionary)",
+  "samples": 110,
+  "exact_match": 0.8364,
+  "cer": 0.0122,
+  "wer": 0.0407,
+  "bleu": 0.8861,
+  "token_acc": 0.9593,
+  "notes": "Measured on dataset_110.csv test split. Avg time per sentence: 0.03s (3.34s total)."
+}

@@ -1,0 +1,72 @@
+flowchart TD
+    UI["🖥️ Streamlit UI\napp.py"]
+    MODE{Mode?}
+
+    UI --> MODE
+
+    subgraph MODE_FULL["Full Sinhala Mode"]
+        direction TB
+        ST["SentenceTransliterator\nseq2seq/mbart_infer.py"]
+        MBART["mBart50-large\nKalana001/mbart50-large-singlish-sinhala\nHF Hub · 2.4 GB"]
+        FIX["Compose Fix Map\nseq2seq/Compose_fix_map.json\nZWJ / Virama corrections"]
+        ST --> MBART
+        MBART -->|"raw Sinhala output"| FIX
+    end
+
+    subgraph MODE_MIXED["Code-Mixed Mode"]
+        direction TB
+
+        subgraph PHASE1["Phase 1 · Word Classification"]
+            direction LR
+            P1A["Sinhala script?\n(U+0D80–0DFF)"]
+            P1B["English vocab?\nenglish_20k.txt"]
+            P1C["Singlish\n(everything else)"]
+        end
+
+        subgraph PHASE2["Phase 2 · Candidate Generation  (single ByT5 batch)"]
+            direction LR
+            BYT5["ByT5-small\nKalana001/byt5-small-singlish-sinhala\nHF Hub · 1.2 GB\nbeam=5 → top-5 candidates"]
+            SIN_PASS["Single candidate\n(word as-is)"]
+            ENG_CAND["English word\n+ ByT5 Sinhala alternatives"]
+            SIN_CAND["Top-5 ByT5\ncandidates"]
+        end
+
+        subgraph PHASE3["Phase 3 · Two-Pass MLM Reranking"]
+            direction LR
+            GREEDY["Pass 1 – Greedy\nBuild draft sentence\n(stale right context)"]
+            RESCORE["Pass 2 – Rescore\nActual decoded output\nas right context"]
+            MLM["XLM-RoBERTa\nKalana001/xlm-roberta-base-finetuned-sinhala\nHF Hub\nMulti-mask log-probability"]
+            SOFTMAX["Softmax normalise\npick argmax"]
+        end
+
+        PHASE1 --> PHASE2
+        P1A -->|Sinhala| SIN_PASS
+        P1B -->|English| ENG_CAND
+        P1C -->|Singlish| SIN_CAND
+        BYT5 --> ENG_CAND
+        BYT5 --> SIN_CAND
+        PHASE2 --> PHASE3
+        GREEDY --> MLM
+        MLM --> SOFTMAX
+        SOFTMAX --> RESCORE
+        RESCORE --> MLM
+    end
+
+    MODE -->|"Full Sinhala Output"| MODE_FULL
+    MODE -->|"Code-Mixed Output"| MODE_MIXED
+
+    MODE_FULL --> OUT["✅ Sinhala Output"]
+    MODE_MIXED --> OUT
+
+    subgraph MODELS["Models on Hugging Face Hub  (Kalana001)"]
+        HF1["byt5-small-singlish-sinhala\n1.2 GB · ByT5-small"]
+        HF2["xlm-roberta-base-finetuned-sinhala\nXLM-RoBERTa"]
+        HF3["mbart50-large-singlish-sinhala\n2.4 GB · mBart50-large"]
+    end
+
+    style MODE_FULL fill:#e8f4fd,stroke:#4a9eda
+    style MODE_MIXED fill:#fdf3e8,stroke:#e8974a
+    style PHASE1 fill:#fff9e6,stroke:#cca800
+    style PHASE2 fill:#e8fff0,stroke:#2ecc71
+    style PHASE3 fill:#f4e8ff,stroke:#9b59b6
+    style MODELS fill:#eaf4ee,stroke:#27ae60

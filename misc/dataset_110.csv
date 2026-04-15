@@ -1,0 +1,111 @@
+id,input,reference,split,has_code_mix,has_ambiguity,domain,notes
+1,api kalin katha kala,අපි කලින් කතා කළා,test,0,0,general,pure singlish
+2,eka honda wage thiyanawa,ඒක හොඳ වගේ තියෙනවා,test,0,1,general,wage=seems
+3,meheta thadata wessa,මෙහෙට තදට වැස්සා,test,0,1,general,thadata=very
+4,oya kiwwata mama giye,ඔයා කිව්වට මම ගියේ,test,0,0,general,contextual past
+5,mama danne na eka gena,මම දන්නෙ නෑ ඒක ගැන,test,0,1,general,eka pronoun
+6,oya awa wage na,ඔයා ආවා වගේ නෑ,test,0,1,general,wage=seems
+7,ekat ynna bri,ඒකට යන්න බැරි,test,0,0,general,ad-hoc bri=bari
+8,mama inne gedaradi,මම ඉන්නෙ ගෙදරදී,test,0,0,general,pure singlish
+9,eka heta balamu,ඒක හෙට බලමු,test,0,0,general,eka pronoun
+10,klya madi api passe yamu,කාලය මදි අපි පස්සෙ යමු,test,0,0,general,ad-hoc klya=kalaya
+11,assignment eka ada submit karanna one,assignment එක අද submit කරන්න ඕනෙ,test,1,0,education,eka after English noun
+12,exam hall eka nisa mama baya una,exam hall එක නිසා මම බය උනා,test,1,1,education,nisa=because
+13,results blnna one,results බලන්න ඕනෙ,test,1,0,education,ad-hoc blnna=balanna
+14,study group ekak hadamu,study group එකක් හදමු,test,1,0,education,ekak after English noun
+15,viva ekta prepared wage na,viva එකට prepared වගේ නෑ,test,1,1,education,wage=seems
+16,mta project ek submit krnna one,මට project එක submit කරන්න ඕනෙ,test,1,0,education,ad-hoc mta krnna
+17,hta parikshanaya thiyanawa,හෙට පරික්‍ෂණය තියෙනවා,test,0,0,education,ad-hoc hta=heta
+18,mama potha kiyawala iwara kala,මම පොත කියවලා ඉවර කළා,test,0,0,education,pure singlish
+19,prkku nisa api kalin giya,පරක්කු නිසා අපි කලින් ගියා,test,0,1,education,nisa=because
+20,prashnaya hondai wage penenawa,ප්‍රශ්නය හොඳයි වගේ පේනවා,test,0,1,education,wage=seems
+21,deployments nisa site down wuna,deployments නිසා site down උනා,test,1,1,work,nisa=because
+22,PR eka merge karanna one,PR එක merge කරන්න ඕනෙ,test,1,0,work,eka after English noun
+23,backlog eka update kala,backlog එක update කළා,test,1,0,work,eka after English noun
+24,server down nisa work karanna ba,server down නිසා work කරන්න බෑ,test,1,1,work,nisa=because
+25,meeting eka tomorrow damu,meeting එක tomorrow දාමු,test,1,0,work,code-mix preserved
+26,feedback nisa redo karanna una,feedback නිසා redo කරන්න උනා,test,1,1,work,nisa=because
+27,ape wada ada iwara wenawa,අපේ වැඩ අද ඉවර වෙනවා,test,0,0,work,pure singlish
+28,kalamanakaru hitpu nisa api katha kala,කලමනාකරු හිටපු නිසා අපි කතා කළා,test,0,1,work,nisa=because; known failure (complex OOV)
+29,me wada hondai wage penawa,මේ වැඩ හොඳයි වගේ පේනවා,test,0,1,work,wage=seems
+30,wada tika ada iwara karamu,වැඩ ටික අද ඉවර කරමු,test,0,0,work,pure singlish
+31,story eke poll ekak damma,story එකේ poll එකක් දැම්මා,test,1,0,social,eke and ekak forms
+32,oyata DM ekak yawwa,ඔයාට DM එකක් යැව්වා,test,1,0,social,ekak after English noun
+33,comment eka delete kala nisa mama danne na,comment එක delete කළා නිසා මම දන්නෙ නෑ,test,1,1,social,"nisa=because; known failure (කළා/කල, දන්නෙ/දන්නේ)"
+34,selfie ekak gannako,selfie එකක් ගන්නකෝ,test,1,0,social,ekak after English noun
+35,post eka private nisa share karanna epa,post එක private නිසා share කරන්න එපා,test,1,1,social,nisa=because
+36,oyta message krnna one,ඔයාට message කරන්න ඕනෙ,test,1,0,social,ad-hoc oyta krnna on=one
+37,api passe katha karamu,අපි පස්සෙ කතා කරමු,test,0,0,social,pure singlish
+38,eya laga pinthurayk thiyanawa,ඒයා ළඟ පින්තූරයක් තියෙනවා,test,0,0,social,ad-hoc pinthurayk
+39,oya awa wage mata hithenawa,ඔයා ආවා වගේ මට හිතෙනවා,test,0,1,social,wage=seems
+40,api passe hambawemu,අපි පස්සෙ හම්බවෙමු,test,0,0,social,pure singlish
+41,phone eka charge karanna one,phone එක charge කරන්න ඕනෙ,test,1,0,general,NEW: general code-mix (gap fix)
+42,bus eka late una,bus එක late උනා,test,1,0,general,NEW: general code-mix
+43,mama online inne,මම online ඉන්නෙ,test,1,0,general,NEW: English mid-sentence
+44,time nathi nisa heta yamu,time නැති නිසා හෙට යමු,test,1,1,general,NEW: English+nisa in general
+45,oya call eka ganna,ඔයා call එක ගන්න,test,1,0,general,NEW: general code-mix eka pattern
+46,api game yanawa heta,අපි ගමේ යනවා හෙට,test,0,1,general,NEW: game=ගමේ(village) ambig with English 'game'
+47,man heta enne na,මන් හෙට එන්නෙ නෑ,test,0,1,general,NEW: man=මං(I) ambig with English 'man'
+48,eka hari lassanai,ඒක හරි ලස්සනයි,test,0,1,general,NEW: hari=very (not OK/correct)
+49,oya kiwwa hari,ඔයා කිව්වා හරි,test,0,1,general,NEW: hari=correct (not very)
+50,kalaya ithuru krganna one,කලය ඉතුරු කරගන්න ඕනෙ,test,0,1,general,NEW: one=ඕනෙ(need) ambig with English 'one'
+51,date eka fix karanna one,date එක fix කරන්න ඕනෙ,test,1,1,general,NEW: date=English preserve; one=ඕනෙ
+52,rata yanna one,රට යන්න ඕනෙ,test,0,0,general,"NEW: rata=country, pure singlish"
+53,game eke leaderboard eka balanna,game එකේ leaderboard එක බලන්න,test,1,1,social,NEW: game=English(video game) not ගමේ
+54,api thamai hodama,අපි තමයි හොඳම,test,0,1,general,NEW: thamai=emphatic we; hodama=best; looks English but Singlish
+55,mama heta udee enawa oya enakota message ekk dnna,මම හෙට උදේ එනවා ඔයා එනකොට message එකක් දාන්න,test,0,0,general,NEW: 8-word pure singlish
+56,ape gedara langa thiyana kadeta yanna one,අපේ ගෙදර ළඟ තියෙන කඩේට යන්න ඕනෙ,test,0,0,general,NEW: 7-word with ළඟ
+57,mama assignment eka karala submit karanawa ada raa,මම assignment එක කරලා submit කරනවා අද රෑ,test,1,0,education,NEW: 8-word code-mix long
+58,oya enne naththe mokada kiyla mama danne na,ඔයා එන්නෙ නැත්තෙ මොකද කියලා මම දන්නෙ නෑ,test,0,0,general,NEW: 9-word complex clause
+59,client ekka call karala feedback eka ahanna one,client එක්ක call කරලා feedback එක අහන්න ඕනෙ,test,1,0,work,NEW: 8-word heavy code-mix
+60,mama gedara gihilla kewata passe call karannm,මම ගෙදර ගිහිල්ලා කෑවට පස්සෙ call කරන්නම්,test,1,0,general,NEW: 8-word code-mix + temporal
+61,laptop eke software update karanna one,laptop එකේ software update කරන්න ඕනෙ,test,1,0,work,NEW: 3 English words consecutive
+62,office eke wifi password eka mokakda,office එකේ wifi password එක මොකක්ද,test,1,0,work,NEW: 3 English words; question
+63,online order eka track karanna ba,online order එක track කරන්න බෑ,test,1,0,general,NEW: 3 English words
+64,email eke attachment eka download karanna,email එකේ attachment එක download කරන්න,test,1,0,work,NEW: 3 English words + double eka
+65,Instagram story eke filter eka hadanna,Instagram story එකේ filter එක හදන්න,test,1,0,social,NEW: 4 English words; social media
+66,oyge wada iwra krd,ඔයාගෙ වැඩ ඉවර කරාද,test,0,0,general,NEW: extreme vowel omission
+67,mge phone ek hack una,මගේ phone එක hack උනා,test,1,0,general,"NEW: heavy ad-hoc mmge=mage, hrk=hack"
+68,handawata ynna wenwa,හැන්දෑවට යන්න වෙනවා,test,0,0,general,"NEW: ad-hoc hndta=handeta, wenwa=wenawa"
+69,prashnya krnna oni,ප්‍රශ්‍නය කරන්න ඕනි,test,0,0,education,NEW: replaced extreme ad-hoc with more readable form
+70,apita gdra ynna oni,අපිට ගෙදර යන්න ඕනි,test,0,0,general,NEW: ad-hoc gdra=gedara
+71,mama oyata kiwwa,මම ඔයාට කිව්වා,test,0,0,general,"NEW: common words only (mama, oyata)"
+72,oya hari hondai,ඔයා හරි හොඳයි,test,0,1,general,NEW: hari=very; common words
+73,api heta yamu,අපි හෙට යමු,test,0,0,general,NEW: common words bypass test
+74,app eka crash wenawa phone eke,app එක crash වෙනවා phone එකේ,test,1,0,technology,NEW: tech domain
+75,code eka push karanna github ekata,code එක push කරන්න github එකට,test,1,0,technology,NEW: dev workflow code-mix
+76,database eka slow nisa query eka optimize karanna one,database එක slow නිසා query එක optimize කරන්න ඕනෙ,test,1,1,technology,NEW: heavy tech code-mix + nisa; long
+77,bug eka fix kala merge karanna,bug එක fix කළා merge කරන්න,test,1,0,technology,NEW: sequential actions code-mix
+78,internet eka slow wage thiyanawa,internet එක slow වගේ තියෙනවා,test,1,1,technology,NEW: tech + wage ambiguity
+79,kema hodai ada,කෑම හොඳයි අද,test,0,0,daily_life,NEW: daily life; short
+80,mama bus eke enawa,මම bus එකේ එනවා,test,1,0,daily_life,NEW: transport code-mix
+81,ganu depala ekka market giya,ගෑනු දෙපල එක්ක market ගියා,test,1,0,daily_life,NEW: colloquial + code-mix
+82,watura bonna one,වතුර බොන්න ඕනෙ,test,0,0,daily_life,NEW: health advice singlish
+83,shop eke sugar nati nisa mama giye na,shop එකේ sugar නැති නිසා මම ගියේ නෑ,test,1,1,daily_life,NEW: daily code-mix + nisa; negative
+84,hri hari,හරි හරි,test,0,0,general,NEW: 2-word repetition; common expression + ad-hoc hri=hari
+85,mta ep,මට එපා,test,0,0,general,NEW: ad-hoc mta=mata ep=epa
+86,ok hari,ok හරි,test,1,0,general,NEW: 2-word code-mix
+87,ape game hari dewal wenne,අපේ ගමේ හරි දේවල් වෙන්නේ,test,0,1,general,"NEW: game=village, hari=nice; looks English"
+88,mta dan one na,මට දැන් ඕනෙ නෑ,test,0,1,general,NEW: man+one look English but Singlish
+89,eka hari hondai wage dnuna nisa mama giya,ඒක හරි හොඳයි වගේ දැනුනා නිසා මම ගියා,test,0,1,general,NEW: hari+wage+nisa triple ambiguity; ref corrected to හොඳයි
+90,game eke mission hari amarui,game එකේ mission හරි අමාරුයි,test,0,1,general,NEW: game=video game hari=very amarui=difficult; looks English but Singlish
+91,mama heta yanawa,මම හෙට යනවා,test,0,0,general,NEW: future tense
+92,ey iye aawa,එයා ඊයේ ආවා,test,0,0,general,NEW: past tense
+93,api dan yanawa,අපි දැන් යනවා,test,0,0,general,NEW: present tense
+94,video eka balanna one,video එක බලන්න ඕනෙ,test,1,0,social,NEW: eka definite article
+95,video ekak hadamu,video එකක් හදමු,test,1,0,social,NEW: ekak indefinite
+96,video eke comment eka balanna,video එකේ comment එක බලන්න,test,1,0,social,NEW: eke possessive + double eka
+97,video ekata like ekak danna,video එකට like එකක් දාන්න,test,1,0,social,NEW: ekata dative case
+98,lecture eka record karala share karanna,lecture එක record කරලා share කරන්න,test,1,0,education,NEW: sequential code-mix actions
+99,research paper eka liyanna one heta wge,research paper එක ලියන්න ඕනෙ හෙට වගේ,test,1,0,education,NEW: long + temporal; 8 words
+100,exam eka hari amarui,exam එක හරි අමාරුයි,test,1,1,education,NEW: hari=very; difficulty context
+101,sprint eka plan karamu Monday,sprint එක plan කරමු Monday,test,1,0,work,NEW: day name preserved
+102,ape team eka deadline ekata kala,අපේ team එක deadline එකට කළා,test,1,0,work,NEW: possessive + double English
+103,standup eke mokada kiwwe,standup එකේ මොකද කිව්වෙ,test,1,0,work,NEW: question form code-mix
+104,reel eka viral una,reel එක viral උනා,test,1,0,social,NEW: social media terminology
+105,group chat eke mokada wenne,group chat එකේ මොකද වෙන්නෙ,test,1,0,social,NEW: compound English + question
+106,oyge profile picture eka lassanai,ඔයාගෙ profile picture එක ලස්සනයි,test,1,0,social,NEW: compound English noun + eka; ref corrected to ඔයාගෙ
+107,mama enne na heta,මම එන්නෙ නෑ හෙට,test,0,0,general,NEW: negation at end
+108,eka karanna epa,ඒක කරන්න එපා,test,0,0,general,NEW: prohibition form
+109,kawruwath enne na,කවුරුවත් එන්නෙ නෑ,test,0,0,general,NEW: nobody negation
+110,oya koheda ynne,ඔයා කොහේද යන්නේ,test,0,0,general,NEW: question form where

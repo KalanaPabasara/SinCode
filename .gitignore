@@ -1,0 +1,28 @@
+# Virtual environment
+.venv/
+
+# Model weights — hosted on Hugging Face Hub
+seq2seq/byt5-singlish-sinhala/
+seq2seq/tokenized_cache/
+
+# Large training data
+seq2seq/wsd_pairs.csv
+
+# Backup weights
+*.safetensors.bak
+*_backup.safetensors
+final_pre_correction_backup.safetensors
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Evaluation outputs (optional — remove if you want these tracked)
+misc/v3_results_110.csv
+
+# Misc
+*.log
+.DS_Store

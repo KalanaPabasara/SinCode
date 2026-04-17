@@ -1,6 +1,6 @@
 ---
 title: SinCode
-emoji: 🇱🇰
+emoji: �
 colorFrom: blue
 colorTo: yellow
 sdk: streamlit

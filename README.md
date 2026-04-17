@@ -10,7 +10,7 @@ pinned: false
 license: mit
 ---
 
-# à·ƒà·’à¶‚Code â€” Singlish to Sinhala Transliterator
+# සිංCode — Singlish to Sinhala Transliterator
 
 A model-driven, context-aware back-transliteration system that converts Romanised Sinhala (Singlish) to native Sinhala script.
 
@@ -18,25 +18,25 @@ A model-driven, context-aware back-transliteration system that converts Romanise
 
 ```
 Input sentence
-    â”‚
-    â–¼
+    │
+    ▼
 Word Tokenizer
-    â”‚
-    â”œâ”€ Sinhala script? â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â–º Pass through unchanged
-    â”‚
-    â”œâ”€ English vocab (len â‰¥ 3)? â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â–º Pass through unchanged
-    â”‚
-    â””â”€ Singlish word?
-            â”‚
-            â–¼
+    │
+    ├─ Sinhala script? ──────────────────────────► Pass through unchanged
+    │
+    ├─ English vocab (len ≥ 3)? ─────────────────► Pass through unchanged
+    │
+    └─ Singlish word?
+            │
+            ▼
      ByT5-small seq2seq
      (top-5 candidates)
-            â”‚
-            â–¼
+            │
+            ▼
      XLM-RoBERTa MLM reranker
      (contextual scoring)
-            â”‚
-            â–¼
+            │
+            ▼
       Best candidate
 ```
 
@@ -44,18 +44,18 @@ Word Tokenizer
 
 | Model | Role | Hub ID |
 |-------|------|--------|
-| ByT5-small | Singlish â†’ Sinhala candidate generation | `Kalana001/byt5-small-singlish-sinhala` |
+| ByT5-small | Singlish → Sinhala candidate generation | `Kalana001/byt5-small-singlish-sinhala` |
 | XLM-RoBERTa | Contextual MLM reranking | `Kalana001/xlm-roberta-base-finetuned-sinhala` |
 | mBart50 | Full-sentence Sinhala output mode | `Kalana001/mbart50-large-singlish-sinhala` |
 
 ## Modes
 
-- **Code-Mixed Output** â€” Retains English words where contextually appropriate; Singlish words are transliterated using ByT5 + XLM-RoBERTa reranking.
-- **Full Sinhala Output** â€” Transliterates the entire sentence to Sinhala script using mBart50.
+- **Code-Mixed Output** — Retains English words where contextually appropriate; Singlish words are transliterated using ByT5 + XLM-RoBERTa reranking.
+- **Full Sinhala Output** — Transliterates the entire sentence to Sinhala script using mBart50.
 
 ## Environment Variables (optional)
 
-Set these in HF Spaces â†’ Settings â†’ Repository secrets to enable Supabase feedback storage:
+Set these in HF Spaces → Settings → Repository secrets to enable Supabase feedback storage:
 
 | Variable | Description |
 |----------|-------------|
@@ -65,4 +65,3 @@ Set these in HF Spaces â†’ Settings â†’ Repository secrets to enable S
 | `SUPABASE_FEEDBACK_TABLE` | Table name (default: `feedback_submissions`) |
 
 If not set, feedback is saved locally to `misc/feedback_submissions.jsonl`.
-

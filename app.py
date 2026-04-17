@@ -101,6 +101,7 @@ if st.button("Transliterate", type="primary") and sentence.strip():
             transliterator = load_transliterator()
             result = transliterator.transliterate(sentence.strip())
         trace_logs: list[str] = []
+        word_candidates: list[tuple] = []
     else:
         with st.spinner("Transliterating…"):
             decoder = load_decoder()

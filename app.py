@@ -14,7 +14,6 @@ from __future__ import annotations
 import os
 
 import streamlit as st
-from streamlit.errors import StreamlitSecretNotFoundError
 
 from feedback_store import FeedbackStore, format_feedback_error
 from sincode_model import BeamSearchDecoder, SentenceTransliterator
@@ -25,9 +24,12 @@ st.set_page_config(page_title="සිංCode", page_icon="🇱🇰", layout="cen
 
 def _secret_or_env(name: str, default: str = "") -> str:
     try:
-        if name in st.secrets:
-            return str(st.secrets[name])
-    except StreamlitSecretNotFoundError:
+        value = st.secrets.get(name)
+        if value is not None:
+            return str(value)
+    except Exception:
+        # Compatible with Streamlit versions where secrets backend differs
+        # or no secrets file is configured.
         pass
     return os.getenv(name, default)
 

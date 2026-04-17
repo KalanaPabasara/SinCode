@@ -1,16 +1,4 @@
-﻿---
-title: SinCode
-emoji: 🔤
-colorFrom: blue
-colorTo: yellow
-sdk: streamlit
-sdk_version: 1.32.0
-app_file: app.py
-pinned: false
-license: mit
----
-
-# SinCode - Singlish to Sinhala Transliterator
+﻿# SinCode: Context-Aware Dual-Neural Back-Transliteration for Code-Mixed Romanized Sinhala
 
 A model-driven, context-aware back-transliteration system that converts Romanised Sinhala (Singlish) to native Sinhala script.
 

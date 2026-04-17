@@ -76,11 +76,14 @@ def main():
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
     print(f"  Device : {device}")
-    if device == "cuda":
-        print(f"  GPU    : {torch.cuda.get_device_name(0)}")
-        print(f"  VRAM   : {torch.cuda.get_device_properties(0).total_memory / 1e9:.1f} GB")
-    else:
-        print("  WARNING: No GPU detected — training will be very slow!")
+    if device != "cuda":
+        raise RuntimeError(
+            "CUDA GPU is required for training. "
+            "No GPU was detected, so training was stopped to avoid CPU slowdown."
+        )
+
+    print(f"  GPU    : {torch.cuda.get_device_name(0)}")
+    print(f"  VRAM   : {torch.cuda.get_device_properties(0).total_memory / 1e9:.1f} GB")
 
     tokenizer = AutoTokenizer.from_pretrained(BASE_MODEL)
     model     = AutoModelForSeq2SeqLM.from_pretrained(BASE_MODEL)

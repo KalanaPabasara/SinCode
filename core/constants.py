@@ -30,6 +30,11 @@ ENGLISH_CORPUS_URL = (
 # ─── Decoding Parameters ─────────────────────────────────────────────────────
 MAX_CANDIDATES: int = 5       # ByT5 beam=5 → 5 candidates per word
 MIN_ENGLISH_LEN: int = 3      # Min word length for English detection
+# Words >= this length that are in the English vocab are treated as unambiguous
+# English loanwords and passed through without MLM scoring.
+# Short words (< 6 chars) are kept in the MLM path because they may be
+# Singlish homophones (e.g. 'mage'=wizard vs 'මගේ', 'mama'=mum vs 'mama'=uncle).
+MIN_ENGLISH_PASSTHROUGH_LEN: int = 5
 
 # ─── Regex ───────────────────────────────────────────────────────────────────
 PUNCT_PATTERN = re.compile(r"^(\W*)(.*?)(\W*)$")

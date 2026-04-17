@@ -1,0 +1,501 @@
+id,category,input,reference,prediction,cer,wer,bleu,exact_match,time_s
+1,colloquial,api heta gedara yanawa,අපි හෙට ගෙදර යනවා,අපි හෙට ගෙදර යනවා,0.0,0.0,1.0,True,2.423
+2,colloquial,mama dan inne office eke,මම දැන් ඉන්නේ office එකේ,මම දනේ ඉන්නේ office එකේ,0.0833,0.2,0.8,False,3.283
+3,code_mixed,mage assignment eka submit kala,මගේ assignment එක submit කළා,මගේ assignment එක submit කළා,0.0,0.0,1.0,True,5.979
+4,code_mixed,api meeting eka cancel kala,අපි meeting එක cancel කළා,අපි meeting එක cancel කළා,0.0,0.0,1.0,True,3.156
+5,formal,obage upakarayata apage wishesha sthuthiya.,ඔබගේ උපකාරයට අපගේ විශේෂ ස්තූතිය.,ඔබගේ උපකාරයට අපගේ විශේෂ ස්තුතිය.,0.0312,0.2,0.8,False,3.776
+6,long_sentence,mema videowe bit rate eka godak wadi nisa buffer wenawa,මෙම වීඩියෝවේ bit rate එක ගොඩක් වැඩි නිසා buffer වෙනවා,මේම විඩෙඔවේ bit rate එක ගොඩක් වැඩි නිසා buffer වෙනවා,0.0943,0.2,0.8,False,7.104
+7,short_phrase,honda naa,හොඳ නෑ,honda ණා,1.1667,1.0,0.0,False,0.695
+8,edge_case,api 3 dena passe yamu,අපි 3 දෙනා පස්සේ යමු,අපි 3 දෙන පස්සී යමු,0.1,0.4,0.6,False,1.997
+9,colloquial,oya dan koheda yanne,ඔයා දැන් කොහේද යන්නේ,ඔයා දනේ කොහෙද යන්නේ,0.15,0.5,0.5,False,2.328
+10,colloquial,mata ada godak wada thiyenawa,මට අද ගොඩක් වැඩ තියෙනවා,මට අද ගොඩක් වද තියෙනවා,0.087,0.2,0.8,False,3.195
+11,colloquial,heta ude keeyatada enne,හෙට උදේ කීයටද එන්නේ,හෙට උදේ ඛීයටද එන්නේ,0.0526,0.25,0.75,False,2.364
+12,colloquial,amma ada monawada kaama haduwe,අම්මා අද මොනවාද කෑම හැදුවේ,අඹ අදා මොනවදා කාම හඩුවේ,0.3846,1.0,0.0,False,2.999
+13,colloquial,mata hariyata ninda giye na,මට හරියට නින්ද ගියේ නෑ,මට හරියට නිනද ගියෙ ණ,0.1818,0.6,0.4,False,2.91
+14,colloquial,nikan boru kiyanna epa,නිකන් බොරු කියන්න එපා,නිකන බොරු කියන්න එපා,0.0476,0.25,0.75,False,2.334
+15,colloquial,api passe welawaka katha karamu,අපි පස්සේ වෙලාවක කතා කරමු,අපි පස්සී වීලාවක කතා කරමු,0.08,0.4,0.6,False,2.847
+16,colloquial,eka dakkama mata baya hithuna,ඒක දැක්කම මට බය හිතුණා,ඒක දැක්කම මට බය හිතුනා,0.0455,0.2,0.8,False,2.84
+17,colloquial,mama ada game giya,මම අද ගමේ ගියා,මම අද ගමේ ගියා,0.0,0.0,1.0,True,1.66
+18,colloquial,oya thama kewe nadda,ඔයා තාම කෑවේ නැද්ද,ඕය ථම කීවී නදද,0.4444,1.0,0.0,False,1.762
+19,colloquial,api dennath ekka heta yamu,අපි දෙන්නත් එක්ක හෙට යමු,අපි දෙන්නත් එක්ක හේට යාමු,0.0833,0.4,0.6,False,3.338
+20,colloquial,dan nikan inna epa wada karanna,දැන් නිකන් ඉන්න එපා වැඩ කරන්න,දනේ නිකන් ඉන්න එපා වාද කරන්න,0.1379,0.3333,0.6667,False,3.018
+21,colloquial,thama bus eka awe na,තාම බස් එක ආවේ නෑ,ථම බූස් එක අවී ණ,0.4118,0.8,0.2,False,2.103
+22,colloquial,wathura nathiwa inna ba,වතුර නැතිව ඉන්න බෑ,වතුර නැතිව ඉන්න බෑ,0.0,0.0,1.0,True,1.984
+23,colloquial,dan hariyata mahansi wage,දැන් හරියට මහන්සි වගේ,දනා හාරියට මහනසි වගී,0.2381,1.0,0.0,False,2.319
+24,colloquial,ai oya ehema kale,ඇයි ඔයා එහෙම කළේ,යි ඔයා එහෙම කළේ,0.0625,0.25,0.75,False,1.647
+25,colloquial,mata oya gana tharahak na,මට ඔයා ගැන තරහක් නෑ,මට ඔයා ගන තරහක ණ,0.2105,0.6,0.4,False,2.421
+26,colloquial,oya thawa kaama ganna,ඔයා තව කෑම ගන්න,ඕය ථව කම ගණනා,0.4667,1.0,0.0,False,1.719
+27,colloquial,me pota kiyawala balanna,මේ පොත කියවලා බලන්න,මේ පෝට කියවලා බලන්න,0.1053,0.25,0.75,False,2.451
+28,colloquial,thaththa dan gedara awada,තාත්තා දැන් ගෙදර ආවාද,තත්තා දනේ ගෙදර ආවාද,0.1429,0.5,0.5,False,2.141
+29,colloquial,api moko karanne dan,අපි මොකෝ කරන්නේ දැන්,අපි මොකෝ කරන්නේ දනේ,0.1,0.25,0.75,False,2.35
+30,colloquial,poddak inna mama enakan,පොඩ්ඩක් ඉන්න මම එනකන්,පොඩ්ඩක් ඉන්න මම ඇණකන,0.1429,0.25,0.75,False,2.675
+31,colloquial,dan moko hithenne,දැන් මොකෝ හිතෙන්නේ,දනේ මෝකෝ හිතෙන්නී,0.2222,1.0,0.0,False,2.269
+32,colloquial,hama dama ekama kaama,හැමදාම එකම කෑම,හාම දම එකාම කාම,0.3571,1.3333,0.0,False,1.672
+33,colloquial,malli ada school giya,මල්ලි අද school ගියා,මලාලි අද school ගියා,0.05,0.25,0.75,False,2.27
+34,colloquial,oya dan moko karanne,ඔයා දැන් මොකෝ කරන්නේ,ඔයා දනේ මොකෝ කරන්නේ,0.1,0.25,0.75,False,2.363
+35,colloquial,me paara mara rasnei,මේ පාර මාර රස්නෙයි,මේ පාර මාර රස්නෙි,0.0556,0.25,0.75,False,2.388
+36,colloquial,oya dan mawa rawattuwa,ඔයා දැන් මාව රැවැට්ටුවා,ඕයා දනා මවාා රවට්ටුවා,0.3043,1.0,0.0,False,3.068
+37,colloquial,e gana hithanna epa,ඒ ගැන හිතන්න එපා,ඒ ගන හිතන්න එපා,0.0625,0.25,0.75,False,2.667
+38,colloquial,dan nam godak rathri wela,දැන් නම් ගොඩක් රාත්‍රී වෙලා,දන නමේ ගොඩක රත්‍රි වේල,0.2963,1.0,0.0,False,2.913
+39,colloquial,heta ude wenakan inna,හෙට උදේ වෙනකන් ඉන්න,හෙට උදේ වෙනකනේ ඉන්න,0.0526,0.25,0.75,False,2.589
+40,colloquial,oya hariyata katha karanna,ඔයා හරියට කතා කරන්න,ඔයා හරියාට කතා කරන්න,0.0526,0.25,0.75,False,2.538
+41,colloquial,mata nam eka epa wuna,මට නම් ඒක එපා වුණා,මට නම් ඒක එපා වුණා,0.0,0.0,1.0,True,2.197
+42,colloquial,poddi kiyatada enne,පොඩ්ඩී කීයටද එන්නේ,පොඩ්ඩි කියටද එන්නේ,0.1111,0.6667,0.3333,False,2.203
+43,colloquial,oya ada gedarada inne,ඔයා අද ගෙදරද ඉන්නේ,ඔයා අද ගෙදරද ඉන්නේ,0.0,0.0,1.0,True,2.759
+44,colloquial,meka hariyata karanna balanna,මේක හරියට කරන්න බලන්න,මේක හරියටා කරන්න බලන්න,0.0476,0.25,0.75,False,2.445
+45,colloquial,mata nam mara badagini dan,මට නම් මාර බඩගිනියි දැන්,මට නම් මාර බදාගිනි දනේ,0.25,0.4,0.6,False,3.467
+46,colloquial,oya kiyana de mata therenne na,ඔයා කියන දේ මට තේරෙන්නේ නෑ,ඔයා කියන දේ මට තේරෙන්නෙ ණ,0.1154,0.3333,0.6667,False,4.682
+47,colloquial,ada ude hariyata wassa,අද උදේ හරියට වැස්සා,අද උදේ හරියට වසෙස,0.1579,0.25,0.75,False,2.495
+48,colloquial,mama dan kade yanawa,මම දැන් කඩේ යනවා,මම දනේ කඩේ යනවා,0.125,0.25,0.75,False,1.843
+49,colloquial,api eka parak yamu balanna,අපි එක පාරක් යමු බලන්න,අපි එක පාරක යමු බලන්න,0.0455,0.2,0.8,False,3.033
+50,colloquial,kauruwath awe na thama,කවුරුවත් ආවේ නෑ තාම,කුරුවත් අවේ ණ ථම,0.3158,1.0,0.0,False,2.856
+51,colloquial,hondata kaala nidaganna,හොඳට කාලා නිදාගන්න,හොඬට කාල නිදගන්න,0.1667,1.0,0.0,False,2.431
+52,colloquial,dan nam wada wadi,දැන් නම් වැඩ වැඩියි,දනා නමා වදා වදි,0.4737,1.0,0.0,False,1.739
+53,colloquial,oya moko kiyanne e gana,ඔයා මොකෝ කියන්නේ ඒ ගැන,ඔයා මෝකෝ කියන්නේ ඒ ගන,0.0909,0.4,0.6,False,3.337
+54,colloquial,dan eliyata yanna epa,දැන් එළියට යන්න එපා,දන ඇලියට යන්න එපා,0.2105,0.5,0.5,False,2.385
+55,colloquial,mata sathutuwen inna one,මට සතුටුවෙන් ඉන්න ඕනේ,මට සතුටුවෙන් ඉන්න ඕනේ,0.0,0.0,1.0,True,3.403
+56,colloquial,moko oya bayawela wage,මොකෝ ඔයා බයවෙලා වගේ,මෝකෝ ඔයා බයවේල වගේ,0.1579,0.5,0.5,False,2.197
+57,colloquial,api thawa tikakin katha karamu,අපි තව ටිකකින් කතා කරමු,අපි තව ටිකකින් කතා කරමු,0.0,0.0,1.0,True,3.384
+58,colloquial,oya ada kiyatada yanne,ඔයා අද කීයටද යන්නේ,ඔයා අදා කියාටද යන්නේ,0.1667,0.5,0.5,False,2.43
+59,colloquial,mama loku deyak kale na,මම ලොකු දෙයක් කළේ නෑ,මම ලොකු දෙයක් කළේ ණ,0.1,0.2,0.8,False,2.522
+60,colloquial,poddak udaw karanna puluwanda,පොඩ්ඩක් උදව් කරන්න පුළුවන්ද,පොඩ්ඩක උදව් කරන්න පුළුවන්ද,0.037,0.25,0.75,False,3.081
+61,colloquial,heta ude game yanna one,හෙට උදේ ගමේ යන්න ඕනේ,හෙට උදේ ගමේ යන්න ඕනේ,0.0,0.0,1.0,True,2.211
+62,colloquial,me dawas wala hariyata rathne,මේ දවස් වල හරියට රත්නේ,මේ දවසෙ වාල හරියට රතනෙ,0.1818,0.6,0.4,False,3.009
+63,colloquial,mata oya gana mara dukai,මට ඔයා ගැන මාර දුකයි,මට ඔයා ගන මාර දුකයි,0.05,0.2,0.8,False,2.7
+64,colloquial,moko mechchara tharaha gihin,මොකෝ මෙච්චර තරහ ගිහින්,මෝකෝ මේච්චර තරහ ගිහින්,0.0909,0.5,0.5,False,2.523
+65,colloquial,api hita hita inna epa,අපි හිත හිත ඉන්න එපා,අපි හිටා හිටා ඉන්න එපා,0.2,0.4,0.6,False,2.17
+66,colloquial,oya ada kohedo hitiye,ඔයා අද කොහේද හිටියේ,ඔයා අද කොහේදො හිටියී,0.1053,0.5,0.5,False,2.508
+67,colloquial,me de karanna ba kiyanna epa,මේ දේ කරන්න බෑ කියන්න එපා,මේ දේ කරන්න බෑ කියන්න එපා,0.0,0.0,1.0,True,3.528
+68,colloquial,oya dan hariyata wenas wela,ඔයා දැන් හරියට වෙනස් වෙලා,ඕය දනේ හරියටා වැනසී වේල,0.36,1.0,0.0,False,2.971
+69,colloquial,api heta canteen ekedi hamuwemu,අපි හෙට canteen එකේදී හමුවෙමු,අපි හෙට කන්ටීන ඒකේදි හමුවෙමු,0.3103,0.4,0.6,False,3.35
+70,colloquial,kaama thama lipe thiyenne,කෑම තාම ලිපේ තියෙන්නේ,කඅම තමා ලිපේ තියෙන්නේ,0.1429,0.5,0.5,False,2.987
+71,colloquial,oya mawa dakke nadda,ඔයා මාව දැක්කේ නැද්ද,ඔයා මාව දැක්කේ නදද,0.1,0.25,0.75,False,2.328
+72,colloquial,me parashne wisadanna balamu,මේ ප්‍රශ්නේ විසඳන්න බලමු,මේ පරශ්නේ විසදන්න බලමු,0.125,0.5,0.5,False,2.984
+73,colloquial,mama heta kiyatath yannam,මම හෙට කීයටත් යන්නම්,මම හෙට කියාටත යන්නම්,0.15,0.25,0.75,False,2.396
+74,colloquial,mata ada tikak amaru wage,මට අද ටිකක් අමාරු වගේ,මට අද ටිකක් අමාරු වගේ,0.0,0.0,1.0,True,2.454
+75,colloquial,dan kauruwath gedara na,දැන් කවුරුවත් ගෙදර නෑ,දන කූරුවත් ගෙදාර ණ,0.3333,1.0,0.0,False,2.696
+76,colloquial,mama heta ude ennamko,මම හෙට උදේ එන්නම්කෝ,මම හෙට උදේ එන්නම්කෝ,0.0,0.0,1.0,True,3.043
+77,colloquial,oya kiyana eka boru,ඔයා කියන එක බොරු,ඔයා කියන එක බොරු,0.0,0.0,1.0,True,2.052
+78,colloquial,mata nikan ninda yanawa dan,මට නිකන් නින්ද යනවා දැන්,මට නිකාන නිනද යනව දනේ,0.25,0.8,0.2,False,2.484
+79,colloquial,thawa deyak kiyanna one,තව දෙයක් කියන්න ඕනේ,තව දෙයක් කියන්න ඕනේ,0.0,0.0,1.0,True,2.315
+80,colloquial,moko oya thama awe natthe,මොකෝ ඔයා තාම ආවේ නැත්තේ,මෝකෝ ඔයා තාම අවේ නටතෙ,0.2609,0.6,0.4,False,2.5
+81,colloquial,mama ada library gihin awa,මම අද library ගිහින් ආවා,මම අද library ගිහින් ආවා,0.0,0.0,1.0,True,3.16
+82,colloquial,poddak methanata enna,පොඩ්ඩක් මෙතනට එන්න,පොඩ්ඩක් මෙතනට එන්න,0.0,0.0,1.0,True,2.103
+83,colloquial,dan oya moko kiyanne,දැන් ඔයා මොකෝ කියන්නේ,දනේ ඔයා මොකෝ කියන්නේ,0.0952,0.25,0.75,False,2.742
+84,colloquial,mata moko une kiyala therenne na,මට මොකෝ වුණේ කියලා තේරෙන්නේ නෑ,මට මොකඔ උණේ කියලා තේරෙන්නැ ණ,0.2,0.6667,0.3333,False,4.413
+85,colloquial,poddak inna kiyala kiyanna,පොඩ්ඩක් ඉන්න කියලා කියන්න,පොඩ්ඩක් ඉන්න කියලා කියන්න,0.0,0.0,1.0,True,2.705
+86,colloquial,oya mawa amataka kala neda,ඔයා මාව අමතක කළා නේද,ඔයා මාව අමටක කළා නේද,0.05,0.2,0.8,False,2.44
+87,colloquial,kaama kaddi katha karanna epa,කෑම කද්දී කතා කරන්න එපා,කාම කඩේදි කතා කරන්න එපා,0.1739,0.4,0.6,False,2.456
+88,colloquial,mama heta ude call karannam,මම හෙට උදේ call කරන්නම්,මම හෙට උදේ චල්ලා කරන්නම්,0.2174,0.2,0.8,False,3.326
+89,colloquial,moko oya ada lassanata inne,මොකෝ ඔයා අද ලස්සනට ඉන්නේ,මෝකෝ ඔයා අද ලාස්සනට ඉන්නේ,0.0833,0.4,0.6,False,3.316
+90,colloquial,mama dan hariyata bayawela inne,මම දැන් හරියට බයවෙලා ඉන්නේ,මම දනේ හරියටා බයවේල ඉන්නේ,0.1923,0.6,0.4,False,2.892
+91,colloquial,me parashne nam iwarayak na,මේ ප්‍රශ්නේ නම් ඉවරයක් නෑ,මේ පරශ්ණී නමේ ඉවාරයක ණ,0.36,0.8,0.2,False,2.951
+92,colloquial,api moko hithanne heta gana,අපි මොකෝ හිතන්නේ හෙට ගැන,අපි මොකෝ හිතනනේ හේට ගන,0.125,0.6,0.4,False,3.257
+93,colloquial,mama dan nikan innawa,මම දැන් නිකන් ඉන්නවා,මම දනේ නිකන ඉනෙනවා,0.2,0.75,0.25,False,2.322
+94,colloquial,oya moko ada parakku,ඔයා මොකෝ අද පරක්කු,ඔයා මෝකෝ අදා පරක්ඛු,0.1667,0.75,0.25,False,2.389
+95,colloquial,mata ada raama yanawa,මට අද රෑම යනවා,මට අද රඅම යනවා,0.0714,0.25,0.75,False,1.834
+96,colloquial,poddak methana indagena inna,පොඩ්ඩක් මෙතන ඉඳගෙන ඉන්න,පොඩ්ඩක් මෙතන ඉඳගෙන ඉන්න,0.0,0.0,1.0,True,2.741
+97,colloquial,oya heta yanawada kade,ඔයා හෙට යනවාද කඩේ,ඔයා හෙට යනවාද කඩේ,0.0,0.0,1.0,True,2.065
+98,colloquial,mata kisima deyak therenne na,මට කිසිම දෙයක් තේරෙන්නේ නෑ,මට කිසිම දෙයක් තේරෙන්නැ ණ,0.1154,0.4,0.6,False,3.653
+99,colloquial,thawa tika welawakin yamu,තව ටික වෙලාවකින් යමු,තව ටික වෙලාවකින් යමු,0.0,0.0,1.0,True,3.311
+100,colloquial,oya moko ehema balanne,ඔයා මොකෝ එහෙම බලන්නේ,ඔයා මොකෝ එහේම බලන්නේ,0.05,0.25,0.75,False,2.34
+101,colloquial,mata nam epa wela thiyenne,මට නම් එපා වෙලා තියෙන්නේ,මට නම් එපා වේල තියෙන්නේ,0.0833,0.2,0.8,False,3.714
+102,colloquial,oya ada moko karanne,ඔයා අද මොකෝ කරන්නේ,ඔයා අද මොකෝ කරන්නේ,0.0,0.0,1.0,True,2.398
+103,colloquial,dan yamu nikan inna epa,දැන් යමු නිකන් ඉන්න එපා,දන යමු නිකන් ඉන්න එපා,0.087,0.2,0.8,False,2.496
+104,colloquial,thawa tikak welawa ganna,තව ටිකක් වෙලාව ගන්න,තව ටිකක් වෙළව ගන්න,0.1053,0.25,0.75,False,2.06
+105,colloquial,mata badagini na dan,මට බඩගිනි නෑ දැන්,මට බදාගිනි ණ දනේ,0.3529,0.75,0.25,False,2.682
+106,colloquial,moko mechchara wada thiyenne,මොකෝ මෙච්චර වැඩ තියෙන්නේ,මොකෝ මේච්චර වද තියෙන්නේ,0.125,0.5,0.5,False,2.998
+107,colloquial,api heta udema yamu,අපි හෙට උදේම යමු,අපි හෙට උදේම යමු,0.0,0.0,1.0,True,1.665
+108,colloquial,mama ada knna giye na,මම අද කන්න ගියේ නෑ,මම අද කොන්න ගියෙ ණ,0.2222,0.6,0.4,False,2.464
+109,colloquial,dan mata mara amaruwak thiyenne,දැන් මට මාර අමාරුවක් තියෙන්නේ,දනේ මට මාර අමාරුවක් තියෙන්නේ,0.069,0.2,0.8,False,3.766
+110,colloquial,oya kiyana de mata therenawa,ඔයා කියන දේ මට තේරෙනවා,ඔයා කියන දේ මට තේරෙනවා,0.0,0.0,1.0,True,3.275
+111,colloquial,api meka karala iwara karamu,අපි මේක කරලා ඉවර කරමු,අපි මේක කරලා ඉවර කරමු,0.0,0.0,1.0,True,2.446
+112,colloquial,mama ada nidagatta na thama,මම අද නිදාගත්තා නෑ තාම,මම අද නිදගටට න ථම,0.3636,0.6,0.4,False,3.316
+113,colloquial,poddak inna mama katha karannam,පොඩ්ඩක් ඉන්න මම කතා කරන්නම්,පොඩ්ඩක් ඉන්න මම කතා කරන්නම්,0.0,0.0,1.0,True,3.277
+114,colloquial,moko mechchara hithanne oya,මොකෝ මෙච්චර හිතන්නේ ඔයා,මොකෝ මේච්චර හිතනනේ ඔයා,0.087,0.5,0.5,False,2.705
+115,colloquial,api heta raata hamuwemu,අපි හෙට රෑට හමුවෙමු,අපි හෙට රඅට හමුවෙමු,0.0526,0.25,0.75,False,2.803
+116,colloquial,oya mara deyakne karanne,ඔයා මාර දෙයක්නේ කරන්නේ,ඔයා මාර දෙයක්නේ කරන්නේ,0.0,0.0,1.0,True,2.668
+117,colloquial,mata tikak dunnoth hondai,මට ටිකක් දුන්නොත් හොඳයි,මට ටිකක් දුන්නොත් හොඳයි,0.0,0.0,1.0,True,3.008
+118,colloquial,oya ada kade giyada,ඔයා අද කඩේ ගියාද,ඔයා අද කඩේ ගියාද,0.0,0.0,1.0,True,2.019
+119,colloquial,dan mata kisima bayak na,දැන් මට කිසිම බයක් නෑ,දනේ මට කිසිම බයක ණ,0.2381,0.6,0.4,False,2.837
+120,colloquial,oya mawa dakka neda ada,ඔයා මාව දැක්කා නේද අද,ඔයා මාව දකක නෑද ආදා,0.2857,0.6,0.4,False,2.088
+121,colloquial,poddak inna meka kiyanna,පොඩ්ඩක් ඉන්න මේක කියන්න,පොඩ්ඩක් ඉනන මේක කියන්න,0.0435,0.25,0.75,False,2.696
+122,colloquial,mata ada loku prashnayak thiyenawa,මට අද ලොකු ප්‍රශ්නයක් තියෙනවා,මට අද ලොකු ප්‍රශ්නයක තියෙනවා,0.0345,0.2,0.8,False,4.142
+123,colloquial,moko me tharah gihin inne,මොකෝ මේ තරහ ගිහින් ඉන්නේ,මොකෝ මේ තරහේ ගිහින් ඉන්නේ,0.0417,0.2,0.8,False,2.853
+124,colloquial,oya heta kiyatada enne,ඔයා හෙට කීයටද එන්නේ,ඔයා හේට කියටද එන්නේ,0.1053,0.5,0.5,False,2.32
+125,colloquial,mama ada kaama haduwe na,මම අද කෑම හැදුවේ නෑ,මම අද කාම හාදුවේ ණ,0.2105,0.6,0.4,False,2.918
+126,colloquial,dan katha karala wadak na,දැන් කතා කරලා වැඩක් නෑ,දනා කත කරළා වඩක ණ,0.3636,1.0,0.0,False,2.078
+127,colloquial,oya mawa amataka karanne epa,ඔයා මාව අමතක කරන්නේ එපා,ඔයා මාව අමටක කරන්නේ ඒපා,0.087,0.4,0.6,False,2.862
+128,colloquial,dan mara widihata wassa,දැන් මාර විදිහට වැස්සා,දනා මාරා විදිාහට වසෙස,0.3182,1.0,0.0,False,2.734
+129,colloquial,api heta gedara yanawada,අපි හෙට ගෙදර යනවාද,අපි හෙට ගෙදර යනවාද,0.0,0.0,1.0,True,2.083
+130,colloquial,mama ada dan hitiye na,මම අද දන්න හිටියේ නෑ,මම අද දනේ හිටියී ණ,0.25,0.6,0.4,False,2.946
+131,colloquial,poddak inna thawa tikakin ennam,පොඩ්ඩක් ඉන්න තව ටිකකින් එන්නම්,පොඩ්ඩක් ඉන්න තව ටිකකින් එන්නම්,0.0,0.0,1.0,True,3.234
+132,code_mixed,e class eka cancel una,ඒ class එක cancel වුණා,ඒ class එක cancel උනා,0.1364,0.2,0.8,False,3.2
+133,code_mixed,mama application eka download kala,මම application එක download කළා,මම application එක download කළා,0.0,0.0,1.0,True,5.593
+134,code_mixed,lecture eka thiyenne kiyatada,lecture එක තියෙන්නේ කීයටද,lecture ඒකා තියෙන්නේ කියාටද,0.16,0.5,0.5,False,3.02
+135,code_mixed,oyage computer eka update karanna,ඔයාගේ computer එක update කරන්න,ඔයාගේ computer එක update කරන්න,0.0,0.0,1.0,True,4.387
+136,code_mixed,mata me project eka godak wadagath,මට මේ project එක ගොඩක් වැදගත්,මට මේ project එක ගොඩක් වැදගත්,0.0,0.0,1.0,True,4.673
+137,code_mixed,results kawada eyida danne na,results කවදා එයිද දන්නේ නෑ,results කවදා එයිද දන්නේ ණ,0.0769,0.2,0.8,False,4.406
+138,code_mixed,oyage id card eka genna,ඔයාගේ id card එක ගේන්න,ඔයාගේ ඉඩේ චර්ඩ් එක ගැන්න,0.4091,0.6,0.4,False,2.484
+139,code_mixed,mama internship eka start kala,මම internship එක start කළා,මම internship එක start කලා,0.0385,0.2,0.8,False,5.503
+140,code_mixed,canteen eka dan wahala athi,canteen එක දැන් වහලා ඇති,කන්ටීන එක දනේ වහලා ඇති,0.375,0.4,0.6,False,3.315
+141,code_mixed,oya presentation eka ready da,ඔයා presentation එක ready ද,ඔයා presentation එක ready ද,0.0,0.0,1.0,True,6.693
+142,code_mixed,mama ada office giye na,මම අද office ගියේ නෑ,මම අද office ගියෙ ණ,0.15,0.4,0.6,False,3.255
+143,code_mixed,mema data set eka evaluate karanna,මෙම data set එක evaluate කරන්න,මෙම data set එක evaluate කරන්න,0.0,0.0,1.0,True,3.895
+144,code_mixed,oya link eka send karanna,ඔයා link එක send කරන්න,ඔය ලිනක් එක සැඳේ කරන්න,0.4545,0.6,0.4,False,2.524
+145,code_mixed,mata internet slow wela ada,මට internet slow වෙලා අද,මට internet slow වෙල අදා,0.0833,0.4,0.6,False,4.886
+146,code_mixed,exam hall ekata yanna parakku wenawa,exam hall එකට යන්න පරක්කු වෙනවා,exam hall එකට යන්න පරක්කු වෙනවා,0.0,0.0,1.0,True,3.397
+147,code_mixed,oyage feedback eka ewanna balanna,ඔයාගේ feedback එක එවන්න බලන්න,ඔයාගේ feedback එක එවන්න බලන්න,0.0,0.0,1.0,True,3.701
+148,code_mixed,mama mage mobile phone eka nathi kala,මම මගේ mobile phone එක නැති කළා,මම මගේ mobile phone එක නැති කළා,0.0,0.0,1.0,True,3.956
+149,code_mixed,lecture notes kiyawala balanna one,lecture notes කියවලා බලන්න ඕනේ,lecture notes කියවලා බලන්න ඕනැ,0.0333,0.2,0.8,False,3.67
+150,code_mixed,oyage user account eka block wela,ඔයාගේ user account එක block වෙලා,ඔයාගේ user account එක block වේල,0.0625,0.1667,0.8333,False,4.747
+151,code_mixed,mama application eka submit kala ada,මම application එක submit කළා අද,මම application එක submit කළා අදා,0.0323,0.1667,0.8333,False,6.855
+152,code_mixed,oya project report eka finalize kalaada,ඔයා project report එක finalize කළාද,ඔයා project report එක ෆිනලිස් කලාද,0.2571,0.3333,0.6667,False,4.814
+153,code_mixed,oya system eka install karala thiyenne,ඔයා system එක install කරලා තියෙන්නේ,ඔය system එක install කරලා තියෙන්නේ,0.0286,0.1667,0.8333,False,4.803
+154,code_mixed,mata me course eka amaru wage,මට මේ course එක අමාරු වගේ,මට මේ course එක ආමාරු වගේ,0.04,0.1667,0.8333,False,3.371
+155,code_mixed,oyage account balance eka check karanna,ඔයාගේ account balance එක check කරන්න,ඔයාගේ account balance එක check කරන්න,0.0,0.0,1.0,True,4.736
+156,code_mixed,api meka group chat eke katha karamu,අපි මේක group chat එකේ කතා කරමු,අපි මේක group chat එකේ කතා කරමු,0.0,0.0,1.0,True,5.13
+157,code_mixed,oya registration form eka fill karanna,ඔයා registration form එක fill කරන්න,ඕය registration form එක fill කරන්න,0.0571,0.1667,0.8333,False,8.086
+158,code_mixed,mama profile picture eka change kala,මම profile picture එක change කළා,මම profile picture එක change කළා,0.0,0.0,1.0,True,4.227
+159,code_mixed,lecture eka record karanna puluwanda,lecture එක record කරන්න පුළුවන්ද,lecture එක record කරන්න පුළුවන්ද,0.0,0.0,1.0,True,3.745
+160,code_mixed,mama mage password eka amataka kala,මම මගේ password එක අමතක කළා,මම මගේ password එක අමටක කළා,0.037,0.1667,0.8333,False,5.283
+161,code_mixed,oya video eka watch kalaada,ඔයා video එක watch කළාද,ඔයා video එක watch කළාද,0.0,0.0,1.0,True,2.423
+162,code_mixed,api next week eke yamu,අපි next week එකේ යමු,අපි next week ඒකේ යමු,0.0476,0.2,0.8,False,2.958
+163,code_mixed,oyage message eka labuna mata,ඔයාගේ message එක ලැබුණා මට,ඔයාගේ message එක ලැබුණ මට,0.0385,0.2,0.8,False,4.232
+164,code_mixed,mama application form eka sign kala,මම application form එක sign කළා,මම application form එක sign කළා,0.0,0.0,1.0,True,7.604
+165,code_mixed,oya photo eka edit karala ewanna,ඔයා photo එක edit කරලා එවන්න,ඔයා photo එක edit කරලා එවාන්න,0.0357,0.1667,0.8333,False,3.871
+166,code_mixed,mata laptop eka repair karanna one,මට laptop එක repair කරන්න ඕනේ,මට laptop එක repair කරන්න ඕනේ,0.0,0.0,1.0,True,4.201
+167,code_mixed,oyage results online balanna puluwan,ඔයාගේ results online බලන්න පුළුවන්,ඔයාගෙ results online බලන්න පුළුවන්,0.0294,0.2,0.8,False,5.038
+168,code_mixed,api meka online meet wela karamu,අපි මේක online meet වෙලා කරමු,අපි මේක online මීට් වෙල කරමු,0.1724,0.3333,0.6667,False,4.609
+169,code_mixed,oya driver eka update karala thiyenne,ඔයා driver එක update කරලා තියෙන්නේ,ඔයා driver එක update කරලා තියෙන්නේ,0.0,0.0,1.0,True,4.891
+170,code_mixed,mama browser eka refresh kala dan,මම browser එක refresh කළා දැන්,මම browser එක refresh කලා දනේ,0.1,0.3333,0.6667,False,5.951
+171,code_mixed,oyage payment eka successful wela thiyenne,ඔයාගේ payment එක successful වෙලා තියෙන්නේ,ඔයාගෙ payment එක successful වේල තියෙන්නෙ,0.0976,0.5,0.5,False,7.397
+172,code_mixed,mama file eka download karala iwarai,මම file එක download කරලා ඉවරයි,මම file එක download කරලා ඉවරයි,0.0,0.0,1.0,True,4.859
+173,code_mixed,oyage profile eka update karanna balanna,ඔයාගේ profile එක update කරන්න බලන්න,ඔයාගේ profile එක update කරන්න බලන්න,0.0,0.0,1.0,True,4.828
+174,code_mixed,mama application status eka check kala,මම application status එක check කළා,මම application status එක check කළා,0.0,0.0,1.0,True,7.424
+175,code_mixed,oya post eka share karala thiyenne,ඔයා post එක share කරලා තියෙන්නේ,ඔයා post එක share කරලා තියෙන්නේ,0.0,0.0,1.0,True,4.996
+176,code_mixed,mama notification eka dakke na thama,මම notification එක දැක්කේ නෑ තාම,මම notification එක දැක්කේ ණ ථම,0.125,0.3333,0.6667,False,7.204
+177,code_mixed,oya meeting invite eka accept kalaada,ඔයා meeting invite එක accept කළාද,ඔයා meeting invite එක accept කළාද,0.0,0.0,1.0,True,4.838
+178,code_mixed,mama mage location eka share karannam,මම මගේ location එක share කරන්නම්,මම මගේ location එක share කරන්නම්,0.0,0.0,1.0,True,4.856
+179,code_mixed,oyage internet connection eka check karanna,ඔයාගේ internet connection එක check කරන්න,ඔයාගේ internet connection එක check කරන්න,0.0,0.0,1.0,True,7.84
+180,code_mixed,mama server eka restart kala dan,මම server එක restart කළා දැන්,මම server එක restart කලා දනේ,0.1034,0.3333,0.6667,False,5.159
+181,code_mixed,oya update eka install karala thiyenne,ඔයා update එක install කරලා තියෙන්නේ,ඔයා update එක install කරලා තියෙන්නේ,0.0,0.0,1.0,True,5.184
+182,code_mixed,mama message eka reply kala ada,මම message එක reply කළා අද,මම message එක reply කළා අදා,0.0385,0.1667,0.8333,False,4.471
+183,code_mixed,oya file eka upload karala thiyenne,ඔයා file එක upload කරලා තියෙන්නේ,ඔයා file එක upload කරලා තියෙන්නේ,0.0,0.0,1.0,True,4.461
+184,code_mixed,mama website eka search kala godak,මම website එක search කළා ගොඩක්,මම website එක search කළා ගොඩක්,0.0,0.0,1.0,True,3.875
+185,code_mixed,oyage order eka confirm wela thiyenne,ඔයාගේ order එක confirm වෙලා තියෙන්නේ,ඔයාගෙ order එක confirm වේල තියෙන්නෙ,0.1111,0.5,0.5,False,5.302
+186,code_mixed,mama notification eka clear kala dan,මම notification එක clear කළා දැන්,මම notification එක clear කළා දනේ,0.0606,0.1667,0.8333,False,6.961
+187,code_mixed,oya user id eka check karanna,ඔයා user id එක check කරන්න,ඔයා උසෙර් ඉඩ් එක check කරන්න,0.3077,0.3333,0.6667,False,3.261
+188,code_mixed,mama backup eka restore kala ada,මම backup එක restore කළා අද,මම backup එක restore කළා අදා,0.037,0.1667,0.8333,False,4.393
+189,code_mixed,oya process eka start karala thiyenne,ඔයා process එක start කරලා තියෙන්නේ,ඔය process එක start කරලා තියෙන්නේ,0.0294,0.1667,0.8333,False,5.75
+190,code_mixed,mama account settings change kala tika,මම account settings change කළා ටික,මම account settings change කළ ඨික,0.0588,0.3333,0.6667,False,6.41
+191,code_mixed,oya system error eka fix kalaada,ඔයා system error එක fix කළාද,ඔයා system error එක fix කලාද,0.0357,0.1667,0.8333,False,5.465
+192,code_mixed,mama security code eka enter kala,මම security code එක enter කළා,මම security code එක enter කළා,0.0,0.0,1.0,True,5.19
+193,code_mixed,oya mobile app eka update karanna,ඔයා mobile app එක update කරන්න,ඔයා mobile app එක update කරන්න,0.0,0.0,1.0,True,3.655
+194,code_mixed,mama login details share kala ada,මම login details share කළා අද,මම login details share කළා අදා,0.0345,0.1667,0.8333,False,4.53
+195,code_mixed,oya verification email eka check karanna,ඔයා verification email එක check කරන්න,ඔයා verification email එක check කරන්න,0.0,0.0,1.0,True,7.17
+196,code_mixed,mama feedback form eka submit kala,මම feedback form එක submit කළා,මම feedback form එක submit කළා,0.0,0.0,1.0,True,4.815
+197,code_mixed,oya project goal eka achieve kalaada,ඔයා project goal එක achieve කළාද,ඔයා project goal එක achieve කලාද,0.0312,0.1667,0.8333,False,5.234
+198,code_mixed,mama link eka copy karala thibba,මම link එක copy කරලා තිබ්බා,මම ලිනක් එක කොප්ය කරල තිබ්බ,0.4444,0.6667,0.3333,False,3.512
+199,code_mixed,oya task eka complete karala thiyenne,ඔයා task එක complete කරලා තියෙන්නේ,ඔයා task එක complete කරලා තියෙන්නේ,0.0,0.0,1.0,True,6.071
+200,code_mixed,mama data entry kala iwaraik,මම data entry කළා ඉවරයි,මම දාට entry කලා ඉවරඉක්,0.3478,0.6,0.4,False,3.69
+201,code_mixed,oya screen share eka enable karanna,ඔයා screen share එක enable කරන්න,ඕයා screen share එක enable කරන්න,0.0312,0.1667,0.8333,False,5.277
+202,code_mixed,mama call eka disconnect kala dan,මම call එක disconnect කළා දැන්,මම චල්ලා එක disconnect කළා දනේ,0.2333,0.3333,0.6667,False,8.03
+203,code_mixed,oya message eka delete karala thiyenne,ඔයා message එක delete කරලා තියෙන්නේ,ඔයා message එක delete කරලා තියෙන්නේ,0.0,0.0,1.0,True,4.851
+204,code_mixed,mama audio quality eka check kala,මම audio quality එක check කළා,මම audio quality එක check කළා,0.0,0.0,1.0,True,3.974
+205,code_mixed,oya output eka verify karala thiyenne,ඔයා output එක verify කරලා තියෙන්නේ,ඔයා output එක verify කරලා තියෙන්නේ,0.0,0.0,1.0,True,4.968
+206,code_mixed,mama input data eka validate kala,මම input data එක validate කළා,මම input data එක validate කළා,0.0,0.0,1.0,True,4.249
+207,code_mixed,oya code eka review karala thiyenne,ඔයා code එක review කරලා තියෙන්නේ,ඔයා කොඩෙ ඒක review කරල තියෙන්නෙ,0.2188,0.6667,0.3333,False,4.656
+208,code_mixed,mama version control eka check kala,මම version control එක check කළා,මම version control එක check කළා,0.0,0.0,1.0,True,6.159
+209,code_mixed,oya merge request eka approve kalaada,ඔයා merge request එක approve කළාද,ඔයා merge request එක approve කලාද,0.0303,0.1667,0.8333,False,5.292
+210,code_mixed,mama documentation eka update kala ada,මම documentation එක update කළා අද,මම documentation එක update කළා අදා,0.0303,0.1667,0.8333,False,8.265
+211,code_mixed,oya bug fix eka test kalaada,ඔයා bug fix එක test කළාද,ඔයා බූගේ ෆිස් එක ටේස්ට් කලාද,0.625,0.6667,0.3333,False,3.829
+212,code_mixed,mama deployment eka success kala dan,මම deployment එක success කළා දැන්,මම deployment එක success කළා දනේ,0.0606,0.1667,0.8333,False,7.136
+213,code_mixed,oya release note eka kiyawala thiyenne,ඔයා release note එක කියවලා තියෙන්නේ,ඔයා release note එක කියවලා තියෙන්නේ,0.0,0.0,1.0,True,4.499
+214,code_mixed,mama cloud storage eka use kala,මම cloud storage එක use කළා,මම cloud storage එක use කලා,0.037,0.1667,0.8333,False,4.526
+215,code_mixed,oya password reset eka request kalaada,ඔයා password reset එක request කළාද,ඔයා password reset එක request කලාද,0.0294,0.1667,0.8333,False,5.631
+216,code_mixed,mama profile info eka edit kala,මම profile info එක edit කළා,මම profile info එක edit කළා,0.0,0.0,1.0,True,4.689
+217,code_mixed,oya privacy settings update karala thiyenne,ඔයා privacy settings update කරලා තියෙන්නේ,ඔයා privacy settings update කරලා තියෙන්නේ,0.0,0.0,1.0,True,6.654
+218,code_mixed,mama contact list eka sync kala,මම contact list එක sync කළා,මම contact list එක සයෙන්ච් කළා,0.2593,0.1667,0.8333,False,5.194
+219,code_mixed,oya battery level eka check karanna,ඔයා battery level එක check කරන්න,ඕය battery level එක check කරන්න,0.0625,0.1667,0.8333,False,4.225
+220,code_mixed,mama screen brightness eka adu kala,මම screen brightness එක අඩු කළා,මම screen brightness එක අඩු කළා,0.0,0.0,1.0,True,7.176
+221,code_mixed,oya storage space eka clear karanna,ඔයා storage space එක clear කරන්න,ඔය storage space එක clear කරන්න,0.0312,0.1667,0.8333,False,4.765
+222,code_mixed,mama software update eka download kala,මම software update එක download කළා,මම software update එක download කළා,0.0,0.0,1.0,True,5.239
+223,code_mixed,oya network speed eka check kalaada,ඔයා network speed එක check කළාද,ඔයා network speed එක check කලාද,0.0323,0.1667,0.8333,False,5.756
+224,code_mixed,mama wifi connection eka fix kala,මම wifi connection එක fix කළා,මම wifi connection එක ෆික් කළා,0.1379,0.1667,0.8333,False,7.812
+225,code_mixed,oya signal strength eka check karanna,ඔයා signal strength එක check කරන්න,ඕය signal strength එක check කරන්න,0.0588,0.1667,0.8333,False,7.311
+226,code_mixed,mama app permissions change kala ada,මම app permissions change කළා අද,මම අපප permissions change කළ අදා,0.1562,0.5,0.5,False,8.498
+227,code_mixed,oya cache memory eka clear karanna,ඔයා cache memory එක clear කරන්න,ඔයා cache memory එක clear කරන්න,0.0,0.0,1.0,True,3.996
+228,code_mixed,mama database eka optimize kala dan,මම database එක optimize කළා දැන්,මම database එක optimize කළා දනේ,0.0625,0.1667,0.8333,False,5.12
+229,code_mixed,oya query eka execute karala thiyenne,ඔයා query එක execute කරලා තියෙන්නේ,ඔයා query එක execute කරලා තියෙන්නේ,0.0,0.0,1.0,True,4.544
+230,code_mixed,mama search result eka filter kala,මම search result එක filter කළා,මම search result එක filter කළා,0.0,0.0,1.0,True,4.609
+231,code_mixed,oya sorting order eka change karanna,ඔයා sorting order එක change කරන්න,ඔයා sorting order එක change කරන්න,0.0,0.0,1.0,True,5.561
+232,code_mixed,mama list eka refresh kala ada,මම list එක refresh කළා අද,මම ලිසට් එක refresh කළා අදා,0.24,0.3333,0.6667,False,5.371
+233,code_mixed,oya item eka select karala thiyenne,ඔයා item එක select කරලා තියෙන්නේ,ඔය item එක select කරලා තියෙන්නේ,0.0312,0.1667,0.8333,False,4.679
+234,code_mixed,mama chart eka generate kala dan,මම chart එක generate කළා දැන්,මම chart එක generate කලා දනේ,0.1034,0.3333,0.6667,False,4.166
+235,code_mixed,oya report eka export karala thiyenne,ඔයා report එක export කරලා තියෙන්නේ,ඔය report එක export කරලා තියෙන්නේ,0.0294,0.1667,0.8333,False,5.301
+236,code_mixed,mama file format eka change kala,මම file format එක change කළා,මම ෆිලේ format එක change කලා,0.1786,0.3333,0.6667,False,4.595
+237,code_mixed,oya image resolution eka check karanna,ඔයා image resolution එක check කරන්න,ඕය image resolution එක check කරන්න,0.0571,0.1667,0.8333,False,6.95
+238,code_mixed,mama video duration eka adu kala,මම video duration එක අඩු කළා,මම video duration එක අඩු කළා,0.0,0.0,1.0,True,5.191
+239,code_mixed,oya thumbnail eka create karala thiyenne,ඔයා thumbnail එක create කරලා තියෙන්නේ,ඔයා thumbnail එක create කරලා තියෙන්නේ,0.0,0.0,1.0,True,4.655
+240,code_mixed,mama subtitle file eka upload kala,මම subtitle file එක upload කළා,මම subtitle file එක upload කළා,0.0,0.0,1.0,True,5.253
+241,code_mixed,oya audio track eka change karanna,ඔයා audio track එක change කරන්න,ඔයා audio track එක change කරන්න,0.0,0.0,1.0,True,3.687
+242,code_mixed,mama volume level eka wadi kala,මම volume level එක වැඩි කළා,මම volume level එක වැඩි කළා,0.0,0.0,1.0,True,3.741
+243,code_mixed,oya mute button eka press karanna,ඔයා mute button එක press කරන්න,ඔයා මූටේ button එක press කරන්න,0.1333,0.1667,0.8333,False,4.505
+244,code_mixed,mama playback speed eka change kala,මම playback speed එක change කළා,මම playback speed එක change කළා,0.0,0.0,1.0,True,5.742
+245,code_mixed,oya playlist eka create karala thiyenne,ඔයා playlist එක create කරලා තියෙන්නේ,ඔයා playlist එක create කරලා තියෙන්නේ,0.0,0.0,1.0,True,5.325
+246,code_mixed,mama album art eka change kala,මම album art එක change කළා,මම album අරටේ එක change කළා,0.1538,0.1667,0.8333,False,3.875
+247,code_mixed,oya artist name eka check karanna,ඔයා artist name එක check කරන්න,ඔයා artist name එක check කරන්න,0.0,0.0,1.0,True,4.378
+248,code_mixed,mama song title eka edit kala,මම song title එක edit කළා,මම සෝනාගේ title එක edit කළා,0.24,0.1667,0.8333,False,3.591
+249,code_mixed,oya lyrics eka search karala thiyenne,ඔයා lyrics එක search කරලා තියෙන්නේ,ඔයා lyrics එක search කරලා තියෙන්නේ,0.0,0.0,1.0,True,4.846
+250,code_mixed,mama app store eka check kala,මම app store එක check කළා,මම app store එක check කළා,0.0,0.0,1.0,True,3.472
+251,code_mixed,oya download link eka click karanna,ඔයා download link එක click කරන්න,ඕය download link එක click කරන්න,0.0625,0.1667,0.8333,False,4.468
+252,code_mixed,mama installation process eka follow kala,මම installation process එක follow කළා,මම installation process එක follow කළා,0.0,0.0,1.0,True,7.703
+253,code_mixed,oya setup wizard eka complete karanna,ඔයා setup wizard එක complete කරන්න,ඕය setup wizard එක complete කරන්න,0.0588,0.1667,0.8333,False,5.315
+254,code_mixed,mama activation key eka enter kala,මම activation key එක enter කළා,මම activation key එක enter කළා,0.0,0.0,1.0,True,6.447
+255,code_mixed,oya license agreement eka accept karanna,ඔයා license agreement එක accept කරන්න,ඕය license agreement එක accept කරන්න,0.0541,0.1667,0.8333,False,5.924
+256,code_mixed,mama terms and conditions kiyewwa,මම terms and conditions කියෙව්වා,මම terms and conditions කියෙව්වා,0.0,0.0,1.0,True,5.834
+257,code_mixed,oya user manual eka check karanna,ඔයා user manual එක check කරන්න,ඔයා උසෙර් manual එක check කරන්න,0.1667,0.1667,0.8333,False,3.403
+258,code_mixed,mama help menu eka search kala,මම help menu එක search කළා,මම හැලපේ මේනු එක search කළා,0.3462,0.3333,0.6667,False,4.026
+259,code_mixed,oya customer support eka contact karanna,ඔයා customer support එක contact කරන්න,ඕය customer support එක contact කරන්න,0.0541,0.1667,0.8333,False,5.409
+260,code_mixed,mama support ticket eka open kala,මම support ticket එක open කළා,මම support ticket එක ඔපෙන් කලා,0.2069,0.3333,0.6667,False,4.805
+261,code_mixed,oya issue report eka submit karanna,ඔයා issue report එක submit කරන්න,ඕය issue report එක submit කරන්න,0.0625,0.1667,0.8333,False,4.37
+262,code_mixed,mama status update eka check kala,මම status update එක check කළා,මම status update එක check කළා,0.0,0.0,1.0,True,3.902
+263,code_mixed,oya resolution details eka check karanna,ඔයා resolution details එක check කරන්න,ඕය resolution details එක check කරන්න,0.0541,0.1667,0.8333,False,6.35
+264,code_mixed,mama case number eka note kala,මම case number එක note කළා,මම කසේ number එක නොටේ කළා,0.3077,0.3333,0.6667,False,2.91
+265,code_mixed,oya service request eka cancel karanna,ඔයා service request එක cancel කරන්න,ඔයා service request එක cancel කරන්න,0.0,0.0,1.0,True,4.863
+266,code_mixed,mama feedback score eka check kala,මම feedback score එක check කළා,මම feedback score එක check කළා,0.0,0.0,1.0,True,4.331
+267,code_mixed,oya rating eka review karala thiyenne,ඔයා rating එක review කරලා තියෙන්නේ,ඔයා rating එක review කරලා තියෙන්නේ,0.0,0.0,1.0,True,4.368
+268,code_mixed,mama comment section eka check kala,මම comment section එක check කළා,මම comment section එක check කළා,0.0,0.0,1.0,True,4.775
+269,code_mixed,oya forum post eka read karanna,ඔයා forum post එක read කරන්න,ඔය forum post එක read කරන්න,0.0357,0.1667,0.8333,False,3.461
+270,code_mixed,mama community guideline eka follow kala,මම community guideline එක follow කළා,මම community guideline එක follow කලා,0.0278,0.1667,0.8333,False,5.857
+271,code_mixed,oya blog post eka publish kalaada,ඔයා blog post එක publish කළාද,ඔයා බොලෝගේ පොසට් එක publish කලාද,0.4138,0.5,0.5,False,3.994
+272,code_mixed,mama article eka edit karala iwarai,මම article එක edit කරලා ඉවරයි,මම article එක edit කරලා ඉවරයි,0.0,0.0,1.0,True,4.867
+273,code_mixed,oya content eka check karala thiyenne,ඔයා content එක check කරලා තියෙන්නේ,ඔයා content එක check කරලා තියෙන්නේ,0.0,0.0,1.0,True,5.372
+274,code_mixed,mama keyword eka search kala godak,මම keyword එක search කළා ගොඩක්,මම keyword එක search කළා ගොඩක්,0.0,0.0,1.0,True,5.016
+275,code_mixed,oya tag eka add karala thiyenne,ඔයා tag එක add කරලා තියෙන්නේ,ඔය ටගේ එක අදද කරලා තියෙන්නේ,0.25,0.5,0.5,False,4.519
+276,code_mixed,mama category eka change kala dan,මම category එක change කළා දැන්,මම category එක change කළා දනේ,0.0667,0.1667,0.8333,False,4.334
+277,code_mixed,oya author name eka check karanna,ඔයා author name එක check කරන්න,ඕය author name එක check කරන්න,0.0667,0.1667,0.8333,False,2.958
+278,code_mixed,mama publish date eka check kala,මම publish date එක check කළා,මම publish දාටේ ඒක check කලා,0.2143,0.5,0.5,False,3.92
+279,code_mixed,oya link status eka verify karanna,ඔයා link status එක verify කරන්න,ඔයා ලිනක status එක verify කරන්න,0.129,0.1667,0.8333,False,4.452
+280,formal,mema pahasukam siyalu denatama podu we,මෙම පහසුකම් සියලු දෙනාටම පොදු වේ,මෙම පහසුකමේ සියලු දෑනටම පොදු වේ,0.0938,0.3333,0.6667,False,4.026
+281,formal,karunakarala oba ge namaya sadahan karanna,කරුණාකරලා ඔබගේ නාමය සඳහන් කරන්න,කරුෘණකරල ඔබා ගේ නමය සදහන් කරන්න,0.2258,1.0,0.2,False,4.977
+282,formal,oba ge upadeshaya apata godak wadagath,ඔබගේ උපදේශය අපට ගොඩක් වැදගත්,ඔබ ගේ උපදේශය අපට ගොඩක් වැදගත්,0.0357,0.4,0.8,False,4.05
+283,formal,mema nivedanaya avadanayata ganna,මෙම නිවේදනය අවධානයට ගන්න,මෙම නිවේදනය අවදානයට ගන්න,0.0417,0.25,0.75,False,2.835
+284,formal,adyaapana depaarthamenthuwa mema thiranaya gaththa,අධ්‍යාපන දෙපාර්තමේන්තුව මෙම තීරණය ගත්තා,අධ්‍යාපන දෙපාර්තමේන්තුව මේම තිරණයා ගත්ත,0.1026,0.6,0.4,False,6.41
+285,formal,mema wadashatahana sadaha obaata aradhana karamu,මෙම වැඩසටහන සඳහා ඔබට ආරාධනා කරමු,මෙම වාදශටහණ සදහා ඔබඅට ආරධනා කරමු,0.2188,0.6667,0.3333,False,4.226
+286,formal,oba ge upakaaraya sadaha sthuthiwantha wemu,ඔබගේ උපකාරය සඳහා ස්තූතිවන්ත වෙමු,ඔබ ගේ උපකාරය සදහා ස්තුතිවන්ත වේමු,0.125,1.0,0.2,False,5.716
+287,formal,rajaye nivedanaya anuwa kriya karanna,රජයේ නිවේදනය අනුව ක්‍රියා කරන්න,රාජයේ නිවෙදනය අනුව කාරිය කරනන,0.1935,0.8,0.2,False,3.42
+288,formal,oba ge arayaachanaya salaka balanu labe,ඔබගේ අයදුම්පත සලකා බලනු ලැබේ,ඔබ ගේ ආර්යාචනය සලකා බලනු ලබෙ,0.3929,0.8,0.4,False,4.53
+289,formal,mema karuna piliyela karana lada deyak,මෙම කරුණ පිළියෙළ කරන ලද දෙයක්,මෙම කාරුණ පිළියැල කරන ලද දෑයක්,0.1379,0.5,0.5,False,3.976
+290,formal,mema prashne gana pashchath vimarshanaya karanna,මෙම ප්‍රශ්නය ගැන පශ්චාත් විමර්ශනය කරන්න,මෙම ප්‍රශ්නේ ඥ පශචත් විමර්ෂණය කරන්න,0.2051,0.6667,0.3333,False,5.056
+291,formal,oba ge sewaya apata agaya kala hakiya,ඔබගේ සේවය අපට අගය කළ හැකිය,ඔබ ගේ සේවය අපට අගය කළ හැකිය,0.0385,0.3333,0.8333,False,3.617
+292,formal,vishwa vidyaalaye palaveni wasare shishyayan,විශ්ව විද්‍යාලයේ පළවෙනි වසරේ ශිෂ්‍යයන්,විශ්ව විද්‍යාලයේ පලවැනි වසරේ ශිෂ්‍යයන්,0.0526,0.2,0.8,False,5.351
+293,formal,parishlana nivedanaya balanna karunakarala,පරිශීලන නිවේදනය බලන්න කරුණාකරලා,පරිශීලන නිවෙදනය බලන්නා කරුෘණකරල,0.1613,0.75,0.25,False,3.733
+294,formal,mema kriyavaliya hariyata kriyathmaka karanna,මෙම ක්‍රියාවලිය හරියට ක්‍රියාත්මක කරන්න,මෙම ක්‍රියාවලිය හරියට ක්‍රියත්මක කරන්න,0.0256,0.2,0.8,False,5.18
+295,formal,adala lekana pirihenu labe,අදාළ ලේඛන පිරිනමනු ලැබේ,අදල ලේකන පිරිහෙනු ලබෙ,0.3043,1.0,0.0,False,3.367
+296,formal,oba ge sahayogaya apata athyawashya we,ඔබගේ සහයෝගය අපට අත්‍යවශ්‍ය වේ,ඔබ ගේ සහයෝගය අපට අත්‍යාවශය වේ,0.1379,0.6,0.6,False,5.304
+297,formal,mema sthanaye rakshawa thahawuru karanna,මෙම ස්ථානයේ රක්ෂාව තහවුරු කරන්න,මෙම සථානයෙ රාක්‍ෂව තහවුරු කරන්න,0.1613,0.4,0.6,False,3.449
+298,formal,paurshika thorathuru rakshitha we,පෞද්ගලික තොරතුරු රක්ෂිත වේ,පෞරෂික තොරතුරු රක‍ෂිත වේ,0.1923,0.5,0.5,False,2.873
+299,formal,mema kramaya anugamanaya karanna balanna,මෙම ක්‍රමය අනුගමනය කරන්න බලන්න,මෙම ක්රමය අනුගමනය කරන්න බලන්න,0.0333,0.2,0.8,False,3.936
+300,formal,oba ge adahas idiripath karanna,ඔබගේ අදහස් ඉදිරිපත් කරන්න,ඔබ ගේ අදහස ඉදිරිපත් කරන්න,0.08,0.75,0.5,False,3.91
+301,formal,mema pahasukama pavichchi karanna puluwan,මෙම පහසුකම පාවිච්චි කරන්න පුළුවන්,මේම පහසුකාම පාවිච්චි කරන්න පුළුවන්,0.0606,0.4,0.6,False,3.934
+302,formal,shishya kalyana sangamaya mema wada karai,ශිෂ්‍ය සුබසාධන සංගමය මෙම වැඩ කරයි,ශිෂය කළ්‍යාන සංගමාය මේම වාද කරයි,0.3636,0.8333,0.1667,False,4.034
+303,formal,oba ge upatha saha thorathuru sadahan karanna,ඔබගේ උපත සහ තොරතුරු සඳහන් කරන්න,ඔබ ගේ උපාත සහ තොරතුරු සදහන් කරන්න,0.0968,0.6667,0.5,False,4.721
+304,formal,rajaye upadeshaya anuwa kriya karanna one,රජයේ උපදේශය අනුව ක්‍රියා කරන්න ඕනේ,රාජයේ උපදේශය අනුවා කාරිය කරන්න ඕනැ,0.1765,0.6667,0.3333,False,4.314
+305,formal,adala niladhariyan wetha thorathuru ewanna,අදාළ නිලධාරීන් වෙත තොරතුරු එවන්න,අදාළ නිලධාරියන් වෙත තොරතුරු එවාන්න,0.0938,0.4,0.6,False,5.089
+306,formal,mema kramaya sadaha anumathiya labuna,මෙම ක්‍රමය සඳහා අනුමතිය ලැබුණා,මෙම කාරමය සදහා අනුමාතිය ලබුන,0.2333,0.8,0.2,False,3.868
+307,formal,oba ge gatalu apata danyapat karanna,ඔබගේ ගැටලු අපට දන්වා එවන්න,ඔබ ගේ ගාටලු ආපට දාන්‍යපට කරන්න,0.3846,1.2,0.0,False,4.634
+308,formal,mema parikshana prathipala keti kalayakin labe,මෙම පරීක්ෂණ ප්‍රතිඵල කෙටි කලයකින් ලැබේ,මෙම පරික‍ෂණ ප්‍රතිඵල කෙටි කලයකින් ලබේ,0.0789,0.3333,0.6667,False,4.726
+309,formal,visheshitha karuna sadaha avadanaya yomu karanna,විශේෂිත කරුණු සඳහා අවධානය යොමු කරන්න,විශේෂිතා කාරුණ සදහා අවදානය යොමු කරන්න,0.1389,0.6667,0.3333,False,4.626
+310,formal,oba ge sahayogaya apata godak wadagath we,ඔබගේ සහයෝගය අපට ගොඩක් වැදගත් වේ,ඔබ ගේ සහයෝගය අපට ගොඩක් වැදගත් වේ,0.0323,0.3333,0.8333,False,4.738
+311,formal,mema karyaya sapura iwara kala yuthuya,මෙම කාර්යය සපුරා ඉවර කළ යුතුය,මෙම කාර්යය සපුරා ඉවරා කළ යුතුය,0.0345,0.1667,0.8333,False,3.553
+312,formal,oba ge lekana keti kalayakin labe,ඔබගේ ලේඛන කෙටි කලයකින් ලැබේ,ඔබා ගේ ලේකන කෙටි කාලයකින් ලබෙ,0.2222,1.0,0.2,False,4.614
+313,formal,mema sewaya sadaha ayabeerak aya nokere,මෙම සේවය සඳහා අය කිරීමක් අය නොකෙරේ,මෙම සේවාය සදහා අයබීරක අය නොකෙරී,0.2647,0.7143,0.2857,False,4.14
+314,formal,oba ge upadeshaya anuwa api kriya karamu,ඔබගේ උපදේශය අනුව අපි ක්‍රියා කරමු,ඔබ ගේ උපදේශය අනුව අපි කාරිය කරමු,0.1212,0.5,0.6667,False,4.85
+315,formal,mema thorathuru rahasya lesa thaba ganna,මෙම තොරතුරු රහස්‍ය ලෙස තබා ගන්න,මෙම තොරතුරු රහස්ය ලෙස තබා ගන්න,0.0323,0.1667,0.8333,False,4.072
+316,formal,oba ge parashna apata danyapat karanna balanna,ඔබගේ ප්‍රශ්න අපට දන්වා එවන්න බලන්න,ඔබ ගේ පරශන ආපට දාන්‍යපට කරන්න බලන්න,0.3529,1.0,0.1667,False,5.301
+317,formal,mema kramavedaya hariyata kriyathmaka karanna,මෙම ක්‍රමවේදය හරියට ක්‍රියාත්මක කරන්න,මේම ක්රමවේදය හරියට ක්‍රියත්මක කරන්න,0.0811,0.6,0.4,False,4.825
+318,formal,oba ge sadaha vishesha sthuthiya pudakaramu,ඔබගේ සඳහා විශේෂ ස්තූතිය පුදකරමු,ඔබ ගේ සදහා විශේෂ ස්තූතිය පුදකරාමු,0.0968,0.8,0.4,False,4.577
+319,formal,mema nivedanaya balapathmaka wanne heta sita,මෙම නිවේදනය බලපෑමක වන්නේ හෙට සිට,මෙම නිවේදනය බලාපාත්මක වන්නේ හෙට සිට,0.125,0.1667,0.8333,False,5.093
+320,formal,oba ge arayaachanaya thira karala iwarai,ඔබගේ අයදුම්පත තීරණය කරලා ඉවරයි,ඔබ ගේ ආර්යාචනය ථිර කරලා ඉවරයි,0.4333,0.8,0.4,False,4.658
+321,formal,mema karyalaya pradhaniya visin anumatha kala,මෙම කාර්යාල ප්‍රධානියා විසින් අනුමත කළා,මෙම කර්යාලය ප්‍රධනිය විසින් අනුමාත කළ,0.1538,0.6667,0.3333,False,5.166
+322,formal,oba ge thorathuru rahasyathawa thahawuru karanu labe,ඔබගේ තොරතුරු රහස්‍යභාවය තහවුරු කරනු ලැබේ,ඔබ ගේ තොරතුරු රහස්‍යතව තහවුරු කරනු ලබෙ,0.15,0.6667,0.5,False,5.881
+323,formal,mema wadashatahana udashanna kaledi thiyeyi,මෙම වැඩසටහන උදෑසන කාලයේදී තියෙයි,මේම වාදශටහණ උදාශනන කලෙදි තියේයි,0.4062,1.0,0.0,False,3.586
+324,formal,oba ge sabaawaya apata loku shakthiyak,ඔබගේ සහභාගීත්වය අපට ලොකු ශක්තියක්,ඔබ ගේ සබයා අපට ලොකු ශක්තියක්,0.2727,0.6,0.6,False,4.688
+325,formal,mema lekanaya keti kalayakin labe,මෙම ලේඛනය කෙටි කලයකින් ලැබේ,මෙම ලේකනය කෙටි කාලයකින් ලබෙ,0.1481,0.6,0.4,False,4.001
+326,formal,oba ge adahas apata sadarayen piliyanamu,ඔබගේ අදහස් අපට සාදරයෙන් පිළිගනිමු,ඔබ ගේ අදහස අපට සදරායෙන් පිළියණමු,0.2121,1.0,0.2,False,5.25
+327,formal,mema kriyawaliya sadaha oba ge sahayogaya one,මෙම ක්‍රියාවලිය සඳහා ඔබගේ සහයෝගය ඕනේ,මෙම ක්‍රියාවලිය සදහා ඔබ ගේ සහයෝගය ඕනේ,0.0556,0.5,0.6667,False,7.434
+328,formal,oba ge karyaya sapura iwara kala yuthuya,ඔබගේ කාර්යය සපුරා ඉවර කළ යුතුය,ඔබ ගේ කාර්යය සපුරා ඉවරා කළ යුතුය,0.0667,0.5,0.6667,False,4.23
+329,formal,mema thorathuru sadahan karanna karunakarala,මෙම තොරතුරු සඳහන් කරන්න කරුණාකරලා,මේම තොරතුරු සදහන් කරන්න කරුෘණකරලා,0.1212,0.6,0.4,False,4.329
+330,formal,oba ge sahayogaya apata nithara labuna,ඔබගේ සහයෝගය අපට නිතර ලැබුණා,ඔබ ගේ සහයෝගය අපට නිතර ලැබුණ,0.0741,0.6,0.6,False,4.179
+331,formal,mema prashne gana vishesha vimarshanayak karamu,මෙම ප්‍රශ්නය ගැන විශේෂ විමර්ශනයක් කරමු,මෙම ප්‍රශ්නේ ගන විශේෂ විමර්ශනයක් කරමු,0.0526,0.3333,0.6667,False,5.624
+332,formal,oba ge sewaya apata sadahayen agaya karamu,ඔබගේ සේවය අපට සාදරයෙන් අගය කරමු,ඔබ ගේ සේවය අපට සදහයෙන් අගය කරමු,0.0968,0.5,0.6667,False,5.256
+333,formal,mema kramaya sadaha vishesha anumathiyak one,මෙම ක්‍රමය සඳහා විශේෂ අනුමතියක් ඕනේ,මෙම කාරමය සදහා විශේෂ අනූමතියක් ඕනෑ,0.1429,0.6667,0.3333,False,5.106
+334,formal,oba ge upakaaraya apata nithara labuna,ඔබගේ උපකාරය අපට නිතර ලැබුණා,ඔබ ගේ උපකාරය අපට නිතර ලැබුණ,0.0741,0.6,0.6,False,4.027
+335,formal,mema karyaya sapura iwara kala hakiya,මෙම කාර්යය සපුරා ඉවර කළ හැකිය,මෙම කාර්යය සපුරා ඉවර කළ හැකිය,0.0,0.0,1.0,True,3.613
+336,formal,oba ge thorathuru sadahan karala ewanna,ඔබගේ තොරතුරු සඳහන් කරලා එවන්න,ඔබ ගේ තොරතුරු සදහන් කරලා එවාන්න,0.1034,0.8,0.4,False,4.014
+337,formal,mema nivedanaya balathmaka wanne ada sita,මෙම නිවේදනය බලපෑමක වන්නේ අද සිට,මෙම නිවේදනය බලාත්මක වන්නේ අද සිට,0.0968,0.1667,0.8333,False,4.025
+338,formal,oba ge upadeshaya apata godak wadagath we,ඔබගේ උපදේශය අපට ගොඩක් වැදගත් වේ,ඔබ ගේ උපදේශය අපට ගොඩක් වැදගත් වේ,0.0323,0.3333,0.8333,False,4.793
+339,formal,mema kramavedaya anugamanaya karanna balanna,මෙම ක්‍රමවේදය අනුගමනය කරන්න බලන්න,මෙම ක්‍රමවේදය අනුගමනය කරන්න බලන්නා,0.0303,0.2,0.8,False,4.274
+340,formal,oba ge sahayogaya apata athyawashya we dan,ඔබගේ සහයෝගය අපට අත්‍යවශ්‍ය වේ දැන්,ඔබ ගේ සහයෝගය අපට අත්‍යාවශය වේ දනේ,0.1765,0.6667,0.5,False,5.899
+341,formal,mema kriyawaliya sadaha vishesha dushyakawaya one,මෙම ක්‍රියාවලිය සඳහා විශේෂ දෘශ්‍යතාවය ඕනේ,මෙම ක්‍රියාවලිය සදහා විශේෂ දුෂ්‍යක්වය ඕනී,0.1463,0.5,0.5,False,6.03
+342,formal,oba ge adahas apata sadarayen piliyanamu dan,ඔබගේ අදහස් අපට සාදරයෙන් පිළිගනිමු දැන්,ඔබ ගේ අදහසේ ආපට සදරායෙන් පිළියණමු දනේ,0.2632,1.1667,0.0,False,5.947
+343,formal,mema thorathuru rahasya lesa thaba ganna balanna,මෙම තොරතුරු රහස්‍ය ලෙස තබා ගන්න බලන්න,මෙම තොරතුරු රහස්ය ලෙස තබා ගන්න බලන්න,0.027,0.1429,0.8571,False,4.653
+344,formal,oba ge sewaya apata nithara agaya karamu,ඔබගේ සේවය අපට නිතර අගය කරමු,ඔබ ගේ සේවය අපටා නිතරා අගය කරමු,0.1111,0.6667,0.5,False,3.568
+345,formal,mema karyaya sapura iwara kala hakiya dan,මෙම කාර්යය සපුරා ඉවර කළ හැකිය දැන්,මෙම කාර්යය සපුරා ඉවර කළ හකියා දනේ,0.1176,0.2857,0.7143,False,4.133
+346,formal,oba ge thorathuru sadahan karala ewanna balanna,ඔබගේ තොරතුරු සඳහන් කරලා එවන්න බලන්න,ඔබ ගේ තොරතුරු සදහනේ කරළා එවාන්න බලන්න,0.1429,0.8333,0.3333,False,4.694
+347,formal,mema nivedanaya balathmaka wanne heta sita dan,මෙම නිවේදනය බලපෑමක වන්නේ හෙට සිට දැන්,මෙම නිවේදනය බලාත්මක වන්නේ හෙට සිට දනේ,0.1351,0.2857,0.7143,False,4.646
+348,formal,oba ge upadeshaya apata godak wadagath we ada,ඔබගේ උපදේශය අපට ගොඩක් වැදගත් වේ අද,ඔබ ගේ උපදේශය අපට ගොඩක් වැදගත් වේ අදා,0.0588,0.4286,0.7143,False,5.414
+349,formal,mema kramavedaya anugamanaya karanna balanna ada,මෙම ක්‍රමවේදය අනුගමනය කරන්න බලන්න අද,මෙම ක්‍රමවේදය අනුගමනය කරන්න බලන්නා අදා,0.0556,0.3333,0.6667,False,5.062
+350,formal,oba ge sahayogaya apata athyawashya we heta sita,ඔබගේ සහයෝගය අපට අත්‍යවශ්‍ය වේ හෙට සිට,ඔබ ගේ සහයෝගය අපට අත්‍යාවශය වේ හෙට සිට,0.1081,0.4286,0.7143,False,6.701
+351,formal,mema kriyawaliya sadaha vishesha dushyakawaya one ada,මෙම ක්‍රියාවලිය සඳහා විශේෂ දෘශ්‍යතාවය ඕනේ අද,මෙම ක්‍රියාවලිය සදහා විශේෂ දුෂ්‍යක්වය ඕනී අදා,0.1591,0.5714,0.4286,False,7.027
+352,formal,oba ge adahas apata sadarayen piliyanamu heta sita,ඔබගේ අදහස් අපට සාදරයෙන් පිළිගනිමු හෙට සිට,ඔබ ගේ අදහස් ආපට සදරායෙන් පිළියණමු හේට සිඨා,0.2439,1.0,0.1429,False,6.667
+353,formal,mema thorathuru rahasya lesa thaba ganna balanna ada,මෙම තොරතුරු රහස්‍ය ලෙස තබා ගන්න බලන්න අද,මෙම තොරතුරු රහස්ය ලෙස තබා ගන්න බලන්නා අදා,0.075,0.375,0.625,False,5.351
+354,formal,oba ge sewaya apata nithara agaya karamu dan,ඔබගේ සේවය අපට නිතර අගය කරමු දැන්,ඔබ ගේ සේවය අපට නිතරා අගය කරමූ දනේ,0.1562,0.7143,0.4286,False,4.059
+355,formal,mema karyaya sapura iwara kala hakiya heta sita,මෙම කාර්යය සපුරා ඉවර කළ හැකිය හෙට සිට,මේම කර්යය සපුරා ඉවාර කළ හකියා හීට සිත,0.1892,0.75,0.25,False,4.734
+356,formal,oba ge thorathuru sadahan karala ewanna balanna dan,ඔබගේ තොරතුරු සඳහන් කරලා එවන්න බලන්න දැන්,ඔබ ගේ තොරතුරූ සදහනේ කරළා එවාන්න බලන්නා දනේ,0.225,1.1429,0.0,False,5.307
+357,formal,mema nivedanaya balathmaka wanne ada sita danma,මෙම නිවේදනය බලපෑමක වන්නේ අද සිට දැන්ම,මෙම නිවෙදනය බලත්මක වන්නේ ආදා සිඨා දනම,0.2432,0.7143,0.2857,False,4.792
+358,formal,oba ge upadeshaya apata godak wadagath we heta,ඔබගේ උපදේශය අපට ගොඩක් වැදගත් වේ හෙට,ඔබ ගේ උපදේශය අපට ගොඩක් වැදගත් වේ හේට,0.0571,0.4286,0.7143,False,5.319
+359,formal,mema kramavedaya anugamanaya karanna balanna heta sita,මෙම ක්‍රමවේදය අනුගමනය කරන්න බලන්න හෙට සිට,මෙම ක්‍රමවේදය අනුගමනය කරන්න බලන්නා හෙට සිට,0.0244,0.1429,0.8571,False,5.845
+360,formal,oba ge sahayogaya apata athyawashya we ada sitama,ඔබගේ සහයෝගය අපට අත්‍යවශ්‍ය වේ අද සිටම,ඔබ ගේ සහයෝගය අපට අත්‍යාවශය වේ අද සිටම,0.1081,0.4286,0.7143,False,6.88
+361,formal,mema kriyawaliya sadaha vishesha dushyakawaya one heta,මෙම ක්‍රියාවලිය සඳහා විශේෂ දෘශ්‍යතාවය ඕනේ හෙට,මෙම ක්‍රියාවලිය සදහා විශේෂ දුෂ්‍යක්වය ඕනී හේට,0.1556,0.5714,0.4286,False,7.064
+362,formal,oba ge adahas apata sadarayen piliyanamu ada sitama,ඔබගේ අදහස් අපට සාදරයෙන් පිළිගනිමු අද සිටම,ඔබ ගේ අදහස අපට සදරායෙන් පිළියණමු අද සිටම,0.1707,0.7143,0.4286,False,6.739
+363,formal,mema thorathuru rahasya lesa thaba ganna balanna heta,මෙම තොරතුරු රහස්‍ය ලෙස තබා ගන්න බලන්න හෙට,මෙම තොරතුරු රහස්ය ලෙස තබා ගන්න බලන්නා හේට,0.0732,0.375,0.625,False,5.391
+364,formal,oba ge sewaya apata nithara agaya karamu ada,ඔබගේ සේවය අපට නිතර අගය කරමු අද,ඔබ ගේ සේවය අපට නිතරා අගය කරමූ අදා,0.1333,0.7143,0.4286,False,4.132
+365,formal,mema karyaya sapura iwara kala hakiya ada sitama,මෙම කාර්යය සපුරා ඉවර කළ හැකිය අද සිටම,මෙම කාර්යය සපූර ඉවාර කළ හකියා ආදා සිටම,0.1892,0.5,0.5,False,4.692
+366,formal,oba ge thorathuru sadahan karala ewanna balanna heta,ඔබගේ තොරතුරු සඳහන් කරලා එවන්න බලන්න හෙට,ඔබ ගේ තොරතුරූ සදහනේ කරළා එවාන්න බලන්නා හේට,0.2051,1.1429,0.0,False,5.361
+367,formal,mema nivedanaya balathmaka wanne heta sita danma,මෙම නිවේදනය බලපෑමක වන්නේ හෙට සිට දැන්ම,මෙම නිවෙදනය බලත්මක වන්නේ හීට සිඨා දනම,0.2105,0.7143,0.2857,False,4.677
+368,formal,oba ge upadeshaya apata godak wadagath we ada sitama,ඔබගේ උපදේශය අපට ගොඩක් වැදගත් වේ අද සිටම,ඔබ ගේ උපදේශය අපට ගොඩක් වැදගත් වේ අද සිටම,0.0256,0.25,0.875,False,6.201
+369,formal,mema kramavedaya anugamanaya karanna balanna ada sitama,මෙම ක්‍රමවේදය අනුගමනය කරන්න බලන්න අද සිටම,මෙම ක්‍රමවේදය අනුගමනය කරනන බළන්නා අදා සිටම,0.0976,0.4286,0.5714,False,5.857
+370,formal,oba ge sahayogaya apata athyawashya we heta sitama,ඔබගේ සහයෝගය අපට අත්‍යවශ්‍ය වේ හෙට සිටම,ඔබ ගේ සහයෝගය අපට අත්‍යාවශය වේ හෙට සිටම,0.1053,0.4286,0.7143,False,6.692
+371,formal,mema kriyawaliya sadaha vishesha dushyakawaya one ada sitama,මෙම ක්‍රියාවලිය සඳහා විශේෂ දෘශ්‍යතාවය ඕනේ අද සිටම,මෙම ක්‍රියාවලිය සදහා විශේෂ දුෂ්‍යක්වය ඕනී ආදා සිටාම,0.1837,0.625,0.375,False,8.081
+372,formal,oba ge adahas apata sadarayen piliyanamu heta sitama,ඔබගේ අදහස් අපට සාදරයෙන් පිළිගනිමු හෙට සිටම,ඔබ ගේ අදහසේ ආපට සදරායෙන් පිළියණමු හීට සිටාම,0.2381,1.1429,0.0,False,6.729
+373,formal,mema thorathuru rahasya lesa thaba ganna balanna ada sitama,මෙම තොරතුරු රහස්‍ය ලෙස තබා ගන්න බලන්න අද සිටම,මෙම තොරතුරු රහස්ය ලෙස තබා ගන්න බලන්නා අද සිටම,0.0444,0.2222,0.7778,False,5.998
+374,formal,oba ge sewaya apata nithara agaya karamu heta sitama,ඔබගේ සේවය අපට නිතර අගය කරමු හෙට සිටම,ඔබ ගේ සේවය අපට ණිතර ආගයා කරමු හෙට සිටම,0.1111,0.5,0.625,False,4.614
+375,formal,mema karyaya sapura iwara kala hakiya heta sitama,මෙම කාර්යය සපුරා ඉවර කළ හැකිය හෙට සිටම,මෙම කාර්යය සපුරා ඉවාර කළ හකියා හේට සිටාම,0.1316,0.5,0.5,False,4.65
+376,formal,oba ge thorathuru sadahan karala ewanna balanna ada sitama,ඔබගේ තොරතුරු සඳහන් කරලා එවන්න බලන්න අද සිටම,ඔබ ගේ තොරතුරු සදහනේ කරළා එවාන්න බලන්නා අද සිටාම,0.1628,0.875,0.25,False,6.081
+377,formal,mema nivedanaya balathmaka wanne ada sitama thawa duratath,මෙම නිවේදනය බලපෑමක වන්නේ අද සිටම තවදුරටත්,මෙම නිවේදනය බලාත්මක වන්නේ අද සිටම තව දුරටත්,0.0976,0.4286,0.7143,False,5.395
+378,formal,oba ge upadeshaya apata godak wadagath we thawa duratath,ඔබගේ උපදේශය අපට ගොඩක් වැදගත් වේ තවදුරටත්,ඔබ ගේ උපදේශය අපට ගොඩක් වැදගත් වේ තව දුරටත්,0.05,0.5714,0.7143,False,5.896
+379,long_sentence,ada ude gedara indan campus ekata yaddi mara traffic ekak thibba,අද උදේ ගෙදර ඉඳන් campus එකට යද්දී මාර traffic එකක් තිබ්බා,අද උදේ ගෙදර ඉඳන් campus එකට යද්දි මාර traffic එකක් තිබ්බ,0.0351,0.1818,0.8182,False,9.972
+380,long_sentence,mama hithanne na ada campus eke lecture eka thiyeyi kiyala,මම හිතන්නේ නෑ අද campus එකේ lecture එක තියෙයි කියලා,මම හිතන්නැ ණ අද campus එකේ lecture එක තියේයි කියලා,0.0784,0.3,0.7,False,7.455
+381,long_sentence,oya heta ude kiyatada train yanna balan inne kiyanna balanna,ඔයා හෙට උදේ කීයටද train යන්න බලන් ඉන්නේ කියන්න බලන්න,ඔයා හෙට උදේ කියාටද train යනන බලන් ඉන්නෑ කියන්න බලන්න,0.0769,0.3,0.7,False,6.639
+382,long_sentence,mata ada hawasa library ekata gihin poth tikak ganna one wenawa,මට අද හවස library එකට ගිහින් පොත් ටිකක් ගන්න ඕනේ වෙනවා,මට අද හවස library එකට ගිහින් පොත් ටිකක් ගන්න ඕනේ වෙනවා,0.0,0.0,1.0,True,7.508
+383,long_sentence,api heta canteen ekedi hamuwela presentation eka gana katha karamu neda,අපි හෙට canteen එකේදී හමුවෙලා presentation එක ගැන කතා කරමු නේද,අපි හෙට කන්ටීන එකේදි හමුවෙළ presentation එක ගන කතා කරමු ඳ,0.2258,0.4545,0.5455,False,15.455
+384,long_sentence,oya ada ude kaama haduwe monawada kiyala mata thawa tika welawakin ewanna,ඔයා අද උදේ කෑම හැදුවේ මොනවාද කියලා මට තව ටික වෙලාවකින් එවන්න,ඔයා අද උදේ කාම හාදුවේ මොනවාද කියලා මට තව ටික වෙලාවකින් එවාන්න,0.05,0.25,0.75,False,9.929
+385,long_sentence,mata ada ude indan mara widihata oluwe kakumak thiyenawa kiyala therenawa,මට අද උදේ ඉඳන් මාර විදිහට ඔළුවේ කැක්කුමක් තියෙනවා කියලා තේරෙනවා,මට අද උදේ ඉඳන් මාර විදිහට ඔලුවේ කකුමක් තියෙනවා කියලා තේරෙණවා,0.0794,0.2727,0.7273,False,7.326
+386,long_sentence,oya heta kade yaddi mata thawa tika welawakin call ekak ganna puluwanda,ඔයා හෙට කඩේ යද්දී මට තව ටික වෙලාවකින් call එකක් ගන්න පුළුවන්ද,ඔයා හෙට කඩේ යද්දි මට තව ටික වෙලාවකින් චල්ලා එකක් ගන්න පුළුවන්ද,0.0984,0.1667,0.8333,False,9.843
+387,long_sentence,api heta gihilla ammata ona karana badu tika aran emu neda,අපි හෙට ගිහිල්ලා අම්මට ඕන කරන බඩු ටික අරන් එමු නේද,අපි හේට ගිහිල්ල අම්මට ඕන කරන බඩු ටික අරන් ඒමු ඳ,0.12,0.3636,0.6364,False,7.446
+388,long_sentence,mama hithanne ada wasinna puluwan kiyala nikan dakkama nam ehemayi penne,මම හිතන්නේ අද වහින්න පුළුවන් කියලා නිකන් දැක්කම නම් එහෙමයි පේන්නේ,මම හිතන්නේ අදා වසින්න පුළුවන් කියලා නිකන දැක්කම නම් එහෙමයි පෑන්නේ,0.0615,0.3636,0.6364,False,7.4
+389,long_sentence,oya ada kade giye na neda mama hithuwe oya yeyi kiyala,ඔයා අද කඩේ ගියේ නෑ නේද මම හිතුවේ ඔයා යයි කියලා,ඔයා අද කඩේ ගියෙ ණ නෑද මම හිතුවේ ඔයා යේයි කියලා,0.1087,0.3636,0.6364,False,6.394
+390,long_sentence,mata ada ude indan kisima wada karanna tharam hitha sanasillak na dan,මට අද උදේ ඉඳන් කිසිම වැඩ කරන්න තරම් හිත සැනසිල්ලක් නෑ දැන්,මට අද උදේ ඉඳන් කිසිමා වාද කරන්න තරම් හිත් සනසිල්ලක ණ දනේ,0.1724,0.5,0.5,False,10.761
+391,long_sentence,api heta ude canteen ekedi hamuwela ape project report eka hadamu balanna,අපි හෙට උදේ canteen එකේදී හමුවෙලා අපේ project report එක හදමු බලන්න,අපි හෙට උදේ කන්ටීන එකේදි හමුවෙලා අපේ project report එක හදාමු බලන්නා,0.1515,0.3333,0.6667,False,9.914
+392,long_sentence,oya ada ude kiyatada campus ekata giye kiyala mata kiyanna puluwanda dan,ඔයා අද උදේ කීයටද campus එකට ගියේ කියලා මට කියන්න පුළුවන්ද දැන්,ඔයා අද උදේ කියාටද campus එකට ගියෙ කියලා මට කියන්න පුළුවන්ද දනේ,0.0806,0.25,0.75,False,8.931
+393,long_sentence,mata ada raata kaama hadanna kisima widihakata mahansi wenna hithenne na thama,මට අද රෑට කෑම හදන්න කිසිම විදිහකට මහන්සි වෙන්න හිතෙන්නේ නෑ තාම,මට අද රටා කාම හඩන්න කිසිම විදිහකට ම ව හිතෙන්නැ ණ ථම,0.2903,0.6667,0.3333,False,8.953
+394,long_sentence,api heta yaddi nangiwa school ekata dammaoth hondai kiyala mama hithanawa,අපි හෙට යද්දී නංගිව school එකට දැම්මොත් හොඳයි කියලා මම හිතනවා,අපි හේට යදදි නැඟිව school එකට දමාමඔත් හොඳයි කියලා මම හිතනවා,0.1311,0.3636,0.6364,False,7.246
+395,long_sentence,oya ada kade gihilla mata ona karana badu tika aran awada balanna,ඔයා අද කඩේ ගිහිල්ලා මට ඕන කරන බඩු ටික අරන් ආවාද බලන්න,ඔයා අද කඩේ ගිහිල්ල මට ඕන කරන බඩු ටික අරන් ආවාද බලන්න,0.0189,0.0833,0.9167,False,7.926
+396,long_sentence,mama hithanne me parashne nam wisadanna godak kalayak yayi kiyala thama hithenne,මම හිතන්නේ මේ ප්‍රශ්නය නම් විසඳන්න ගොඩක් කාලයක් යයි කියලා තාම හිතෙන්නේ,මම හිතන්නේ මේ පරශ්නේ නම් විසදන්න ගොඩක් කාලයක් යයි කියලා තමා හිතෙන්නේ,0.0857,0.25,0.75,False,8.794
+397,long_sentence,oya ada ude canteen ekedi kauruwath dakke nadda kiyala mata kiyanna puluwanda,ඔයා අද උදේ canteen එකේදී කාවවත් දැක්කේ නැද්ද කියලා මට කියන්න පුළුවන්ද,ඔයා අද උදේ කන්ටීන එකේදි කූරුවත් දැක්කේ නදද කියලා මට කියන්න පුළුවන්ද,0.1884,0.3333,0.6667,False,8.844
+398,long_sentence,api heta presentation eka karanna kalin presentation notes tika kiyawala balanna one neda,අපි හෙට presentation එක කරන්න කලින් presentation notes ටික කියවලා බලන්න ඕනේ නේද,අපි හේට presentation එක කරන්න කලින් presentation notes ටික කියවලා බලන්න ඕනේ නෑද,0.0253,0.1538,0.8462,False,17.683
+399,long_sentence,mata ada ude indan kisima deyak therenne na wage dan hariyata mahansiyi,මට අද උදේ ඉඳන් කිසිම දෙයක් තේරෙන්නේ නෑ වගේ දැන් හරියට මහන්සියි,මට අද උදේ ඉඳන් කිසිම දෙයක් තේරෙන්නැ ණ වගේ දනේ හරියට ම,0.1935,0.3333,0.6667,False,8.905
+400,long_sentence,oya heta kade yaddi thawa tika welawakin call ekak deela badu tika kiyanna,ඔයා හෙට කඩේ යද්දී තව ටික වෙලාවකින් call එකක් දීලා බඩු ටික කියන්න,ඔයා හෙට කඩේ යද්දි තව ටික වෙලාවකින් චල්ලා එකක් දීලා බඩු ටික කියන්න,0.0938,0.1538,0.8462,False,10.622
+401,long_sentence,api heta gihilla ammata badu tika aran thawa tika welawakin emu neda,අපි හෙට ගිහිල්ලා අම්මට බඩු ටික අරන් තව ටික වෙලාවකින් එමු නේද,අපි හේට ගිහිල්ල අම්මට බඩු ටික අරන් තව ටික වෙලාවකින් ඒමු නේද,0.05,0.25,0.75,False,9.762
+402,long_sentence,mama hithanne me para nam results mara widihata parakku wenna puluwan kiyala,මම හිතන්නේ මේ පාර නම් results මාර විදිහට පරක්කු වෙන්න පුළුවන් කියලා,මම හිතන්නේ මේ පාර නම් results මාර විදිහට පරක්කු වෙන්න පුළුවන් කියලා,0.0,0.0,1.0,True,10.724
+403,long_sentence,oya ada kade giyoth mata thawa tika welawakin ewanna puluwanda badu tika dan,ඔයා අද කඩේ ගියොත් මට තව ටික වෙලාවකින් එවන්න පුළුවන්ද බඩු ටික දැන්,ඔයා අද කඩේ ගියොත් මට තව ටික වෙලාවකින් ඒවන්න පුළුවන්ද බඩු ටික දනේ,0.0462,0.1538,0.8462,False,10.934
+404,long_sentence,mata ada ude indan kisima wada karanna hitha denne na mara widihata kamaliy,මට අද උදේ ඉඳන් කිසිම වැඩ කරන්න හිත දෙන්නේ නෑ මාර විදිහට කම්මැලියි,මට අද උදේ ඉඳන් කිසිමා වාද කරන්න හිත් දෙන්නෙ ණ මාරා විදිාහට කමලියේ,0.2,0.6154,0.3846,False,9.131
+405,long_sentence,api heta canteen ekedi hamuwela presentation eka thawa tika welawakin ready karamu neda,අපි හෙට canteen එකේදී හමුවෙලා presentation එක තව ටික වෙලාවකින් ready කරමු නේද,අපි හෙට කන්ටීන එකෙදි හමුවෙළ presentation ඒක තව ටික වේලාවකින් ready කාරමු ඳ,0.2208,0.5385,0.4615,False,18.386
+406,long_sentence,oya ada ude kiyatada campus ekata giye kiyala kiyanna puluwanda mata thawa tika welawakin,ඔයා අද උදේ කීයටද campus එකට ගියේ කියලා කියන්න පුළුවන්ද මට තව ටික වෙලාවකින්,ඔයා අද උදේ කියාටද campus එකට ගියෙ කියලා කියන්න පුළුවන්ද මට තව ටික වෙලාවකින්,0.0405,0.1429,0.8571,False,11.657
+407,long_sentence,mata ada raata kaama hadanna hithenne na thawa tika welawakin kade yamu balanna,මට අද රෑට කෑම හදන්න හිතෙන්නේ නෑ තව ටික වෙලාවකින් කඩේ යමු බලන්න,මට අදා රාට කාම හදනන හිතෙන්නැ ණ තව ටික වෙලාවකින් කඩේ යමු බලන්නා,0.129,0.5385,0.4615,False,10.877
+408,long_sentence,api heta yaddi nangiwa school ekata dammaoth hondai neda thawa tika welawakin,අපි හෙට යද්දී නංගිව school එකට දැම්මොත් හොඳයි නේද තව ටික වෙලාවකින්,අපි හේට යදදි නඟිව school එකාට දම්මඔත් හොඬයි නේද තව ටික වෙලාවකින්,0.1364,0.5,0.5,False,10.038
+409,long_sentence,oya ada kade gihilla mata badu tika aran awada kiyala thawa tika welawakin kiyanna,ඔයා අද කඩේ ගිහිල්ලා මට බඩු ටික අරන් ආවාද කියලා තව ටික වෙලාවකින් කියන්න,ඔයා අද කඩේ ගිහිල්ල මට බඩු ටික අරන් ආවාද කියලා තව ටික වෙලාවකින් කියන්න,0.0143,0.0714,0.9286,False,12.049
+410,long_sentence,mama hithanne me parashne thawa tika welawakin wisadanna puluwan kiyala thama hithenne mata,මම හිතන්නේ මේ ප්‍රශ්නය තව ටික වෙලාවකින් විසඳන්න පුළුවන් කියලා තාම හිතෙන්නේ මට,මම හිතන්නේ මේ පරශ්නී ථව ටික වෙලාවකින් විසදන්න පුළුවන් කියලා තමා හිතෙන්නේ මට,0.0909,0.3077,0.6923,False,10.885
+411,long_sentence,oya ada ude canteen ekedi kauruwath dakke nadda kiyala mata thawa tika welawakin kiyanna,ඔයා අද උදේ canteen එකේදී කාවවත් දැක්කේ නැද්ද කියලා මට තව ටික වෙලාවකින් කියන්න,ඔයා අද උදේ කන්ටීන එකේදි කූරුවත් දැක්කේ නදද කියලා මට තව ටික වෙලාවකින් කියන්න,0.1688,0.2857,0.7143,False,11.704
+412,long_sentence,api heta presentation notes tika kiyawala thawa tika welawakin presentation eka ready karamu balanna,අපි හෙට presentation notes ටික කියවලා තව ටික වෙලාවකින් presentation එක ready කරමු බලන්න,අපි හේට presentation notes ටික කියවලා තව ටික වෙලාවකින් presentation එක ready කරමූ බලන්නා,0.0345,0.2143,0.7857,False,19.956
+413,long_sentence,mata ada ude indan kisima deyak therenne na dan mara widihata mahansi wela thiyenne,මට අද උදේ ඉඳන් කිසිම දෙයක් තේරෙන්නේ නෑ දැන් මාර විදිහට මහන්සි වෙලා තියෙන්නේ,මට අද උදේ ඉඳන් කිසිම දෙයක් තේරෙන්නෙ ණ දනේ මාර විදිහට මහනසි වෙල තියෙන්නෙ,0.1067,0.4286,0.5714,False,10.513
+414,long_sentence,oya heta kade yaddi call ekak deela badu tika mata thawa tika welawakin kiyanna,ඔයා හෙට කඩේ යද්දී call එකක් දීලා බඩු ටික මට තව ටික වෙලාවකින් කියන්න,ඔයා හෙට කඩේ යදදි චල්ලා එකක් දීලා බඩු ටික මට තව ටික වෙලාවකින් කියන්න,0.1045,0.1429,0.8571,False,11.655
+415,long_sentence,api heta gihilla badu tika aran thawa tika welawakin emu neda ada raata,අපි හෙට ගිහිල්ලා බඩු ටික අරන් තව ටික වෙලාවකින් එමු නේද අද රෑට,අපි හේට ගිහිලල බඩු ටික අරන් තව ටික වෙලාවකින් ඒමු නේද ආදා රාට,0.1148,0.3846,0.6154,False,10.929
+416,long_sentence,mama hithanne results thawa tika welawakin online balanna puluwan kiyala thama dan hithenne,මම හිතන්නේ results තව ටික වෙලාවකින් online බලන්න පුළුවන් කියලා තාම දැන් හිතෙන්නේ,මම හිතන්නේ results තව ටික වෙලාවකින් online බලන්න පුළුවන් කියලා තමා දන හිතෙන්නේ,0.05,0.1538,0.8462,False,11.764
+417,long_sentence,oya ada kade giyoth badu tika mata thawa tika welawakin ewanna puluwanda danma,ඔයා අද කඩේ ගියොත් බඩු ටික මට තව ටික වෙලාවකින් එවන්න පුළුවන්ද දැන්ම,ඔයා අද කඩේ ගියොත් බඩු ටික මට තව ටික වෙලාවකින් එවාන්න පුළුවන්ද දනම,0.0455,0.1538,0.8462,False,10.822
+418,long_sentence,mata ada ude indan wada karanna hitha denne na mara widihata kamaliy ada nam,මට අද උදේ ඉඳන් වැඩ කරන්න හිත දෙන්නේ නෑ මාර විදිහට කම්මැලියි අද නම්,මට අද උදේ ඉඳන් වාද කරන්න හිත් දෙන්නෙ ණ මාරා විදිාහට කමලියේ අදා නම්,0.197,0.5714,0.4286,False,9.359
+419,long_sentence,api heta canteen ekedi presentation eka thawa tika welawakin ready karamu neda api dennama,අපි හෙට canteen එකේදී presentation එක තව ටික වෙලාවකින් ready කරමු නේද අපි දෙන්නම,අපි හෙට කන්ටීන එකේදි presentation එක තව ටික වේලාවකින් ready කරමු නේද අපි දෙන්නම,0.1125,0.2143,0.7857,False,19.246
+420,long_sentence,oya ada ude campus ekata giye kiyatada kiyala kiyanna thawa tika welawakin mata balanna,ඔයා අද උදේ campus එකට ගියේ කීයටද කියලා කියන්න තව ටික වෙලාවකින් මට බලන්න,ඔයා අද උදේ campus එකට ගියෙ කියටද කියලා කියන්න තව ටික වෙලාවකින් මට බලන්න,0.0282,0.1429,0.8571,False,11.675
+421,long_sentence,mata ada raata kaama hadanna hithenne na kade yamu balanna thawa tika welawakin api,මට අද රෑට කෑම හදන්න හිතෙන්නේ නෑ කඩේ යමු බලන්න තව ටික වෙලාවකින් අපි,මට අඩා රඅට කඅම හඩන්න හිතෙන්නී ණ කඩේ යමු බලන්නා තව ටික වෙලාවකින් අපි,0.1364,0.5,0.5,False,11.207
+422,long_sentence,api heta yaddi nangiwa school ekata dammaoth hondai kiyala mama hithanawa thawa duratath,අපි හෙට යද්දී නංගිව school එකට දැම්මොත් හොඳයි කියලා මම හිතනවා තවදුරටත්,අපි හෙට යදාදි නැඟිව school එකට දමාමඔත් හොඳයි කියලා මම හිතනවා තව දුරටත්,0.1143,0.4167,0.6667,False,8.618
+423,long_sentence,oya ada kade gihilla badu tika aran awada kiyala thawa tika welawakin mata kiyanna,ඔයා අද කඩේ ගිහිල්ලා බඩු ටික අරන් ආවාද කියලා තව ටික වෙලාවකින් මට කියන්න,ඔයා අද කඩේ ගිහිලාල බඩු ටික අරන් ආවාද කියලා තව ටික වේලාවකින් මට කියන්න,0.0429,0.1429,0.8571,False,11.476
+424,long_sentence,mama hithanne parashne thawa tika welawakin wisadanna puluwan kiyala thama hithenne mata dan,මම හිතන්නේ ප්‍රශ්නය තව ටික වෙලාවකින් විසඳන්න පුළුවන් කියලා තාම හිතෙන්නේ මට දැන්,මම හිතන්නේ පරශ්නී ථව ටික වෙලාවකින් විසදන්න පුළුවන් කියලා තාම හිතෙන්නේ මට දනේ,0.0886,0.3077,0.6923,False,10.817
+425,long_sentence,oya ada ude canteen ekedi kauruwath dakke nadda kiyala thawa tika welawakin mata kiyanna,ඔයා අද උදේ canteen එකේදී කාවවත් දැක්කේ නැද්ද කියලා තව ටික වෙලාවකින් මට කියන්න,ඔයා අද උදේ කන්ටීන එකේදි කූරුවත් දැක්කේ නදද කියලා තව ටික වේලාවකින් මට කියන්න,0.1818,0.3571,0.6429,False,11.217
+426,long_sentence,api presentation notes tika kiyawala thawa tika welawakin presentation eka ready karamu balanna heta,අපි presentation notes ටික කියවලා තව ටික වෙලාවකින් presentation එක ready කරමු බලන්න හෙට,අපි presentation notes ටික කියවලා තව ටික වෙලාවකින් presentation එක ready කාරමු බලන්නා හේට,0.0345,0.2143,0.7857,False,18.727
+427,long_sentence,mata ada ude indan therenne na mara widihata mahansi wela thiyenne thawa duratath dan,මට අද උදේ ඉඳන් තේරෙන්නේ නෑ මාර විදිහට මහන්සි වෙලා තියෙන්නේ තවදුරටත් දැන්,මට අද උදේ ඉඳන් තේරෙණ්ණේ ණ මාරා විදිාහට මහනසි වෙල තියෙන්නේ තව දුරටත් දනේ,0.1528,0.6923,0.3846,False,10.738
+428,long_sentence,oya heta kade yaddi call ekak deela badu tika mata thawa tika welawakin kiyanna balanna,ඔයා හෙට කඩේ යද්දී call එකක් දීලා බඩු ටික මට තව ටික වෙලාවකින් කියන්න බලන්න,ඔයා හෙට කඩේ යදදි චල්ලා එකක් දීලා බඩු ටික මට තව ටික වෙලාවකින් කියන්න බලන්න,0.0959,0.1333,0.8667,False,12.582
+429,long_sentence,api gihilla badu tika aran thawa tika welawakin emu neda ada raata hamoma,අපි ගිහිල්ලා බඩු ටික අරන් තව ටික වෙලාවකින් එමු නේද අද රෑට හැමෝම,අපි ගිහිලල බඩු ටික අරන් තව ටික වෙලාවකින් ඒමු නේද අදා රාට හමෝම,0.0952,0.3846,0.6154,False,10.981
+430,long_sentence,mama hithanne results thawa tika welawakin online balanna puluwan kiyala thama hithenne mata ada,මම හිතන්නේ results තව ටික වෙලාවකින් online බලන්න පුළුවන් කියලා තාම හිතෙන්නේ මට අද,මම හිතන්නේ results තව ටික වෙලාවකින් online බලන්න පුළුවන් කියලා තාම හිතෙන්නේ මට අදා,0.0123,0.0714,0.9286,False,12.731
+431,long_sentence,oya kade giyoth badu tika mata thawa tika welawakin ewanna puluwanda danma balanna oya,ඔයා කඩේ ගියොත් බඩු ටික මට තව ටික වෙලාවකින් එවන්න පුළුවන්ද දැන්ම බලන්න ඔයා,ඔයා කඩේ ගියොත් බඩු ටික මට තව ටික වෙලාවකින් එවාන්න පුළුවන්ද දනම බලන්න ඔයා,0.0411,0.1429,0.8571,False,11.761
+432,long_sentence,mata ude indan wada karanna hitha denne na mara widihata kamaliy ada nam thawa duratath,මට උදේ ඉඳන් වැඩ කරන්න හිත දෙන්නේ නෑ මාර විදිහට කම්මැලියි අද නම් තවදුරටත්,මට උදේ ඉඳන් වාද කරන්න හිත් දෙන්නෙ ණ මාරා විදිාහට කමලියේ අද නම් තව දුරටත්,0.1806,0.6429,0.4286,False,10.118
+433,long_sentence,api canteen ekedi presentation eka thawa tika welawakin ready karamu neda api dennama hamoma,අපි canteen එකේදී presentation එක තව ටික වෙලාවකින් ready කරමු නේද අපි දෙන්නම හැමෝම,අපි කන්ටීන එකේදි presentation එක තව ටික වේලාවකින් ready කරාමු නේද අපි දෙන්නම හාමෝම,0.1341,0.3571,0.6429,False,19.501
+434,long_sentence,oya campus ekata giye kiyatada kiyala kiyanna thawa tika welawakin mata balanna ada ude,ඔයා campus එකට ගියේ කීයටද කියලා කියන්න තව ටික වෙලාවකින් මට බලන්න අද උදේ,ඔයා campus එකට ගියෙ කියටද කියලා කියන්න තව ටික වෙලාවකින් මට බලන්න අද උදේ,0.0282,0.1429,0.8571,False,11.684
+435,long_sentence,mata kaama hadanna hithenne na kade yamu balanna thawa tika welawakin api heta udema,මට කෑම හදන්න හිතෙන්නේ නෑ කඩේ යමු බලන්න තව ටික වෙලාවකින් අපි හෙට උදේම,මට කාම හඩන්න හිතෙන්නෑ ණ කඩේ යමු බලන්නා තව ටික වෙලාවකින් අපි හෙට උදේම,0.0882,0.3571,0.6429,False,11.938
+436,long_sentence,api yaddi nangiwa school ekata dammaoth hondai kiyala mama hithanawa thawa duratath heta,අපි යද්දී නංගිව school එකට දැම්මොත් හොඳයි කියලා මම හිතනවා තවදුරටත් හෙට,අපි යදාදි නැඟිව school එකට දමාමඔත් හොඳයි කියලා මම හිතනවා තව දුරටත් හේට,0.1286,0.5,0.5833,False,8.427
+437,long_sentence,oya kade gihilla badu tika aran awada kiyala thawa tika welawakin mata kiyanna balanna,ඔයා කඩේ ගිහිල්ලා බඩු ටික අරන් ආවාද කියලා තව ටික වෙලාවකින් මට කියන්න බලන්න,ඔයා කඩේ ගිහිලාල බඩු ටික අරන් ආවාද කියලා තව ටික වේලාවකින් මට කියන්න බලන්න,0.0411,0.1429,0.8571,False,11.28
+438,long_sentence,mama hithanne meka thawa tika welawakin wisadanna puluwan kiyala thama hithenne mata dan meka,මම හිතන්නේ මේක තව ටික වෙලාවකින් විසඳන්න පුළුවන් කියලා තාම හිතෙන්නේ මට දැන් මේක,මම හිතන්නේ මේක තව ටික වේලාවකින් විසදන්න පුළුවන් කියලා තමා හිතෙන්නේ මට දනේ මේක,0.0769,0.2857,0.7143,False,11.468
+439,long_sentence,oya canteen ekedi kauruwath dakke nadda kiyala thawa tika welawakin mata kiyanna balanna heta,ඔයා canteen එකේදී කාවවත් දැක්කේ නැද්ද කියලා තව ටික වෙලාවකින් මට කියන්න බලන්න හෙට,ඔයා කන්ටීන ඒකේදි කුරුවත් දැක්කේ නදද කියලා තව ටික වේලාවකින් මට කියන්න බලන්න හේට,0.2,0.4286,0.5714,False,11.073
+440,long_sentence,api presentation eka ready karamu balanna heta ude canteen ekedi hamuwela api dennama meka,අපි presentation එක ready කරමු බලන්න හෙට උදේ canteen එකේදී හමුවෙලා අපි දෙන්නම මේක,අපි presentation එක ready කරාමු බලන්නා හෙට උදේ කන්ටීන එකේදි හමුවැල අපි දෙන්නම මේක,0.1481,0.3571,0.6429,False,19.543
+441,long_sentence,mata therenne na mara widihata mahansi wela thiyenne thawa duratath dan mata nam meka,මට තේරෙන්නේ නෑ මාර විදිහට මහන්සි වෙලා තියෙන්නේ තවදුරටත් දැන් මට නම් මේක,මට තේරෙණ්ණේ ණ මාර විදිාහට මහනසි වෙල තියෙන්නේ තව දුරටත දනේ ඹ නමේ මෙක,0.2113,0.8462,0.2308,False,10.524
+442,long_sentence,oya call ekak deela badu tika mata thawa tika welawakin kiyanna balanna heta kade yaddi,ඔයා call එකක් දීලා බඩු ටික මට තව ටික වෙලාවකින් කියන්න බලන්න හෙට කඩේ යද්දී,ඔයා චල්ලා එකක් දීලා බඩු ටික මට තව ටික වෙලාවකින් කියන්න බලන්න හෙට කඩේ යද්දි,0.0822,0.1333,0.8667,False,12.428
+443,long_sentence,api badu tika aran thawa tika welawakin emu neda ada raata hamoma nuwara gihilla,අපි බඩු ටික අරන් තව ටික වෙලාවකින් එමු නේද අද රෑට හැමෝම නුවර ගිහිල්ලා,අපි බඩු ටික අරන් තව ටික වෙලාවකින් ඒමු නේද අදා රාට හමෝම නූවරා ගිහිලලා,0.1029,0.4286,0.5714,False,12.06
+444,long_sentence,mama hithanne results online balanna puluwan kiyala thama hithenne mata ada thawa tika welawakin,මම හිතන්නේ results online බලන්න පුළුවන් කියලා තාම හිතෙන්නේ මට අද තව ටික වෙලාවකින්,මම හිතන්නේ results online බලන්න පුළුවන් කියලා තමා හිතෙන්නේ මට අදා තව ටික වෙලාවකින්,0.037,0.1429,0.8571,False,13.024
+445,long_sentence,oya badu tika mata thawa tika welawakin ewanna puluwanda danma balanna kade giyoth oya,ඔයා බඩු ටික මට තව ටික වෙලාවකින් එවන්න පුළුවන්ද දැන්ම බලන්න කඩේ ගියොත් ඔයා,ඔය බඩු ටික මට තව ටික වෙලාවකින් එවාන්න පුළුවන්ද දනම බලන්න කඩේ ගියොත් ඔයා,0.0548,0.2143,0.7857,False,12.037
+446,long_sentence,mata wada karanna hitha denne na mara widihata kamaliy ada nam thawa duratath ude indan,මට වැඩ කරන්න හිත දෙන්නේ නෑ මාර විදිහට කම්මැලියි අද නම් තවදුරටත් උදේ ඉඳන්,මට වාද කරන්න හිත් දෙන්නෙ ණ මාරා විදිාහට කමලියා අද නම් තව දුරටත් උඩේ ඉඳාන,0.2222,0.7857,0.2857,False,10.104
+447,long_sentence,api presentation eka thawa tika welawakin ready karamu neda canteen ekedi hamuwela api dennama ada,අපි presentation එක තව ටික වෙලාවකින් ready කරමු නේද canteen එකේදී හමුවෙලා අපි දෙන්නම අද,අපි presentation එක තව ටික වේලාවකින් ready කරමු නෑද කන්ටීන එකේදි හමුවෙලා අපි දෙන්නම අදා,0.1264,0.3333,0.6667,False,21.323
+448,long_sentence,oya kiyatada giye kiyala kiyanna thawa tika welawakin mata balanna ada ude campus ekata,ඔයා කීයටද ගියේ කියලා කියන්න තව ටික වෙලාවකින් මට බලන්න අද උදේ campus එකට,ඔයා කියටද ගියේ කියලා කියන්න තව ටික වෙලාවකින් මට බලන්න අද උදේ campus එකාට,0.0282,0.1429,0.8571,False,11.84
+449,long_sentence,mata kaama hadanna hithenne na kade yamu balanna thawa tika welawakin api heta raata,මට කෑම හදන්න හිතෙන්නේ නෑ කඩේ යමු බලන්න තව ටික වෙලාවකින් අපි හෙට රෑට,මට කාම හඩන්න හිතෙන්නෑ ණ කඩේ යමු බලන්නා තව ටික වෙලාවකින් අපි හේට රටා,0.1343,0.5,0.5,False,12.164
+450,long_sentence,api nangiwa school ekata dammoth hondai kiyala mama hithanawa,අපි නංගිව school එකට දැම්මොත් හොඳයි කියලා මම හිතනවා,අපි නැඟිව school එකට දමාමොත් හොඳයි කියලා මම හිතනවා,0.0784,0.2222,0.7778,False,6.19
+451,long_sentence,oya badu tika aran awada kiyala thawa tika welawakin mata kiyanna balanna kade gihilla,ඔයා බඩු ටික අරන් ආවාද කියලා තව ටික වෙලාවකින් මට කියන්න බලන්න කඩේ ගිහිල්ලා,ඔයා බඩු ටික අරන් ආවාද කියලා තව ටික වේලාවකින් මට කියන්න බලන්න කඩේ ගිහිලලා,0.0274,0.1429,0.8571,False,11.834
+452,long_sentence,mama hithanne thawa tika welawakin wisadanna puluwan kiyala thama hithenne mata dan me parashnaya,මම හිතන්නේ තව ටික වෙලාවකින් විසඳන්න පුළුවන් කියලා තාම හිතෙන්නේ මට දැන් මේ ප්‍රශ්නය,මම හිතන්නේ තව ටික වෙලාවකින් විසදන්න පුළුවන් කියලා තමා හිතෙන්නේ මට දනේ මේ පරශනය,0.0976,0.2857,0.7143,False,11.771
+453,short_phrase,honda naa,හොඳ නෑ,honda ණා,1.1667,1.0,0.0,False,0.769
+454,short_phrase,kohomada oya,කොහොමද ඔයා,කොහොමද ඔයා,0.0,0.0,1.0,True,1.391
+455,short_phrase,kiyatada enne,කීයටද එන්නේ,කියාටද එන්නේ,0.1818,0.5,0.5,False,1.396
+456,short_phrase,me kohedo,මේ කොහේද,මේ කොහේදො,0.125,0.5,0.5,False,1.373
+457,short_phrase,dan yamu,දැන් යමු,දනේ යමු,0.25,0.5,0.5,False,1.006
+458,short_phrase,epa epa,එපා එපා,එප එප,0.2857,1.0,0.0,False,0.795
+459,short_phrase,poddak inna,පොඩ්ඩක් ඉන්න,පොඩ්ඩක් ඉන්න,0.0,0.0,1.0,True,1.566
+460,short_phrase,kauda inne,කවුද ඉන්නේ,කෞද ඉන්නී,0.3,1.0,0.0,False,1.227
+461,short_phrase,moko une,මොකෝ වුණේ,මෝකෝ උණේ,0.3333,1.0,0.0,False,0.971
+462,short_phrase,hari hari,හරි හරි,හරි හරි,0.0,0.0,1.0,True,0.987
+463,short_phrase,kiyanna balanna,කියන්න බලන්න,කියන්න බලන්න,0.0,0.0,1.0,True,1.355
+464,short_phrase,thawa tika welawakin,තව ටික වෙලාවකින්,තව ටික වෙලාවකින්,0.0,0.0,1.0,True,2.765
+465,short_phrase,kohedu giye,කොහේද ගියේ,කොහේදූ ගියේ,0.1,0.5,0.5,False,1.39
+466,short_phrase,kaama kawaada,කෑම කෑවාද,කඅම කවාඅඩ,0.4444,1.0,0.0,False,1.157
+467,short_phrase,ninda giye na,නින්ද ගියේ නෑ,නිනද ගියෙ ණ,0.3077,1.0,0.0,False,1.48
+468,short_phrase,moko karanne,මොකෝ කරන්නේ,මෝකෝ කරන්නී,0.1818,1.0,0.0,False,1.372
+469,short_phrase,api yamu,අපි යමු,අපි යමු,0.0,0.0,1.0,True,0.972
+470,short_phrase,mata epa,මට එපා,මට එපා,0.0,0.0,1.0,True,0.778
+471,short_phrase,badagini wela,බඩගිනි වෙලා,බදාගිණි වෙල,0.3636,1.0,0.0,False,1.546
+472,short_phrase,wahinna wage,වහින්න වගේ,වහින්න වගේ,0.0,0.0,1.0,True,1.349
+473,short_phrase,heta ennam,හෙට එන්නම්,හේට එන්නම්,0.1,0.5,0.5,False,1.365
+474,short_phrase,parakku wenawa,පරක්කු වෙනවා,පරක්කු වෙනවා,0.0,0.0,1.0,True,1.374
+475,short_phrase,kohe inne,කොහේ ඉන්නේ,කොහේ ඉන්නේ,0.0,0.0,1.0,True,1.246
+476,short_phrase,mokakda e,මොකක්ද ඒ,මොකකද ඒ,0.125,0.5,0.5,False,1.385
+477,short_phrase,dan enna,දැන් එන්න,දන එනන,0.3333,1.0,0.0,False,0.992
+478,short_phrase,kisima deyak na,කිසිම දෙයක් නෑ,කිසිම දෙයක ණ,0.2143,0.6667,0.3333,False,1.949
+479,short_phrase,sathutuwen inna,සතුටුවෙන් ඉන්න,සතුටුවෙන් ඉන්න,0.0,0.0,1.0,True,1.965
+480,short_phrase,aththada ehemada,ඇත්තද එහෙමද,අත්තද එහෙමද,0.0909,0.5,0.5,False,1.163
+481,short_phrase,kiyanna puluwanda,කියන්න පුළුවන්ද,කියන්න පුළුවන්ද,0.0,0.0,1.0,True,1.778
+482,edge_case,api 1st floor ekata yamu,අපි 1st floor එකට යමු,අපි 1st floor එකට යමු,0.0,0.0,1.0,True,2.549
+483,edge_case,oya 5000k denawada mata,ඔයා 5000ක් දෙනවාද මට,ඔයා 5000ක් දෙනවාද මට,0.0,0.0,1.0,True,1.934
+484,edge_case,wada karanne na???,වැඩ කරන්නේ නෑ???,වාද කරන්නේ ණ???,0.25,0.6667,0.3333,False,1.926
+485,edge_case,bye bye heta hamuwemu,bye bye හෙට හමුවෙමු,bye bye හෙට හමුවෙමු,0.0,0.0,1.0,True,2.886
+486,edge_case,mama 10.30ta nuwara yanawa,මම 10.30ට නුවර යනවා,මම 10.30ට නුවරා යනවා,0.0526,0.25,0.75,False,1.771
+487,edge_case,oya kiyatada 2nd lecture ekata enne,ඔයා කීයටද 2nd lecture එකට එන්නේ,ඔයා කියටද 2nd lecture එකට එන්නෙ,0.0645,0.3333,0.6667,False,3.903
+488,edge_case,mama 100%k sure kiyala kiyanna,මම 100%ක් sure කියලා කියන්න,මම 100%ක් සුරේ කියලා කියන්න,0.1481,0.2,0.8,False,2.518
+489,edge_case,me moko me... moko une,මේ මොකෝ මේ... මොකෝ වුණේ,මේ මොකෝ මේ... මොකෝ උණේ,0.087,0.2,0.8,False,2.223
+490,edge_case,oya results 1st rank ekatama gaththa,ඔයා results 1st rank එකටම ගත්තා,ඔය results 1st rank එකටම ගත්ත,0.0645,0.3333,0.6667,False,4.869
+491,edge_case,mata 500/- k denna puluwanda dan,මට 500/- ක් දෙන්න පුළුවන්ද දැන්,මට 500/- ක් දෙන්න පුළුවන්ද දන,0.0645,0.1667,0.8333,False,3.961
+492,edge_case,oya me wada 2-3 parak kala neda,ඔයා මේ වැඩ 2-3 පාරක් කළා නේද,ඔයා මේ වද 2-3 පාරක කාල නෑද,0.2143,0.5714,0.4286,False,2.67
+493,edge_case,mama 9.00 a.m. wenakan balan hitiya,මම 9.00 a.m. වෙනකන් බලන් හිටියා,මම 9.00 a.m. වෙනකන් බලන් හිටියා,0.0,0.0,1.0,True,2.532
+494,edge_case,"oya presentation eka ""ready"" neda balanna","ඔයා presentation එක ""ready"" නේද බලන්න","ඔය presentation එක ""ready"" නෑද බලන්න",0.0541,0.3333,0.6667,False,8.686
+495,edge_case,mama message 10k damma thama awe na,මම message 10ක් දැම්මා තාම ආවේ නෑ,මම message 10ක් දමාම ථම අවී ණ,0.2727,0.5714,0.4286,False,4.624
+496,edge_case,api 3.30 p.m. meeting eka cancel karamu,අපි 3.30 p.m. meeting එක cancel කරමු,අපි 3.30 p.m. meeting එක cancel කරමු,0.0,0.0,1.0,True,3.446
+497,edge_case,oya wada 100%k complete karala iwarada,ඔයා වැඩ 100%ක් complete කරලා ඉවරද,ඔයා වද 100%ක් complete කරලා ඉවරාද,0.0909,0.3333,0.6667,False,4.83
+498,edge_case,mm 1st attempt ekenma pass una,මම 1st attempt එකෙන්ම pass වුණා,මම 1st attempt එකෙන්ම පස්ස උනා,0.2258,0.3333,0.6667,False,4.763
+499,edge_case,me moko me??? bayawela neda???,මේ මොකෝ මේ??? බයවෙලා නේද???,මේ මොකෝ මේ??? බයවේල නෑද???,0.1111,0.4,0.6,False,2.791
+500,edge_case,api 5 dena passe welawaka katha karamu,අපි 5 දෙනා පස්සේ වෙලාවක කතා කරමු,අපි 5 දෙන පස්සී වීලාවක කතා කරමු,0.0938,0.4286,0.5714,False,3.714

@@ -4,7 +4,7 @@ SinCode v3 — public API entry point.
 Usage:
     from sincode_model import BeamSearchDecoder
     decoder = BeamSearchDecoder()
-    result, logs = decoder.decode("mema videowe bit rate eka godak wadi nisa buffer wenawa")
+    result, logs, word_candidates = decoder.decode("mema videowe bit rate eka godak wadi nisa buffer wenawa")
 """
 
 from core.decoder import BeamSearchDecoder, ScoredCandidate             # noqa: F401

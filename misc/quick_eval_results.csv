@@ -1,0 +1,11 @@
+singlish,expected,predicted,subset,cer,wer,bleu,em
+awankawama mata eya mathaka ethi akaraya eyayi namuth eya wikarayaki mama obata ashwaya kerehi wedi elmak nodakwana namuth eya mage wilasithawa nowe,අවංකවම මට එය මතක ඇති ආකාරය එයයි නමුත් එය විකාරයකි මම ඔබට අශ්වයා කෙරෙහි වැඩි ඇල්මක් නොදක්වන නමුත් එය මගේ විලාසිතාව නොවේ,අවංකවාම මට එය මතක ඇති ආකාරය එයයි නමුත් එය විකරයකි මම ඔබටා අශවය කෙරෙහි වැඩි ඇලීමක් නොදක්වාන නමුත් එය මගේ විලාසිතව නොවේ,formal,0.03829787234042559,0.31818181818181823,0.6818181818181818,0
+oba mage aneka yeyi adahas karanne kese ho oba ema wilasithawata andinne mandeyi mama asami,ඔබ මගේ අනෙකා යැයි අදහස් කරන්නේ කෙසේ හෝ ඔබ එම විලාසිතාවට අඳින්නේ මන්දැයි මම අසමි,ඔබ මගේ අණෙක යැයි අදහස් කරන්නේ කෙසේ හෝ ඔබ ඒම විලාසිතවට අඳින්නේ මන්දැයි මම අසමි,formal,0.038461538461538436,0.19999999999999996,0.8,0
+mama kiwa yuthuyi oba wedipura penenne obe mahalu athmayayi oba adahas karanne mage aneka bawayi,මම කිව යුතුයි ඔබ වැඩිපුර පෙනෙන්නේ ඔබේ මහලු ආත්මයයි ඔබ අදහස් කරන්නේ මගේ අනෙකා බවයි,මම කිව යුතුයි ඔබ වැඩිපුරා පෙනෙන්නේ ඔබේ ම ආතේමයයි ඔබ අදහස් කරන්නේ මගේ අනෙකා බවයි,formal,0.03749999999999998,0.19999999999999996,0.8,0
+kese ho oba ese andinne mandeyi mata eseemata ida etha mama shokayen sitina bawa pehedili yeyi mata sithiya yuthuwa thibuni,"කෙසේ හෝ ඔබ එසේ අඳින්නේ මන්දැයි මට ඇසීමට ඉඩ ඇත, මම ශෝකයෙන් සිටින බව පැහැදිලි යැයි මට සිතිය යුතුව තිබුණි",කෙසේ හෝ ඔබ එසේ අඳින්නේ මන්දැයි මට ඇසීමට ඉඩ ඇත මම ශෝකයෙන් සිටින බව පැහැදිලි යැයි මට සිතිය යුතුව තිබුණි,formal,0.0049261083743842304,0.050000000000000044,0.95,0
+mona hari adahas monada,මොනා හරි අදහස් මොනාද,මොන හරි අදහසේ මොනද,formal,0.10526315789473684,0.75,0.25,0
+mta eka prshnyk ahanna puluwn nm awulak ne,මට එක ප්‍රශ්නයක් අහන්න පුළුවන් නම් අවුලක් නෑ,මට එක ප්‍රශ්නයක අහන්න පුළුවන් නම් අවුලක් නෑ,informal,0.011494252873563204,0.125,0.875,0
+hondyi eka modyi wge,"හොඳයි, ඒක මෝඩයි වගේ",හොඳයි ඒක මෝඩයි වගේ,informal,0.027027027027026973,0.25,0.75,0
+kmk nehe modyi wge,කමක් නැහැ මෝඩයි වගේ,කමක් නැහැ මෝදයි වගේ,informal,0.052631578947368474,0.25,0.75,0
+kmk nehe oba eyta kemthi nownu etha,කමක් නැහැ ඔබ එයට කැමති නොවනු ඇත,කමක් නැහැ ඔබ එයට කැමති නොවනු ඇත,informal,0.0,0.0,1.0,1
+oba eyta kemthi nownu etha eya asanna,"ඔබ එයට කැමති නොවනු ඇත, එය අසන්න",ඔබ එයට කැමති නොවනු ඇත එය අසන්න,informal,0.016393442622950838,0.1428571428571429,0.8571428571428571,0

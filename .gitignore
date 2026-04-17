@@ -3,6 +3,8 @@
 
 # Model weights — hosted on Hugging Face Hub
 seq2seq/byt5-singlish-sinhala/
+seq2seq/byt5-base-clean/
+seq2seq/experiments/
 seq2seq/tokenized_cache/
 
 # Large training data
@@ -22,6 +24,9 @@ __pycache__/
 
 # Evaluation outputs (optional — remove if you want these tracked)
 misc/v3_results_110.csv
+
+# User feedback data — contains real submissions, do not expose
+misc/feedback_submissions.jsonl
 
 # Misc
 *.log

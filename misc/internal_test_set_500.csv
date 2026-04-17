@@ -1,0 +1,501 @@
+﻿id,category,input,code_mixed_reference
+1,colloquial,api heta gedara yanawa,අපි හෙට ගෙදර යනවා
+2,colloquial,mama dan inne office eke,මම දැන් ඉන්නේ office එකේ
+3,code_mixed,mage assignment eka submit kala,මගේ assignment එක submit කළා
+4,code_mixed,api meeting eka cancel kala,අපි meeting එක cancel කළා
+5,formal,obage upakarayata apage wishesha sthuthiya.,ඔබගේ උපකාරයට අපගේ විශේෂ ස්තූතිය.
+6,long_sentence,mema videowe bit rate eka godak wadi nisa buffer wenawa,මෙම වීඩියෝවේ bit rate එක ගොඩක් වැඩි නිසා buffer වෙනවා
+7,short_phrase,honda naa,හොඳ නෑ
+8,edge_case,api 3 dena passe yamu,අපි 3 දෙනා පස්සේ යමු
+9,colloquial,oya dan koheda yanne,ඔයා දැන් කොහේද යන්නේ
+10,colloquial,mata ada godak wada thiyenawa,මට අද ගොඩක් වැඩ තියෙනවා
+11,colloquial,heta ude keeyatada enne,හෙට උදේ කීයටද එන්නේ
+12,colloquial,amma ada monawada kaama haduwe,අම්මා අද මොනවාද කෑම හැදුවේ
+13,colloquial,mata hariyata ninda giye na,මට හරියට නින්ද ගියේ නෑ
+14,colloquial,nikan boru kiyanna epa,නිකන් බොරු කියන්න එපා
+15,colloquial,api passe welawaka katha karamu,අපි පස්සේ වෙලාවක කතා කරමු
+16,colloquial,eka dakkama mata baya hithuna,ඒක දැක්කම මට බය හිතුණා
+17,colloquial,mama ada game giya,මම අද ගමේ ගියා
+18,colloquial,oya thama kewe nadda,ඔයා තාම කෑවේ නැද්ද
+19,colloquial,api dennath ekka heta yamu,අපි දෙන්නත් එක්ක හෙට යමු
+20,colloquial,dan nikan inna epa wada karanna,දැන් නිකන් ඉන්න එපා වැඩ කරන්න
+21,colloquial,thama bus eka awe na,තාම බස් එක ආවේ නෑ
+22,colloquial,wathura nathiwa inna ba,වතුර නැතිව ඉන්න බෑ
+23,colloquial,dan hariyata mahansi wage,දැන් හරියට මහන්සි වගේ
+24,colloquial,ai oya ehema kale,ඇයි ඔයා එහෙම කළේ
+25,colloquial,mata oya gana tharahak na,මට ඔයා ගැන තරහක් නෑ
+26,colloquial,oya thawa kaama ganna,ඔයා තව කෑම ගන්න
+27,colloquial,me pota kiyawala balanna,මේ පොත කියවලා බලන්න
+28,colloquial,thaththa dan gedara awada,තාත්තා දැන් ගෙදර ආවාද
+29,colloquial,api moko karanne dan,අපි මොකෝ කරන්නේ දැන්
+30,colloquial,poddak inna mama enakan,පොඩ්ඩක් ඉන්න මම එනකන්
+31,colloquial,dan moko hithenne,දැන් මොකෝ හිතෙන්නේ
+32,colloquial,hama dama ekama kaama,හැමදාම එකම කෑම
+33,colloquial,malli ada school giya,මල්ලි අද school ගියා
+34,colloquial,oya dan moko karanne,ඔයා දැන් මොකෝ කරන්නේ
+35,colloquial,me paara mara rasnei,මේ පාර මාර රස්නෙයි
+36,colloquial,oya dan mawa rawattuwa,ඔයා දැන් මාව රැවැට්ටුවා
+37,colloquial,e gana hithanna epa,ඒ ගැන හිතන්න එපා
+38,colloquial,dan nam godak rathri wela,දැන් නම් ගොඩක් රාත්‍රී වෙලා
+39,colloquial,heta ude wenakan inna,හෙට උදේ වෙනකන් ඉන්න
+40,colloquial,oya hariyata katha karanna,ඔයා හරියට කතා කරන්න
+41,colloquial,mata nam eka epa wuna,මට නම් ඒක එපා වුණා
+42,colloquial,poddi kiyatada enne,පොඩ්ඩී කීයටද එන්නේ
+43,colloquial,oya ada gedarada inne,ඔයා අද ගෙදරද ඉන්නේ
+44,colloquial,meka hariyata karanna balanna,මේක හරියට කරන්න බලන්න
+45,colloquial,mata nam mara badagini dan,මට නම් මාර බඩගිනියි දැන්
+46,colloquial,oya kiyana de mata therenne na,ඔයා කියන දේ මට තේරෙන්නේ නෑ
+47,colloquial,ada ude hariyata wassa,අද උදේ හරියට වැස්සා
+48,colloquial,mama dan kade yanawa,මම දැන් කඩේ යනවා
+49,colloquial,api eka parak yamu balanna,අපි එක පාරක් යමු බලන්න
+50,colloquial,kauruwath awe na thama,කවුරුවත් ආවේ නෑ තාම
+51,colloquial,hondata kaala nidaganna,හොඳට කාලා නිදාගන්න
+52,colloquial,dan nam wada wadi,දැන් නම් වැඩ වැඩියි
+53,colloquial,oya moko kiyanne e gana,ඔයා මොකෝ කියන්නේ ඒ ගැන
+54,colloquial,dan eliyata yanna epa,දැන් එළියට යන්න එපා
+55,colloquial,mata sathutuwen inna one,මට සතුටුවෙන් ඉන්න ඕනේ
+56,colloquial,moko oya bayawela wage,මොකෝ ඔයා බයවෙලා වගේ
+57,colloquial,api thawa tikakin katha karamu,අපි තව ටිකකින් කතා කරමු
+58,colloquial,oya ada kiyatada yanne,ඔයා අද කීයටද යන්නේ
+59,colloquial,mama loku deyak kale na,මම ලොකු දෙයක් කළේ නෑ
+60,colloquial,poddak udaw karanna puluwanda,පොඩ්ඩක් උදව් කරන්න පුළුවන්ද
+61,colloquial,heta ude game yanna one,හෙට උදේ ගමේ යන්න ඕනේ
+62,colloquial,me dawas wala hariyata rathne,මේ දවස් වල හරියට රත්නේ
+63,colloquial,mata oya gana mara dukai,මට ඔයා ගැන මාර දුකයි
+64,colloquial,moko mechchara tharaha gihin,මොකෝ මෙච්චර තරහ ගිහින්
+65,colloquial,api hita hita inna epa,අපි හිත හිත ඉන්න එපා
+66,colloquial,oya ada kohedo hitiye,ඔයා අද කොහේද හිටියේ
+67,colloquial,me de karanna ba kiyanna epa,මේ දේ කරන්න බෑ කියන්න එපා
+68,colloquial,oya dan hariyata wenas wela,ඔයා දැන් හරියට වෙනස් වෙලා
+69,colloquial,api heta canteen ekedi hamuwemu,අපි හෙට canteen එකේදී හමුවෙමු
+70,colloquial,kaama thama lipe thiyenne,කෑම තාම ලිපේ තියෙන්නේ
+71,colloquial,oya mawa dakke nadda,ඔයා මාව දැක්කේ නැද්ද
+72,colloquial,me parashne wisadanna balamu,මේ ප්‍රශ්නේ විසඳන්න බලමු
+73,colloquial,mama heta kiyatath yannam,මම හෙට කීයටත් යන්නම්
+74,colloquial,mata ada tikak amaru wage,මට අද ටිකක් අමාරු වගේ
+75,colloquial,dan kauruwath gedara na,දැන් කවුරුවත් ගෙදර නෑ
+76,colloquial,mama heta ude ennamko,මම හෙට උදේ එන්නම්කෝ
+77,colloquial,oya kiyana eka boru,ඔයා කියන එක බොරු
+78,colloquial,mata nikan ninda yanawa dan,මට නිකන් නින්ද යනවා දැන්
+79,colloquial,thawa deyak kiyanna one,තව දෙයක් කියන්න ඕනේ
+80,colloquial,moko oya thama awe natthe,මොකෝ ඔයා තාම ආවේ නැත්තේ
+81,colloquial,mama ada library gihin awa,මම අද library ගිහින් ආවා
+82,colloquial,poddak methanata enna,පොඩ්ඩක් මෙතනට එන්න
+83,colloquial,dan oya moko kiyanne,දැන් ඔයා මොකෝ කියන්නේ
+84,colloquial,mata moko une kiyala therenne na,මට මොකෝ වුණේ කියලා තේරෙන්නේ නෑ
+85,colloquial,poddak inna kiyala kiyanna,පොඩ්ඩක් ඉන්න කියලා කියන්න
+86,colloquial,oya mawa amataka kala neda,ඔයා මාව අමතක කළා නේද
+87,colloquial,kaama kaddi katha karanna epa,කෑම කද්දී කතා කරන්න එපා
+88,colloquial,mama heta ude call karannam,මම හෙට උදේ call කරන්නම්
+89,colloquial,moko oya ada lassanata inne,මොකෝ ඔයා අද ලස්සනට ඉන්නේ
+90,colloquial,mama dan hariyata bayawela inne,මම දැන් හරියට බයවෙලා ඉන්නේ
+91,colloquial,me parashne nam iwarayak na,මේ ප්‍රශ්නේ නම් ඉවරයක් නෑ
+92,colloquial,api moko hithanne heta gana,අපි මොකෝ හිතන්නේ හෙට ගැන
+93,colloquial,mama dan nikan innawa,මම දැන් නිකන් ඉන්නවා
+94,colloquial,oya moko ada parakku,ඔයා මොකෝ අද පරක්කු
+95,colloquial,mata ada raama yanawa,මට අද රෑම යනවා
+96,colloquial,poddak methana indagena inna,පොඩ්ඩක් මෙතන ඉඳගෙන ඉන්න
+97,colloquial,oya heta yanawada kade,ඔයා හෙට යනවාද කඩේ
+98,colloquial,mata kisima deyak therenne na,මට කිසිම දෙයක් තේරෙන්නේ නෑ
+99,colloquial,thawa tika welawakin yamu,තව ටික වෙලාවකින් යමු
+100,colloquial,oya moko ehema balanne,ඔයා මොකෝ එහෙම බලන්නේ
+101,colloquial,mata nam epa wela thiyenne,මට නම් එපා වෙලා තියෙන්නේ
+102,colloquial,oya ada moko karanne,ඔයා අද මොකෝ කරන්නේ
+103,colloquial,dan yamu nikan inna epa,දැන් යමු නිකන් ඉන්න එපා
+104,colloquial,thawa tikak welawa ganna,තව ටිකක් වෙලාව ගන්න
+105,colloquial,mata badagini na dan,මට බඩගිනි නෑ දැන්
+106,colloquial,moko mechchara wada thiyenne,මොකෝ මෙච්චර වැඩ තියෙන්නේ
+107,colloquial,api heta udema yamu,අපි හෙට උදේම යමු
+108,colloquial,mama ada knna giye na,මම අද කන්න ගියේ නෑ
+109,colloquial,dan mata mara amaruwak thiyenne,දැන් මට මාර අමාරුවක් තියෙන්නේ
+110,colloquial,oya kiyana de mata therenawa,ඔයා කියන දේ මට තේරෙනවා
+111,colloquial,api meka karala iwara karamu,අපි මේක කරලා ඉවර කරමු
+112,colloquial,mama ada nidagatta na thama,මම අද නිදාගත්තා නෑ තාම
+113,colloquial,poddak inna mama katha karannam,පොඩ්ඩක් ඉන්න මම කතා කරන්නම්
+114,colloquial,moko mechchara hithanne oya,මොකෝ මෙච්චර හිතන්නේ ඔයා
+115,colloquial,api heta raata hamuwemu,අපි හෙට රෑට හමුවෙමු
+116,colloquial,oya mara deyakne karanne,ඔයා මාර දෙයක්නේ කරන්නේ
+117,colloquial,mata tikak dunnoth hondai,මට ටිකක් දුන්නොත් හොඳයි
+118,colloquial,oya ada kade giyada,ඔයා අද කඩේ ගියාද
+119,colloquial,dan mata kisima bayak na,දැන් මට කිසිම බයක් නෑ
+120,colloquial,oya mawa dakka neda ada,ඔයා මාව දැක්කා නේද අද
+121,colloquial,poddak inna meka kiyanna,පොඩ්ඩක් ඉන්න මේක කියන්න
+122,colloquial,mata ada loku prashnayak thiyenawa,මට අද ලොකු ප්‍රශ්නයක් තියෙනවා
+123,colloquial,moko me tharah gihin inne,මොකෝ මේ තරහ ගිහින් ඉන්නේ
+124,colloquial,oya heta kiyatada enne,ඔයා හෙට කීයටද එන්නේ
+125,colloquial,mama ada kaama haduwe na,මම අද කෑම හැදුවේ නෑ
+126,colloquial,dan katha karala wadak na,දැන් කතා කරලා වැඩක් නෑ
+127,colloquial,oya mawa amataka karanne epa,ඔයා මාව අමතක කරන්නේ එපා
+128,colloquial,dan mara widihata wassa,දැන් මාර විදිහට වැස්සා
+129,colloquial,api heta gedara yanawada,අපි හෙට ගෙදර යනවාද
+130,colloquial,mama ada dan hitiye na,මම අද දන්න හිටියේ නෑ
+131,colloquial,poddak inna thawa tikakin ennam,පොඩ්ඩක් ඉන්න තව ටිකකින් එන්නම්
+132,code_mixed,e class eka cancel una,ඒ class එක cancel වුණා
+133,code_mixed,mama application eka download kala,මම application එක download කළා
+134,code_mixed,lecture eka thiyenne kiyatada,lecture එක තියෙන්නේ කීයටද
+135,code_mixed,oyage computer eka update karanna,ඔයාගේ computer එක update කරන්න
+136,code_mixed,mata me project eka godak wadagath,මට මේ project එක ගොඩක් වැදගත්
+137,code_mixed,results kawada eyida danne na,results කවදා එයිද දන්නේ නෑ
+138,code_mixed,oyage id card eka genna,ඔයාගේ id card එක ගේන්න
+139,code_mixed,mama internship eka start kala,මම internship එක start කළා
+140,code_mixed,canteen eka dan wahala athi,canteen එක දැන් වහලා ඇති
+141,code_mixed,oya presentation eka ready da,ඔයා presentation එක ready ද
+142,code_mixed,mama ada office giye na,මම අද office ගියේ නෑ
+143,code_mixed,mema data set eka evaluate karanna,මෙම data set එක evaluate කරන්න
+144,code_mixed,oya link eka send karanna,ඔයා link එක send කරන්න
+145,code_mixed,mata internet slow wela ada,මට internet slow වෙලා අද
+146,code_mixed,exam hall ekata yanna parakku wenawa,exam hall එකට යන්න පරක්කු වෙනවා
+147,code_mixed,oyage feedback eka ewanna balanna,ඔයාගේ feedback එක එවන්න බලන්න
+148,code_mixed,mama mage mobile phone eka nathi kala,මම මගේ mobile phone එක නැති කළා
+149,code_mixed,lecture notes kiyawala balanna one,lecture notes කියවලා බලන්න ඕනේ
+150,code_mixed,oyage user account eka block wela,ඔයාගේ user account එක block වෙලා
+151,code_mixed,mama application eka submit kala ada,මම application එක submit කළා අද
+152,code_mixed,oya project report eka finalize kalaada,ඔයා project report එක finalize කළාද
+153,code_mixed,oya system eka install karala thiyenne,ඔයා system එක install කරලා තියෙන්නේ
+154,code_mixed,mata me course eka amaru wage,මට මේ course එක අමාරු වගේ
+155,code_mixed,oyage account balance eka check karanna,ඔයාගේ account balance එක check කරන්න
+156,code_mixed,api meka group chat eke katha karamu,අපි මේක group chat එකේ කතා කරමු
+157,code_mixed,oya registration form eka fill karanna,ඔයා registration form එක fill කරන්න
+158,code_mixed,mama profile picture eka change kala,මම profile picture එක change කළා
+159,code_mixed,lecture eka record karanna puluwanda,lecture එක record කරන්න පුළුවන්ද
+160,code_mixed,mama mage password eka amataka kala,මම මගේ password එක අමතක කළා
+161,code_mixed,oya video eka watch kalaada,ඔයා video එක watch කළාද
+162,code_mixed,api next week eke yamu,අපි next week එකේ යමු
+163,code_mixed,oyage message eka labuna mata,ඔයාගේ message එක ලැබුණා මට
+164,code_mixed,mama application form eka sign kala,මම application form එක sign කළා
+165,code_mixed,oya photo eka edit karala ewanna,ඔයා photo එක edit කරලා එවන්න
+166,code_mixed,mata laptop eka repair karanna one,මට laptop එක repair කරන්න ඕනේ
+167,code_mixed,oyage results online balanna puluwan,ඔයාගේ results online බලන්න පුළුවන්
+168,code_mixed,api meka online meet wela karamu,අපි මේක online meet වෙලා කරමු
+169,code_mixed,oya driver eka update karala thiyenne,ඔයා driver එක update කරලා තියෙන්නේ
+170,code_mixed,mama browser eka refresh kala dan,මම browser එක refresh කළා දැන්
+171,code_mixed,oyage payment eka successful wela thiyenne,ඔයාගේ payment එක successful වෙලා තියෙන්නේ
+172,code_mixed,mama file eka download karala iwarai,මම file එක download කරලා ඉවරයි
+173,code_mixed,oyage profile eka update karanna balanna,ඔයාගේ profile එක update කරන්න බලන්න
+174,code_mixed,mama application status eka check kala,මම application status එක check කළා
+175,code_mixed,oya post eka share karala thiyenne,ඔයා post එක share කරලා තියෙන්නේ
+176,code_mixed,mama notification eka dakke na thama,මම notification එක දැක්කේ නෑ තාම
+177,code_mixed,oya meeting invite eka accept kalaada,ඔයා meeting invite එක accept කළාද
+178,code_mixed,mama mage location eka share karannam,මම මගේ location එක share කරන්නම්
+179,code_mixed,oyage internet connection eka check karanna,ඔයාගේ internet connection එක check කරන්න
+180,code_mixed,mama server eka restart kala dan,මම server එක restart කළා දැන්
+181,code_mixed,oya update eka install karala thiyenne,ඔයා update එක install කරලා තියෙන්නේ
+182,code_mixed,mama message eka reply kala ada,මම message එක reply කළා අද
+183,code_mixed,oya file eka upload karala thiyenne,ඔයා file එක upload කරලා තියෙන්නේ
+184,code_mixed,mama website eka search kala godak,මම website එක search කළා ගොඩක්
+185,code_mixed,oyage order eka confirm wela thiyenne,ඔයාගේ order එක confirm වෙලා තියෙන්නේ
+186,code_mixed,mama notification eka clear kala dan,මම notification එක clear කළා දැන්
+187,code_mixed,oya user id eka check karanna,ඔයා user id එක check කරන්න
+188,code_mixed,mama backup eka restore kala ada,මම backup එක restore කළා අද
+189,code_mixed,oya process eka start karala thiyenne,ඔයා process එක start කරලා තියෙන්නේ
+190,code_mixed,mama account settings change kala tika,මම account settings change කළා ටික
+191,code_mixed,oya system error eka fix kalaada,ඔයා system error එක fix කළාද
+192,code_mixed,mama security code eka enter kala,මම security code එක enter කළා
+193,code_mixed,oya mobile app eka update karanna,ඔයා mobile app එක update කරන්න
+194,code_mixed,mama login details share kala ada,මම login details share කළා අද
+195,code_mixed,oya verification email eka check karanna,ඔයා verification email එක check කරන්න
+196,code_mixed,mama feedback form eka submit kala,මම feedback form එක submit කළා
+197,code_mixed,oya project goal eka achieve kalaada,ඔයා project goal එක achieve කළාද
+198,code_mixed,mama link eka copy karala thibba,මම link එක copy කරලා තිබ්බා
+199,code_mixed,oya task eka complete karala thiyenne,ඔයා task එක complete කරලා තියෙන්නේ
+200,code_mixed,mama data entry kala iwaraik,මම data entry කළා ඉවරයි
+201,code_mixed,oya screen share eka enable karanna,ඔයා screen share එක enable කරන්න
+202,code_mixed,mama call eka disconnect kala dan,මම call එක disconnect කළා දැන්
+203,code_mixed,oya message eka delete karala thiyenne,ඔයා message එක delete කරලා තියෙන්නේ
+204,code_mixed,mama audio quality eka check kala,මම audio quality එක check කළා
+205,code_mixed,oya output eka verify karala thiyenne,ඔයා output එක verify කරලා තියෙන්නේ
+206,code_mixed,mama input data eka validate kala,මම input data එක validate කළා
+207,code_mixed,oya code eka review karala thiyenne,ඔයා code එක review කරලා තියෙන්නේ
+208,code_mixed,mama version control eka check kala,මම version control එක check කළා
+209,code_mixed,oya merge request eka approve kalaada,ඔයා merge request එක approve කළාද
+210,code_mixed,mama documentation eka update kala ada,මම documentation එක update කළා අද
+211,code_mixed,oya bug fix eka test kalaada,ඔයා bug fix එක test කළාද
+212,code_mixed,mama deployment eka success kala dan,මම deployment එක success කළා දැන්
+213,code_mixed,oya release note eka kiyawala thiyenne,ඔයා release note එක කියවලා තියෙන්නේ
+214,code_mixed,mama cloud storage eka use kala,මම cloud storage එක use කළා
+215,code_mixed,oya password reset eka request kalaada,ඔයා password reset එක request කළාද
+216,code_mixed,mama profile info eka edit kala,මම profile info එක edit කළා
+217,code_mixed,oya privacy settings update karala thiyenne,ඔයා privacy settings update කරලා තියෙන්නේ
+218,code_mixed,mama contact list eka sync kala,මම contact list එක sync කළා
+219,code_mixed,oya battery level eka check karanna,ඔයා battery level එක check කරන්න
+220,code_mixed,mama screen brightness eka adu kala,මම screen brightness එක අඩු කළා
+221,code_mixed,oya storage space eka clear karanna,ඔයා storage space එක clear කරන්න
+222,code_mixed,mama software update eka download kala,මම software update එක download කළා
+223,code_mixed,oya network speed eka check kalaada,ඔයා network speed එක check කළාද
+224,code_mixed,mama wifi connection eka fix kala,මම wifi connection එක fix කළා
+225,code_mixed,oya signal strength eka check karanna,ඔයා signal strength එක check කරන්න
+226,code_mixed,mama app permissions change kala ada,මම app permissions change කළා අද
+227,code_mixed,oya cache memory eka clear karanna,ඔයා cache memory එක clear කරන්න
+228,code_mixed,mama database eka optimize kala dan,මම database එක optimize කළා දැන්
+229,code_mixed,oya query eka execute karala thiyenne,ඔයා query එක execute කරලා තියෙන්නේ
+230,code_mixed,mama search result eka filter kala,මම search result එක filter කළා
+231,code_mixed,oya sorting order eka change karanna,ඔයා sorting order එක change කරන්න
+232,code_mixed,mama list eka refresh kala ada,මම list එක refresh කළා අද
+233,code_mixed,oya item eka select karala thiyenne,ඔයා item එක select කරලා තියෙන්නේ
+234,code_mixed,mama chart eka generate kala dan,මම chart එක generate කළා දැන්
+235,code_mixed,oya report eka export karala thiyenne,ඔයා report එක export කරලා තියෙන්නේ
+236,code_mixed,mama file format eka change kala,මම file format එක change කළා
+237,code_mixed,oya image resolution eka check karanna,ඔයා image resolution එක check කරන්න
+238,code_mixed,mama video duration eka adu kala,මම video duration එක අඩු කළා
+239,code_mixed,oya thumbnail eka create karala thiyenne,ඔයා thumbnail එක create කරලා තියෙන්නේ
+240,code_mixed,mama subtitle file eka upload kala,මම subtitle file එක upload කළා
+241,code_mixed,oya audio track eka change karanna,ඔයා audio track එක change කරන්න
+242,code_mixed,mama volume level eka wadi kala,මම volume level එක වැඩි කළා
+243,code_mixed,oya mute button eka press karanna,ඔයා mute button එක press කරන්න
+244,code_mixed,mama playback speed eka change kala,මම playback speed එක change කළා
+245,code_mixed,oya playlist eka create karala thiyenne,ඔයා playlist එක create කරලා තියෙන්නේ
+246,code_mixed,mama album art eka change kala,මම album art එක change කළා
+247,code_mixed,oya artist name eka check karanna,ඔයා artist name එක check කරන්න
+248,code_mixed,mama song title eka edit kala,මම song title එක edit කළා
+249,code_mixed,oya lyrics eka search karala thiyenne,ඔයා lyrics එක search කරලා තියෙන්නේ
+250,code_mixed,mama app store eka check kala,මම app store එක check කළා
+251,code_mixed,oya download link eka click karanna,ඔයා download link එක click කරන්න
+252,code_mixed,mama installation process eka follow kala,මම installation process එක follow කළා
+253,code_mixed,oya setup wizard eka complete karanna,ඔයා setup wizard එක complete කරන්න
+254,code_mixed,mama activation key eka enter kala,මම activation key එක enter කළා
+255,code_mixed,oya license agreement eka accept karanna,ඔයා license agreement එක accept කරන්න
+256,code_mixed,mama terms and conditions kiyewwa,මම terms and conditions කියෙව්වා
+257,code_mixed,oya user manual eka check karanna,ඔයා user manual එක check කරන්න
+258,code_mixed,mama help menu eka search kala,මම help menu එක search කළා
+259,code_mixed,oya customer support eka contact karanna,ඔයා customer support එක contact කරන්න
+260,code_mixed,mama support ticket eka open kala,මම support ticket එක open කළා
+261,code_mixed,oya issue report eka submit karanna,ඔයා issue report එක submit කරන්න
+262,code_mixed,mama status update eka check kala,මම status update එක check කළා
+263,code_mixed,oya resolution details eka check karanna,ඔයා resolution details එක check කරන්න
+264,code_mixed,mama case number eka note kala,මම case number එක note කළා
+265,code_mixed,oya service request eka cancel karanna,ඔයා service request එක cancel කරන්න
+266,code_mixed,mama feedback score eka check kala,මම feedback score එක check කළා
+267,code_mixed,oya rating eka review karala thiyenne,ඔයා rating එක review කරලා තියෙන්නේ
+268,code_mixed,mama comment section eka check kala,මම comment section එක check කළා
+269,code_mixed,oya forum post eka read karanna,ඔයා forum post එක read කරන්න
+270,code_mixed,mama community guideline eka follow kala,මම community guideline එක follow කළා
+271,code_mixed,oya blog post eka publish kalaada,ඔයා blog post එක publish කළාද
+272,code_mixed,mama article eka edit karala iwarai,මම article එක edit කරලා ඉවරයි
+273,code_mixed,oya content eka check karala thiyenne,ඔයා content එක check කරලා තියෙන්නේ
+274,code_mixed,mama keyword eka search kala godak,මම keyword එක search කළා ගොඩක්
+275,code_mixed,oya tag eka add karala thiyenne,ඔයා tag එක add කරලා තියෙන්නේ
+276,code_mixed,mama category eka change kala dan,මම category එක change කළා දැන්
+277,code_mixed,oya author name eka check karanna,ඔයා author name එක check කරන්න
+278,code_mixed,mama publish date eka check kala,මම publish date එක check කළා
+279,code_mixed,oya link status eka verify karanna,ඔයා link status එක verify කරන්න
+280,formal,mema pahasukam siyalu denatama podu we,මෙම පහසුකම් සියලු දෙනාටම පොදු වේ
+281,formal,karunakarala oba ge namaya sadahan karanna,කරුණාකරලා ඔබගේ නාමය සඳහන් කරන්න
+282,formal,oba ge upadeshaya apata godak wadagath,ඔබගේ උපදේශය අපට ගොඩක් වැදගත්
+283,formal,mema nivedanaya avadanayata ganna,මෙම නිවේදනය අවධානයට ගන්න
+284,formal,adyaapana depaarthamenthuwa mema thiranaya gaththa,අධ්‍යාපන දෙපාර්තමේන්තුව මෙම තීරණය ගත්තා
+285,formal,mema wadashatahana sadaha obaata aradhana karamu,මෙම වැඩසටහන සඳහා ඔබට ආරාධනා කරමු
+286,formal,oba ge upakaaraya sadaha sthuthiwantha wemu,ඔබගේ උපකාරය සඳහා ස්තූතිවන්ත වෙමු
+287,formal,rajaye nivedanaya anuwa kriya karanna,රජයේ නිවේදනය අනුව ක්‍රියා කරන්න
+288,formal,oba ge arayaachanaya salaka balanu labe,ඔබගේ අයදුම්පත සලකා බලනු ලැබේ
+289,formal,mema karuna piliyela karana lada deyak,මෙම කරුණ පිළියෙළ කරන ලද දෙයක්
+290,formal,mema prashne gana pashchath vimarshanaya karanna,මෙම ප්‍රශ්නය ගැන පශ්චාත් විමර්ශනය කරන්න
+291,formal,oba ge sewaya apata agaya kala hakiya,ඔබගේ සේවය අපට අගය කළ හැකිය
+292,formal,vishwa vidyaalaye palaveni wasare shishyayan,විශ්ව විද්‍යාලයේ පළවෙනි වසරේ ශිෂ්‍යයන්
+293,formal,parishlana nivedanaya balanna karunakarala,පරිශීලන නිවේදනය බලන්න කරුණාකරලා
+294,formal,mema kriyavaliya hariyata kriyathmaka karanna,මෙම ක්‍රියාවලිය හරියට ක්‍රියාත්මක කරන්න
+295,formal,adala lekana pirihenu labe,අදාළ ලේඛන පිරිනමනු ලැබේ
+296,formal,oba ge sahayogaya apata athyawashya we,ඔබගේ සහයෝගය අපට අත්‍යවශ්‍ය වේ
+297,formal,mema sthanaye rakshawa thahawuru karanna,මෙම ස්ථානයේ රක්ෂාව තහවුරු කරන්න
+298,formal,paurshika thorathuru rakshitha we,පෞද්ගලික තොරතුරු රක්ෂිත වේ
+299,formal,mema kramaya anugamanaya karanna balanna,මෙම ක්‍රමය අනුගමනය කරන්න බලන්න
+300,formal,oba ge adahas idiripath karanna,ඔබගේ අදහස් ඉදිරිපත් කරන්න
+301,formal,mema pahasukama pavichchi karanna puluwan,මෙම පහසුකම පාවිච්චි කරන්න පුළුවන්
+302,formal,shishya kalyana sangamaya mema wada karai,ශිෂ්‍ය සුබසාධන සංගමය මෙම වැඩ කරයි
+303,formal,oba ge upatha saha thorathuru sadahan karanna,ඔබගේ උපත සහ තොරතුරු සඳහන් කරන්න
+304,formal,rajaye upadeshaya anuwa kriya karanna one,රජයේ උපදේශය අනුව ක්‍රියා කරන්න ඕනේ
+305,formal,adala niladhariyan wetha thorathuru ewanna,අදාළ නිලධාරීන් වෙත තොරතුරු එවන්න
+306,formal,mema kramaya sadaha anumathiya labuna,මෙම ක්‍රමය සඳහා අනුමතිය ලැබුණා
+307,formal,oba ge gatalu apata danyapat karanna,ඔබගේ ගැටලු අපට දන්වා එවන්න
+308,formal,mema parikshana prathipala keti kalayakin labe,මෙම පරීක්ෂණ ප්‍රතිඵල කෙටි කලයකින් ලැබේ
+309,formal,visheshitha karuna sadaha avadanaya yomu karanna,විශේෂිත කරුණු සඳහා අවධානය යොමු කරන්න
+310,formal,oba ge sahayogaya apata godak wadagath we,ඔබගේ සහයෝගය අපට ගොඩක් වැදගත් වේ
+311,formal,mema karyaya sapura iwara kala yuthuya,මෙම කාර්යය සපුරා ඉවර කළ යුතුය
+312,formal,oba ge lekana keti kalayakin labe,ඔබගේ ලේඛන කෙටි කලයකින් ලැබේ
+313,formal,mema sewaya sadaha ayabeerak aya nokere,මෙම සේවය සඳහා අය කිරීමක් අය නොකෙරේ
+314,formal,oba ge upadeshaya anuwa api kriya karamu,ඔබගේ උපදේශය අනුව අපි ක්‍රියා කරමු
+315,formal,mema thorathuru rahasya lesa thaba ganna,මෙම තොරතුරු රහස්‍ය ලෙස තබා ගන්න
+316,formal,oba ge parashna apata danyapat karanna balanna,ඔබගේ ප්‍රශ්න අපට දන්වා එවන්න බලන්න
+317,formal,mema kramavedaya hariyata kriyathmaka karanna,මෙම ක්‍රමවේදය හරියට ක්‍රියාත්මක කරන්න
+318,formal,oba ge sadaha vishesha sthuthiya pudakaramu,ඔබගේ සඳහා විශේෂ ස්තූතිය පුදකරමු
+319,formal,mema nivedanaya balapathmaka wanne heta sita,මෙම නිවේදනය බලපෑමක වන්නේ හෙට සිට
+320,formal,oba ge arayaachanaya thira karala iwarai,ඔබගේ අයදුම්පත තීරණය කරලා ඉවරයි
+321,formal,mema karyalaya pradhaniya visin anumatha kala,මෙම කාර්යාල ප්‍රධානියා විසින් අනුමත කළා
+322,formal,oba ge thorathuru rahasyathawa thahawuru karanu labe,ඔබගේ තොරතුරු රහස්‍යභාවය තහවුරු කරනු ලැබේ
+323,formal,mema wadashatahana udashanna kaledi thiyeyi,මෙම වැඩසටහන උදෑසන කාලයේදී තියෙයි
+324,formal,oba ge sabaawaya apata loku shakthiyak,ඔබගේ සහභාගීත්වය අපට ලොකු ශක්තියක්
+325,formal,mema lekanaya keti kalayakin labe,මෙම ලේඛනය කෙටි කලයකින් ලැබේ
+326,formal,oba ge adahas apata sadarayen piliyanamu,ඔබගේ අදහස් අපට සාදරයෙන් පිළිගනිමු
+327,formal,mema kriyawaliya sadaha oba ge sahayogaya one,මෙම ක්‍රියාවලිය සඳහා ඔබගේ සහයෝගය ඕනේ
+328,formal,oba ge karyaya sapura iwara kala yuthuya,ඔබගේ කාර්යය සපුරා ඉවර කළ යුතුය
+329,formal,mema thorathuru sadahan karanna karunakarala,මෙම තොරතුරු සඳහන් කරන්න කරුණාකරලා
+330,formal,oba ge sahayogaya apata nithara labuna,ඔබගේ සහයෝගය අපට නිතර ලැබුණා
+331,formal,mema prashne gana vishesha vimarshanayak karamu,මෙම ප්‍රශ්නය ගැන විශේෂ විමර්ශනයක් කරමු
+332,formal,oba ge sewaya apata sadahayen agaya karamu,ඔබගේ සේවය අපට සාදරයෙන් අගය කරමු
+333,formal,mema kramaya sadaha vishesha anumathiyak one,මෙම ක්‍රමය සඳහා විශේෂ අනුමතියක් ඕනේ
+334,formal,oba ge upakaaraya apata nithara labuna,ඔබගේ උපකාරය අපට නිතර ලැබුණා
+335,formal,mema karyaya sapura iwara kala hakiya,මෙම කාර්යය සපුරා ඉවර කළ හැකිය
+336,formal,oba ge thorathuru sadahan karala ewanna,ඔබගේ තොරතුරු සඳහන් කරලා එවන්න
+337,formal,mema nivedanaya balathmaka wanne ada sita,මෙම නිවේදනය බලපෑමක වන්නේ අද සිට
+338,formal,oba ge upadeshaya apata godak wadagath we,ඔබගේ උපදේශය අපට ගොඩක් වැදගත් වේ
+339,formal,mema kramavedaya anugamanaya karanna balanna,මෙම ක්‍රමවේදය අනුගමනය කරන්න බලන්න
+340,formal,oba ge sahayogaya apata athyawashya we dan,ඔබගේ සහයෝගය අපට අත්‍යවශ්‍ය වේ දැන්
+341,formal,mema kriyawaliya sadaha vishesha dushyakawaya one,මෙම ක්‍රියාවලිය සඳහා විශේෂ දෘශ්‍යතාවය ඕනේ
+342,formal,oba ge adahas apata sadarayen piliyanamu dan,ඔබගේ අදහස් අපට සාදරයෙන් පිළිගනිමු දැන්
+343,formal,mema thorathuru rahasya lesa thaba ganna balanna,මෙම තොරතුරු රහස්‍ය ලෙස තබා ගන්න බලන්න
+344,formal,oba ge sewaya apata nithara agaya karamu,ඔබගේ සේවය අපට නිතර අගය කරමු
+345,formal,mema karyaya sapura iwara kala hakiya dan,මෙම කාර්යය සපුරා ඉවර කළ හැකිය දැන්
+346,formal,oba ge thorathuru sadahan karala ewanna balanna,ඔබගේ තොරතුරු සඳහන් කරලා එවන්න බලන්න
+347,formal,mema nivedanaya balathmaka wanne heta sita dan,මෙම නිවේදනය බලපෑමක වන්නේ හෙට සිට දැන්
+348,formal,oba ge upadeshaya apata godak wadagath we ada,ඔබගේ උපදේශය අපට ගොඩක් වැදගත් වේ අද
+349,formal,mema kramavedaya anugamanaya karanna balanna ada,මෙම ක්‍රමවේදය අනුගමනය කරන්න බලන්න අද
+350,formal,oba ge sahayogaya apata athyawashya we heta sita,ඔබගේ සහයෝගය අපට අත්‍යවශ්‍ය වේ හෙට සිට
+351,formal,mema kriyawaliya sadaha vishesha dushyakawaya one ada,මෙම ක්‍රියාවලිය සඳහා විශේෂ දෘශ්‍යතාවය ඕනේ අද
+352,formal,oba ge adahas apata sadarayen piliyanamu heta sita,ඔබගේ අදහස් අපට සාදරයෙන් පිළිගනිමු හෙට සිට
+353,formal,mema thorathuru rahasya lesa thaba ganna balanna ada,මෙම තොරතුරු රහස්‍ය ලෙස තබා ගන්න බලන්න අද
+354,formal,oba ge sewaya apata nithara agaya karamu dan,ඔබගේ සේවය අපට නිතර අගය කරමු දැන්
+355,formal,mema karyaya sapura iwara kala hakiya heta sita,මෙම කාර්යය සපුරා ඉවර කළ හැකිය හෙට සිට
+356,formal,oba ge thorathuru sadahan karala ewanna balanna dan,ඔබගේ තොරතුරු සඳහන් කරලා එවන්න බලන්න දැන්
+357,formal,mema nivedanaya balathmaka wanne ada sita danma,මෙම නිවේදනය බලපෑමක වන්නේ අද සිට දැන්ම
+358,formal,oba ge upadeshaya apata godak wadagath we heta,ඔබගේ උපදේශය අපට ගොඩක් වැදගත් වේ හෙට
+359,formal,mema kramavedaya anugamanaya karanna balanna heta sita,මෙම ක්‍රමවේදය අනුගමනය කරන්න බලන්න හෙට සිට
+360,formal,oba ge sahayogaya apata athyawashya we ada sitama,ඔබගේ සහයෝගය අපට අත්‍යවශ්‍ය වේ අද සිටම
+361,formal,mema kriyawaliya sadaha vishesha dushyakawaya one heta,මෙම ක්‍රියාවලිය සඳහා විශේෂ දෘශ්‍යතාවය ඕනේ හෙට
+362,formal,oba ge adahas apata sadarayen piliyanamu ada sitama,ඔබගේ අදහස් අපට සාදරයෙන් පිළිගනිමු අද සිටම
+363,formal,mema thorathuru rahasya lesa thaba ganna balanna heta,මෙම තොරතුරු රහස්‍ය ලෙස තබා ගන්න බලන්න හෙට
+364,formal,oba ge sewaya apata nithara agaya karamu ada,ඔබගේ සේවය අපට නිතර අගය කරමු අද
+365,formal,mema karyaya sapura iwara kala hakiya ada sitama,මෙම කාර්යය සපුරා ඉවර කළ හැකිය අද සිටම
+366,formal,oba ge thorathuru sadahan karala ewanna balanna heta,ඔබගේ තොරතුරු සඳහන් කරලා එවන්න බලන්න හෙට
+367,formal,mema nivedanaya balathmaka wanne heta sita danma,මෙම නිවේදනය බලපෑමක වන්නේ හෙට සිට දැන්ම
+368,formal,oba ge upadeshaya apata godak wadagath we ada sitama,ඔබගේ උපදේශය අපට ගොඩක් වැදගත් වේ අද සිටම
+369,formal,mema kramavedaya anugamanaya karanna balanna ada sitama,මෙම ක්‍රමවේදය අනුගමනය කරන්න බලන්න අද සිටම
+370,formal,oba ge sahayogaya apata athyawashya we heta sitama,ඔබගේ සහයෝගය අපට අත්‍යවශ්‍ය වේ හෙට සිටම
+371,formal,mema kriyawaliya sadaha vishesha dushyakawaya one ada sitama,මෙම ක්‍රියාවලිය සඳහා විශේෂ දෘශ්‍යතාවය ඕනේ අද සිටම
+372,formal,oba ge adahas apata sadarayen piliyanamu heta sitama,ඔබගේ අදහස් අපට සාදරයෙන් පිළිගනිමු හෙට සිටම
+373,formal,mema thorathuru rahasya lesa thaba ganna balanna ada sitama,මෙම තොරතුරු රහස්‍ය ලෙස තබා ගන්න බලන්න අද සිටම
+374,formal,oba ge sewaya apata nithara agaya karamu heta sitama,ඔබගේ සේවය අපට නිතර අගය කරමු හෙට සිටම
+375,formal,mema karyaya sapura iwara kala hakiya heta sitama,මෙම කාර්යය සපුරා ඉවර කළ හැකිය හෙට සිටම
+376,formal,oba ge thorathuru sadahan karala ewanna balanna ada sitama,ඔබගේ තොරතුරු සඳහන් කරලා එවන්න බලන්න අද සිටම
+377,formal,mema nivedanaya balathmaka wanne ada sitama thawa duratath,මෙම නිවේදනය බලපෑමක වන්නේ අද සිටම තවදුරටත්
+378,formal,oba ge upadeshaya apata godak wadagath we thawa duratath,ඔබගේ උපදේශය අපට ගොඩක් වැදගත් වේ තවදුරටත්
+379,long_sentence,ada ude gedara indan campus ekata yaddi mara traffic ekak thibba,අද උදේ ගෙදර ඉඳන් campus එකට යද්දී මාර traffic එකක් තිබ්බා
+380,long_sentence,mama hithanne na ada campus eke lecture eka thiyeyi kiyala,මම හිතන්නේ නෑ අද campus එකේ lecture එක තියෙයි කියලා
+381,long_sentence,oya heta ude kiyatada train yanna balan inne kiyanna balanna,ඔයා හෙට උදේ කීයටද train යන්න බලන් ඉන්නේ කියන්න බලන්න
+382,long_sentence,mata ada hawasa library ekata gihin poth tikak ganna one wenawa,මට අද හවස library එකට ගිහින් පොත් ටිකක් ගන්න ඕනේ වෙනවා
+383,long_sentence,api heta canteen ekedi hamuwela presentation eka gana katha karamu neda,අපි හෙට canteen එකේදී හමුවෙලා presentation එක ගැන කතා කරමු නේද
+384,long_sentence,oya ada ude kaama haduwe monawada kiyala mata thawa tika welawakin ewanna,ඔයා අද උදේ කෑම හැදුවේ මොනවාද කියලා මට තව ටික වෙලාවකින් එවන්න
+385,long_sentence,mata ada ude indan mara widihata oluwe kakumak thiyenawa kiyala therenawa,මට අද උදේ ඉඳන් මාර විදිහට ඔළුවේ කැක්කුමක් තියෙනවා කියලා තේරෙනවා
+386,long_sentence,oya heta kade yaddi mata thawa tika welawakin call ekak ganna puluwanda,ඔයා හෙට කඩේ යද්දී මට තව ටික වෙලාවකින් call එකක් ගන්න පුළුවන්ද
+387,long_sentence,api heta gihilla ammata ona karana badu tika aran emu neda,අපි හෙට ගිහිල්ලා අම්මට ඕන කරන බඩු ටික අරන් එමු නේද
+388,long_sentence,mama hithanne ada wasinna puluwan kiyala nikan dakkama nam ehemayi penne,මම හිතන්නේ අද වහින්න පුළුවන් කියලා නිකන් දැක්කම නම් එහෙමයි පේන්නේ
+389,long_sentence,oya ada kade giye na neda mama hithuwe oya yeyi kiyala,ඔයා අද කඩේ ගියේ නෑ නේද මම හිතුවේ ඔයා යයි කියලා
+390,long_sentence,mata ada ude indan kisima wada karanna tharam hitha sanasillak na dan,මට අද උදේ ඉඳන් කිසිම වැඩ කරන්න තරම් හිත සැනසිල්ලක් නෑ දැන්
+391,long_sentence,api heta ude canteen ekedi hamuwela ape project report eka hadamu balanna,අපි හෙට උදේ canteen එකේදී හමුවෙලා අපේ project report එක හදමු බලන්න
+392,long_sentence,oya ada ude kiyatada campus ekata giye kiyala mata kiyanna puluwanda dan,ඔයා අද උදේ කීයටද campus එකට ගියේ කියලා මට කියන්න පුළුවන්ද දැන්
+393,long_sentence,mata ada raata kaama hadanna kisima widihakata mahansi wenna hithenne na thama,මට අද රෑට කෑම හදන්න කිසිම විදිහකට මහන්සි වෙන්න හිතෙන්නේ නෑ තාම
+394,long_sentence,api heta yaddi nangiwa school ekata dammaoth hondai kiyala mama hithanawa,අපි හෙට යද්දී නංගිව school එකට දැම්මොත් හොඳයි කියලා මම හිතනවා
+395,long_sentence,oya ada kade gihilla mata ona karana badu tika aran awada balanna,ඔයා අද කඩේ ගිහිල්ලා මට ඕන කරන බඩු ටික අරන් ආවාද බලන්න
+396,long_sentence,mama hithanne me parashne nam wisadanna godak kalayak yayi kiyala thama hithenne,මම හිතන්නේ මේ ප්‍රශ්නය නම් විසඳන්න ගොඩක් කාලයක් යයි කියලා තාම හිතෙන්නේ
+397,long_sentence,oya ada ude canteen ekedi kauruwath dakke nadda kiyala mata kiyanna puluwanda,ඔයා අද උදේ canteen එකේදී කාවවත් දැක්කේ නැද්ද කියලා මට කියන්න පුළුවන්ද
+398,long_sentence,api heta presentation eka karanna kalin presentation notes tika kiyawala balanna one neda,අපි හෙට presentation එක කරන්න කලින් presentation notes ටික කියවලා බලන්න ඕනේ නේද
+399,long_sentence,mata ada ude indan kisima deyak therenne na wage dan hariyata mahansiyi,මට අද උදේ ඉඳන් කිසිම දෙයක් තේරෙන්නේ නෑ වගේ දැන් හරියට මහන්සියි
+400,long_sentence,oya heta kade yaddi thawa tika welawakin call ekak deela badu tika kiyanna,ඔයා හෙට කඩේ යද්දී තව ටික වෙලාවකින් call එකක් දීලා බඩු ටික කියන්න
+401,long_sentence,api heta gihilla ammata badu tika aran thawa tika welawakin emu neda,අපි හෙට ගිහිල්ලා අම්මට බඩු ටික අරන් තව ටික වෙලාවකින් එමු නේද
+402,long_sentence,mama hithanne me para nam results mara widihata parakku wenna puluwan kiyala,මම හිතන්නේ මේ පාර නම් results මාර විදිහට පරක්කු වෙන්න පුළුවන් කියලා
+403,long_sentence,oya ada kade giyoth mata thawa tika welawakin ewanna puluwanda badu tika dan,ඔයා අද කඩේ ගියොත් මට තව ටික වෙලාවකින් එවන්න පුළුවන්ද බඩු ටික දැන්
+404,long_sentence,mata ada ude indan kisima wada karanna hitha denne na mara widihata kamaliy,මට අද උදේ ඉඳන් කිසිම වැඩ කරන්න හිත දෙන්නේ නෑ මාර විදිහට කම්මැලියි
+405,long_sentence,api heta canteen ekedi hamuwela presentation eka thawa tika welawakin ready karamu neda,අපි හෙට canteen එකේදී හමුවෙලා presentation එක තව ටික වෙලාවකින් ready කරමු නේද
+406,long_sentence,oya ada ude kiyatada campus ekata giye kiyala kiyanna puluwanda mata thawa tika welawakin,ඔයා අද උදේ කීයටද campus එකට ගියේ කියලා කියන්න පුළුවන්ද මට තව ටික වෙලාවකින්
+407,long_sentence,mata ada raata kaama hadanna hithenne na thawa tika welawakin kade yamu balanna,මට අද රෑට කෑම හදන්න හිතෙන්නේ නෑ තව ටික වෙලාවකින් කඩේ යමු බලන්න
+408,long_sentence,api heta yaddi nangiwa school ekata dammaoth hondai neda thawa tika welawakin,අපි හෙට යද්දී නංගිව school එකට දැම්මොත් හොඳයි නේද තව ටික වෙලාවකින්
+409,long_sentence,oya ada kade gihilla mata badu tika aran awada kiyala thawa tika welawakin kiyanna,ඔයා අද කඩේ ගිහිල්ලා මට බඩු ටික අරන් ආවාද කියලා තව ටික වෙලාවකින් කියන්න
+410,long_sentence,mama hithanne me parashne thawa tika welawakin wisadanna puluwan kiyala thama hithenne mata,මම හිතන්නේ මේ ප්‍රශ්නය තව ටික වෙලාවකින් විසඳන්න පුළුවන් කියලා තාම හිතෙන්නේ මට
+411,long_sentence,oya ada ude canteen ekedi kauruwath dakke nadda kiyala mata thawa tika welawakin kiyanna,ඔයා අද උදේ canteen එකේදී කාවවත් දැක්කේ නැද්ද කියලා මට තව ටික වෙලාවකින් කියන්න
+412,long_sentence,api heta presentation notes tika kiyawala thawa tika welawakin presentation eka ready karamu balanna,අපි හෙට presentation notes ටික කියවලා තව ටික වෙලාවකින් presentation එක ready කරමු බලන්න
+413,long_sentence,mata ada ude indan kisima deyak therenne na dan mara widihata mahansi wela thiyenne,මට අද උදේ ඉඳන් කිසිම දෙයක් තේරෙන්නේ නෑ දැන් මාර විදිහට මහන්සි වෙලා තියෙන්නේ
+414,long_sentence,oya heta kade yaddi call ekak deela badu tika mata thawa tika welawakin kiyanna,ඔයා හෙට කඩේ යද්දී call එකක් දීලා බඩු ටික මට තව ටික වෙලාවකින් කියන්න
+415,long_sentence,api heta gihilla badu tika aran thawa tika welawakin emu neda ada raata,අපි හෙට ගිහිල්ලා බඩු ටික අරන් තව ටික වෙලාවකින් එමු නේද අද රෑට
+416,long_sentence,mama hithanne results thawa tika welawakin online balanna puluwan kiyala thama dan hithenne,මම හිතන්නේ results තව ටික වෙලාවකින් online බලන්න පුළුවන් කියලා තාම දැන් හිතෙන්නේ
+417,long_sentence,oya ada kade giyoth badu tika mata thawa tika welawakin ewanna puluwanda danma,ඔයා අද කඩේ ගියොත් බඩු ටික මට තව ටික වෙලාවකින් එවන්න පුළුවන්ද දැන්ම
+418,long_sentence,mata ada ude indan wada karanna hitha denne na mara widihata kamaliy ada nam,මට අද උදේ ඉඳන් වැඩ කරන්න හිත දෙන්නේ නෑ මාර විදිහට කම්මැලියි අද නම්
+419,long_sentence,api heta canteen ekedi presentation eka thawa tika welawakin ready karamu neda api dennama,අපි හෙට canteen එකේදී presentation එක තව ටික වෙලාවකින් ready කරමු නේද අපි දෙන්නම
+420,long_sentence,oya ada ude campus ekata giye kiyatada kiyala kiyanna thawa tika welawakin mata balanna,ඔයා අද උදේ campus එකට ගියේ කීයටද කියලා කියන්න තව ටික වෙලාවකින් මට බලන්න
+421,long_sentence,mata ada raata kaama hadanna hithenne na kade yamu balanna thawa tika welawakin api,මට අද රෑට කෑම හදන්න හිතෙන්නේ නෑ කඩේ යමු බලන්න තව ටික වෙලාවකින් අපි
+422,long_sentence,api heta yaddi nangiwa school ekata dammaoth hondai kiyala mama hithanawa thawa duratath,අපි හෙට යද්දී නංගිව school එකට දැම්මොත් හොඳයි කියලා මම හිතනවා තවදුරටත්
+423,long_sentence,oya ada kade gihilla badu tika aran awada kiyala thawa tika welawakin mata kiyanna,ඔයා අද කඩේ ගිහිල්ලා බඩු ටික අරන් ආවාද කියලා තව ටික වෙලාවකින් මට කියන්න
+424,long_sentence,mama hithanne parashne thawa tika welawakin wisadanna puluwan kiyala thama hithenne mata dan,මම හිතන්නේ ප්‍රශ්නය තව ටික වෙලාවකින් විසඳන්න පුළුවන් කියලා තාම හිතෙන්නේ මට දැන්
+425,long_sentence,oya ada ude canteen ekedi kauruwath dakke nadda kiyala thawa tika welawakin mata kiyanna,ඔයා අද උදේ canteen එකේදී කාවවත් දැක්කේ නැද්ද කියලා තව ටික වෙලාවකින් මට කියන්න
+426,long_sentence,api presentation notes tika kiyawala thawa tika welawakin presentation eka ready karamu balanna heta,අපි presentation notes ටික කියවලා තව ටික වෙලාවකින් presentation එක ready කරමු බලන්න හෙට
+427,long_sentence,mata ada ude indan therenne na mara widihata mahansi wela thiyenne thawa duratath dan,මට අද උදේ ඉඳන් තේරෙන්නේ නෑ මාර විදිහට මහන්සි වෙලා තියෙන්නේ තවදුරටත් දැන්
+428,long_sentence,oya heta kade yaddi call ekak deela badu tika mata thawa tika welawakin kiyanna balanna,ඔයා හෙට කඩේ යද්දී call එකක් දීලා බඩු ටික මට තව ටික වෙලාවකින් කියන්න බලන්න
+429,long_sentence,api gihilla badu tika aran thawa tika welawakin emu neda ada raata hamoma,අපි ගිහිල්ලා බඩු ටික අරන් තව ටික වෙලාවකින් එමු නේද අද රෑට හැමෝම
+430,long_sentence,mama hithanne results thawa tika welawakin online balanna puluwan kiyala thama hithenne mata ada,මම හිතන්නේ results තව ටික වෙලාවකින් online බලන්න පුළුවන් කියලා තාම හිතෙන්නේ මට අද
+431,long_sentence,oya kade giyoth badu tika mata thawa tika welawakin ewanna puluwanda danma balanna oya,ඔයා කඩේ ගියොත් බඩු ටික මට තව ටික වෙලාවකින් එවන්න පුළුවන්ද දැන්ම බලන්න ඔයා
+432,long_sentence,mata ude indan wada karanna hitha denne na mara widihata kamaliy ada nam thawa duratath,මට උදේ ඉඳන් වැඩ කරන්න හිත දෙන්නේ නෑ මාර විදිහට කම්මැලියි අද නම් තවදුරටත්
+433,long_sentence,api canteen ekedi presentation eka thawa tika welawakin ready karamu neda api dennama hamoma,අපි canteen එකේදී presentation එක තව ටික වෙලාවකින් ready කරමු නේද අපි දෙන්නම හැමෝම
+434,long_sentence,oya campus ekata giye kiyatada kiyala kiyanna thawa tika welawakin mata balanna ada ude,ඔයා campus එකට ගියේ කීයටද කියලා කියන්න තව ටික වෙලාවකින් මට බලන්න අද උදේ
+435,long_sentence,mata kaama hadanna hithenne na kade yamu balanna thawa tika welawakin api heta udema,මට කෑම හදන්න හිතෙන්නේ නෑ කඩේ යමු බලන්න තව ටික වෙලාවකින් අපි හෙට උදේම
+436,long_sentence,api yaddi nangiwa school ekata dammaoth hondai kiyala mama hithanawa thawa duratath heta,අපි යද්දී නංගිව school එකට දැම්මොත් හොඳයි කියලා මම හිතනවා තවදුරටත් හෙට
+437,long_sentence,oya kade gihilla badu tika aran awada kiyala thawa tika welawakin mata kiyanna balanna,ඔයා කඩේ ගිහිල්ලා බඩු ටික අරන් ආවාද කියලා තව ටික වෙලාවකින් මට කියන්න බලන්න
+438,long_sentence,mama hithanne meka thawa tika welawakin wisadanna puluwan kiyala thama hithenne mata dan meka,මම හිතන්නේ මේක තව ටික වෙලාවකින් විසඳන්න පුළුවන් කියලා තාම හිතෙන්නේ මට දැන් මේක
+439,long_sentence,oya canteen ekedi kauruwath dakke nadda kiyala thawa tika welawakin mata kiyanna balanna heta,ඔයා canteen එකේදී කාවවත් දැක්කේ නැද්ද කියලා තව ටික වෙලාවකින් මට කියන්න බලන්න හෙට
+440,long_sentence,api presentation eka ready karamu balanna heta ude canteen ekedi hamuwela api dennama meka,අපි presentation එක ready කරමු බලන්න හෙට උදේ canteen එකේදී හමුවෙලා අපි දෙන්නම මේක
+441,long_sentence,mata therenne na mara widihata mahansi wela thiyenne thawa duratath dan mata nam meka,මට තේරෙන්නේ නෑ මාර විදිහට මහන්සි වෙලා තියෙන්නේ තවදුරටත් දැන් මට නම් මේක
+442,long_sentence,oya call ekak deela badu tika mata thawa tika welawakin kiyanna balanna heta kade yaddi,ඔයා call එකක් දීලා බඩු ටික මට තව ටික වෙලාවකින් කියන්න බලන්න හෙට කඩේ යද්දී
+443,long_sentence,api badu tika aran thawa tika welawakin emu neda ada raata hamoma nuwara gihilla,අපි බඩු ටික අරන් තව ටික වෙලාවකින් එමු නේද අද රෑට හැමෝම නුවර ගිහිල්ලා
+444,long_sentence,mama hithanne results online balanna puluwan kiyala thama hithenne mata ada thawa tika welawakin,මම හිතන්නේ results online බලන්න පුළුවන් කියලා තාම හිතෙන්නේ මට අද තව ටික වෙලාවකින්
+445,long_sentence,oya badu tika mata thawa tika welawakin ewanna puluwanda danma balanna kade giyoth oya,ඔයා බඩු ටික මට තව ටික වෙලාවකින් එවන්න පුළුවන්ද දැන්ම බලන්න කඩේ ගියොත් ඔයා
+446,long_sentence,mata wada karanna hitha denne na mara widihata kamaliy ada nam thawa duratath ude indan,මට වැඩ කරන්න හිත දෙන්නේ නෑ මාර විදිහට කම්මැලියි අද නම් තවදුරටත් උදේ ඉඳන්
+447,long_sentence,api presentation eka thawa tika welawakin ready karamu neda canteen ekedi hamuwela api dennama ada,අපි presentation එක තව ටික වෙලාවකින් ready කරමු නේද canteen එකේදී හමුවෙලා අපි දෙන්නම අද
+448,long_sentence,oya kiyatada giye kiyala kiyanna thawa tika welawakin mata balanna ada ude campus ekata,ඔයා කීයටද ගියේ කියලා කියන්න තව ටික වෙලාවකින් මට බලන්න අද උදේ campus එකට
+449,long_sentence,mata kaama hadanna hithenne na kade yamu balanna thawa tika welawakin api heta raata,මට කෑම හදන්න හිතෙන්නේ නෑ කඩේ යමු බලන්න තව ටික වෙලාවකින් අපි හෙට රෑට
+450,long_sentence,api nangiwa school ekata dammoth hondai kiyala mama hithanawa,අපි නංගිව school එකට දැම්මොත් හොඳයි කියලා මම හිතනවා
+451,long_sentence,oya badu tika aran awada kiyala thawa tika welawakin mata kiyanna balanna kade gihilla,ඔයා බඩු ටික අරන් ආවාද කියලා තව ටික වෙලාවකින් මට කියන්න බලන්න කඩේ ගිහිල්ලා
+452,long_sentence,mama hithanne thawa tika welawakin wisadanna puluwan kiyala thama hithenne mata dan me parashnaya,මම හිතන්නේ තව ටික වෙලාවකින් විසඳන්න පුළුවන් කියලා තාම හිතෙන්නේ මට දැන් මේ ප්‍රශ්නය
+453,short_phrase,honda naa,හොඳ නෑ
+454,short_phrase,kohomada oya,කොහොමද ඔයා
+455,short_phrase,kiyatada enne,කීයටද එන්නේ
+456,short_phrase,me kohedo,මේ කොහේද
+457,short_phrase,dan yamu,දැන් යමු
+458,short_phrase,epa epa,එපා එපා
+459,short_phrase,poddak inna,පොඩ්ඩක් ඉන්න
+460,short_phrase,kauda inne,කවුද ඉන්නේ
+461,short_phrase,moko une,මොකෝ වුණේ
+462,short_phrase,hari hari,හරි හරි
+463,short_phrase,kiyanna balanna,කියන්න බලන්න
+464,short_phrase,thawa tika welawakin,තව ටික වෙලාවකින්
+465,short_phrase,kohedu giye,කොහේද ගියේ
+466,short_phrase,kaama kawaada,කෑම කෑවාද
+467,short_phrase,ninda giye na,නින්ද ගියේ නෑ
+468,short_phrase,moko karanne,මොකෝ කරන්නේ
+469,short_phrase,api yamu,අපි යමු
+470,short_phrase,mata epa,මට එපා
+471,short_phrase,badagini wela,බඩගිනි වෙලා
+472,short_phrase,wahinna wage,වහින්න වගේ
+473,short_phrase,heta ennam,හෙට එන්නම්
+474,short_phrase,parakku wenawa,පරක්කු වෙනවා
+475,short_phrase,kohe inne,කොහේ ඉන්නේ
+476,short_phrase,mokakda e,මොකක්ද ඒ
+477,short_phrase,dan enna,දැන් එන්න
+478,short_phrase,kisima deyak na,කිසිම දෙයක් නෑ
+479,short_phrase,sathutuwen inna,සතුටුවෙන් ඉන්න
+480,short_phrase,aththada ehemada,ඇත්තද එහෙමද
+481,short_phrase,kiyanna puluwanda,කියන්න පුළුවන්ද
+482,edge_case,api 1st floor ekata yamu,අපි 1st floor එකට යමු
+483,edge_case,oya 5000k denawada mata,ඔයා 5000ක් දෙනවාද මට
+484,edge_case,wada karanne na???,වැඩ කරන්නේ නෑ???
+485,edge_case,bye bye heta hamuwemu,bye bye හෙට හමුවෙමු
+486,edge_case,mama 10.30ta nuwara yanawa,මම 10.30ට නුවර යනවා
+487,edge_case,oya kiyatada 2nd lecture ekata enne,ඔයා කීයටද 2nd lecture එකට එන්නේ
+488,edge_case,mama 100%k sure kiyala kiyanna,මම 100%ක් sure කියලා කියන්න
+489,edge_case,me moko me... moko une,මේ මොකෝ මේ... මොකෝ වුණේ
+490,edge_case,oya results 1st rank ekatama gaththa,ඔයා results 1st rank එකටම ගත්තා
+491,edge_case,mata 500/- k denna puluwanda dan,මට 500/- ක් දෙන්න පුළුවන්ද දැන්
+492,edge_case,oya me wada 2-3 parak kala neda,ඔයා මේ වැඩ 2-3 පාරක් කළා නේද
+493,edge_case,mama 9.00 a.m. wenakan balan hitiya,මම 9.00 a.m. වෙනකන් බලන් හිටියා
+494,edge_case,"oya presentation eka ""ready"" neda balanna","ඔයා presentation එක ""ready"" නේද බලන්න"
+495,edge_case,mama message 10k damma thama awe na,මම message 10ක් දැම්මා තාම ආවේ නෑ
+496,edge_case,api 3.30 p.m. meeting eka cancel karamu,අපි 3.30 p.m. meeting එක cancel කරමු
+497,edge_case,oya wada 100%k complete karala iwarada,ඔයා වැඩ 100%ක් complete කරලා ඉවරද
+498,edge_case,mm 1st attempt ekenma pass una,මම 1st attempt එකෙන්ම pass වුණා
+499,edge_case,me moko me??? bayawela neda???,මේ මොකෝ මේ??? බයවෙලා නේද???
+500,edge_case,api 5 dena passe welawaka katha karamu,අපි 5 දෙනා පස්සේ වෙලාවක කතා කරමු

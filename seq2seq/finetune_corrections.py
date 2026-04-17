@@ -17,9 +17,11 @@ Run from the project root:
 
 from __future__ import annotations
 
+import argparse
 import random
 import sys
 from pathlib import Path
+from datetime import datetime
 
 ROOT = Path(__file__).parent.parent
 if str(ROOT) not in sys.path:
@@ -37,9 +39,11 @@ from transformers import (
 
 # ── Config ────────────────────────────────────────────────────────────────────
 
-MODEL_PATH   = ROOT / "seq2seq" / "byt5-singlish-sinhala" / "final"
 DATA_PATH    = ROOT / "seq2seq" / "wsd_pairs.csv"
-OUTPUT_DIR   = ROOT / "seq2seq" / "byt5-singlish-sinhala" / "final"   # overwrite in place
+# Clean base model downloaded from HF Hub — never fine-tuned directly.
+# Experiments always read from here and write to a timestamped subfolder.
+DEFAULT_MODEL_PATH = ROOT / "seq2seq" / "byt5-base-clean"
+EXPERIMENTS_ROOT = ROOT / "seq2seq" / "experiments" / "byt5-corrections"
 
 REPEAT       = 500       # how many times each correction pair is repeated
 BG_SAMPLES   = 50_000    # random background pairs from wsd_pairs.csv to prevent forgetting
@@ -207,17 +211,63 @@ def build_dataset(tokenizer) -> Dataset:
     return ds
 
 
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Fine-tune ByT5 corrections on an experiment copy (GPU-only)."
+    )
+    parser.add_argument(
+        "--model-path",
+        type=Path,
+        default=DEFAULT_MODEL_PATH,
+        help="Input model directory (experiment copy recommended).",
+    )
+    parser.add_argument(
+        "--output-dir",
+        type=Path,
+        default=None,
+        help="Output directory for this run. If omitted, a timestamped experiment folder is created.",
+    )
+    parser.add_argument(
+        "--allow-cpu",
+        action="store_true",
+        help="Allow CPU training (not recommended). By default training requires CUDA.",
+    )
+    return parser.parse_args()
+
+
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def main():
+    cli = parse_args()
+
     device = "cuda" if torch.cuda.is_available() else "cpu"
     print(f"\nDevice : {device}")
-    if device == "cpu":
-        print("WARNING: running on CPU — this will take ~30-60 min.")
+    if device != "cuda" and not cli.allow_cpu:
+        raise RuntimeError(
+            "CUDA GPU is required for fine-tuning. "
+            "No GPU was detected, so the run was stopped to avoid CPU slowdown. "
+            "If you really need CPU mode, run with --allow-cpu."
+        )
 
-    print(f"Loading model from {MODEL_PATH} ...")
-    tokenizer = AutoTokenizer.from_pretrained(str(MODEL_PATH))
-    model     = AutoModelForSeq2SeqLM.from_pretrained(str(MODEL_PATH))
+    model_path = cli.model_path
+    if not model_path.exists():
+        raise FileNotFoundError(f"Model path not found: {model_path}")
+
+    if cli.output_dir is None:
+        run_name = datetime.now().strftime("run-%Y%m%d-%H%M%S")
+        output_dir = EXPERIMENTS_ROOT / run_name
+    else:
+        output_dir = cli.output_dir
+
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    print(f"Loading model from {model_path} ...")
+    tokenizer = AutoTokenizer.from_pretrained(str(model_path))
+    model     = AutoModelForSeq2SeqLM.from_pretrained(str(model_path))
+    
+    # Explicitly move model to GPU
+    model = model.to(device)
+    print(f"Model moved to: {device}")
 
     print("\nBuilding correction dataset ...")
     ds = build_dataset(tokenizer)
@@ -230,7 +280,7 @@ def main():
     warmup = max(100, len(train_ds) // (BATCH_SIZE * 20))
 
     args = Seq2SeqTrainingArguments(
-        output_dir=str(OUTPUT_DIR),
+        output_dir=str(output_dir),
         num_train_epochs=EPOCHS,
         per_device_train_batch_size=BATCH_SIZE,
         per_device_eval_batch_size=BATCH_SIZE,
@@ -260,9 +310,9 @@ def main():
     print("\nStarting correction fine-tune ...")
     trainer.train()
 
-    print(f"\nSaving corrected model to {OUTPUT_DIR} ...")
-    model.save_pretrained(str(OUTPUT_DIR))
-    tokenizer.save_pretrained(str(OUTPUT_DIR))
+    print(f"\nSaving corrected model to {output_dir} ...")
+    model.save_pretrained(str(output_dir))
+    tokenizer.save_pretrained(str(output_dir))
     print("Done.")
 
 

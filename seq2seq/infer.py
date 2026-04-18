@@ -1,12 +1,6 @@
 """
 Inference helper — given a romanized word, return top-K Sinhala candidates
 using beam search on the fine-tuned ByT5 model.
-
-Usage:
-    from seq2seq.infer import Transliterator
-    t = Transliterator()
-    print(t.candidates("videowe", k=5))
-    # ['වීඩියොවේ', 'වීඩියොවී', 'වීඩියොව', ...]
 """
 
 from __future__ import annotations

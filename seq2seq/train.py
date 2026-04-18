@@ -9,9 +9,6 @@ Training approach:
   - Target : sinhala word    (e.g. "වැඩි")
   - Model  : ByT5-small (byte-level T5, no vocab issues with any script)
   - Beam=5 at inference → top-5 candidates for MLM reranking
-
-  Tokenized dataset is saved to disk after first run — restarts skip
-  straight to training without re-tokenizing.
 """
 
 from pathlib import Path
@@ -37,7 +34,7 @@ MAX_SAMPLES     = 1_000_000   # 1M pairs — more than enough for word translite
 TRAIN_SPLIT     = 0.97
 MAX_INPUT_LEN   = 64
 MAX_TARGET_LEN  = 64
-BATCH_SIZE      = 64    # 16GB VRAM — ByT5-small with seq_len=64
+BATCH_SIZE      = 64    
 EPOCHS          = 2
 LR              = 5e-4
 SEED            = 42
@@ -46,8 +43,6 @@ SEED            = 42
 # ── Tokenize ────────────────────────────────────────────────────────────────
 
 def tokenize_fn(batch, tokenizer):
-    # Pad to fixed max_length so all tensors have the same shape.
-    # This lets set_format("torch") work and default_data_collator just stacks.
     model_inputs = tokenizer(
         batch["romanized"],
         max_length=MAX_INPUT_LEN,
@@ -138,7 +133,7 @@ def main():
     train_ds.set_format("torch")
     eval_ds.set_format("torch")
 
-    # All sequences are pre-padded to fixed length — just stack them
+    # All sequences are pre-padded to fixed length
     collator     = default_data_collator
     warmup_steps = int(0.05 * (len(train_ds) // BATCH_SIZE))
 
@@ -156,7 +151,7 @@ def main():
         load_best_model_at_end=True,
         metric_for_best_model="eval_loss",
         logging_steps=200,
-        dataloader_num_workers=0,   # 0 = main process only (most stable on Windows)
+        dataloader_num_workers=0,   # 0 = main process only
         dataloader_pin_memory=True,
         bf16=torch.cuda.is_bf16_supported(),
         fp16=not torch.cuda.is_bf16_supported() and torch.cuda.is_available(),

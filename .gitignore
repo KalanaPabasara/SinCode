@@ -22,10 +22,10 @@ __pycache__/
 *.pyd
 .Python
 
-# Evaluation outputs (optional — remove if you want these tracked)
+# Evaluation outputs (optional)
 misc/v3_results_110.csv
 
-# User feedback data — contains real submissions, do not expose
+# User feedback data
 misc/feedback_submissions.jsonl
 
 # Misc

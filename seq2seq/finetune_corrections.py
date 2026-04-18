@@ -40,8 +40,6 @@ from transformers import (
 # ── Config ────────────────────────────────────────────────────────────────────
 
 DATA_PATH    = ROOT / "seq2seq" / "wsd_pairs.csv"
-# Clean base model downloaded from HF Hub — never fine-tuned directly.
-# Experiments always read from here and write to a timestamped subfolder.
 DEFAULT_MODEL_PATH = ROOT / "seq2seq" / "byt5-base-clean"
 EXPERIMENTS_ROOT = ROOT / "seq2seq" / "experiments" / "byt5-corrections"
 

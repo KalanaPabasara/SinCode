@@ -3,14 +3,6 @@ Prepare local clean model snapshots and experiment copies.
 
 Workflow:
 1) Download/save a clean Hugging Face model to a stable local path once.
-2) Create a copy of that clean local model for each experiment run.
-
-This prevents accidental overwrites of your base model and keeps
-fine-tuning runs isolated.
-
-Examples:
-    python seq2seq/prepare_experiment_model.py --model-id Kalana001/mbart50-large-singlish-sinhala
-    python seq2seq/prepare_experiment_model.py --model-id Kalana001/mbart50-large-singlish-sinhala --run-name exp-lr5e5
 """
 
 from __future__ import annotations
